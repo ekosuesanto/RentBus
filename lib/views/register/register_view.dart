@@ -87,7 +87,7 @@ class _SignUpFormState extends State<SignUpForm> {
                   ),
                   SizedBox(
                     width: MediaQuery.of(context).size.width,
-                    height: MediaQuery.of(context).size.height - 350,
+                    height: MediaQuery.of(context).size.height - 330,
                     child: MultiWizard(
                       steps: [
                         WizardStep(
