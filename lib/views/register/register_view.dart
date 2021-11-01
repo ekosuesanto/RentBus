@@ -206,6 +206,7 @@ class _SignUpFormState extends State<SignUpForm> {
                           ),
                         ),
                         WizardStep(
+                            child : Padding ( padding : EdgeInset.all(24), 
                           child: Center(
                             child: Form(
                               key: _formKey,
@@ -225,6 +226,7 @@ class _SignUpFormState extends State<SignUpForm> {
                               ),
                             ),
                           ),
+                                ), 
                         ),
                       ],
                       finishFunction: () {
