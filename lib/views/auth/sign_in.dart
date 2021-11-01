@@ -2,7 +2,6 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:page_transition/page_transition.dart';
 import 'package:helloworld/views/register/register_view.dart';
 
 class SignIn extends StatelessWidget {
@@ -152,15 +151,54 @@ class _SignInFormState extends State<SignInForm> {
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
                             OutlinedButton(
-                              onPressed: () { Navigator.push(
-                  context,
-                  PageTransition(
-                      duration: Duration( milliseconds: 1500),
-                        reverseDuration: Duration(milliseconds: 1500),
-                    type: PageTransitionType.rightToLeft,
-                    child: RegisterView(),
-                  ),
-                );
+                              onPressed: () {
+                                  Navigator.push( 
+
+                    context, 
+
+                    PageRouteBuilder( 
+
+                      transitionsBuilder: 
+
+                          (context, animation, secondaryAnimation, child) { 
+
+                        return ScaleTransition( 
+
+                          alignment: Alignment.center, 
+
+                          scale: Tween<double>(begin: 0.1, end: 1).animate( 
+
+                            CurvedAnimation( 
+
+                              parent: animation, 
+
+                              curve: Curves.bounceIn, 
+
+                            ), 
+
+                          ), 
+
+                          child: child, 
+
+                        ); 
+
+                      }, 
+
+                      transitionDuration: Duration(seconds: 2), 
+
+                      pageBuilder: (BuildContext context, 
+
+                          Animation<double> animation, 
+
+                          Animation<double> secondaryAnimation) { 
+
+                        return RegisterView(); 
+
+                      }, 
+
+                    ), 
+
+                  ); 
                               },
                               style: ButtonStyle(
                                 side: MaterialStateProperty.all<BorderSide>(
