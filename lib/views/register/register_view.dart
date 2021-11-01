@@ -122,10 +122,10 @@ class _SignUpFormState extends State<SignUpForm> {
                                       SizedBox(height: 30),
                                       Center(
                                         child: Form( 
-                                          controller : _emailController, 
+                                           
                                           key: _formKey,
                                           child: TextFormField(
-                                            autovalidateMode: AutovalidateMode.always,
+                            controller : _emailController,                autovalidateMode: AutovalidateMode.always,
                                             decoration: InputDecoration(hintText: 'Your Email'),
                                             validator: (value) {
                                               if (value!.isEmpty) {
@@ -184,10 +184,10 @@ class _SignUpFormState extends State<SignUpForm> {
                                       SizedBox(height: 30),
                                       Center(
                                         child: Form( 
-                                          controller : _phoneController,
+                                          
                                           key: _formKey,
                                           child: TextFormField(
-                                            autovalidateMode: AutovalidateMode.always,
+     controller : _phoneController,                                      autovalidateMode: AutovalidateMode.always,
                                             decoration: InputDecoration(hintText: 'Your phone'),
                                             validator: (value) {
                                               if (value!.isEmpty) {
@@ -233,10 +233,10 @@ class _SignUpFormState extends State<SignUpForm> {
                                       ),
                                       SizedBox(height: 30), 
                                 Form( 
-                              controller : _fullnameController,
+                              
                               key: _formKey,
                               child: TextFormField(
-                                autovalidateMode: AutovalidateMode.always,
+    controller : _fullnameController,                            autovalidateMode: AutovalidateMode.always,
                                 decoration: InputDecoration(hintText: 'Your name'),
                                 validator: (value) {
                                   if (value!.isEmpty) {
