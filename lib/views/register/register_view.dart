@@ -134,7 +134,7 @@ class _SignUpFormState extends State<SignUpForm> {
                                                 return 'Your Email must be atleast 8 charachters long!';
                                               }
                                             },
-                                            onChange: (value) {
+                                            onChanged: (value) {
                                               _emailCtrl = value!;
                                             },
                                           ),
@@ -196,7 +196,7 @@ class _SignUpFormState extends State<SignUpForm> {
                                                 return 'Your Phone must be atleast 8 charachters long!';
                                               }
                                             },
-                                            onChange: (value) {
+                                            onChanged: (value) {
                                               _phoneCtrl = value!;
                                             },
                                           ),
@@ -245,7 +245,7 @@ class _SignUpFormState extends State<SignUpForm> {
                                     return 'Your name must be atleast 2 charachters long!';
                                   }
                                 },
-                                onChange: (value) {
+                                onChanged: (value) {
                                   _nameCtrl = value!;
                                 },
                               ),
