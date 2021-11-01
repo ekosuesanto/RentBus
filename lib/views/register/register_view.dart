@@ -96,7 +96,7 @@ class _SignUpFormState extends State<SignUpForm> {
                             child: Wrap(
                               direction: Axis.vertical,
                               alignment: WrapAlignment.start,
-                              crossAxisAlignment: WrapCrossAlignment.center,
+                              crossAxisAlignment: WrapCrossAlignment.start,
                               children: [
                                 Container(
                                   padding: EdgeInsets.only(left: 24.0, right: 24.0, top: 5.0, bottom: 15.0),
