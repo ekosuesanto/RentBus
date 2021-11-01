@@ -46,10 +46,12 @@ class SignUpForm extends StatefulWidget {
 
 class _SignUpFormState extends State<SignUpForm> {
   final _formKey = GlobalKey<FormState>();
-
+  final TextEditingController _emailController = TextEditingController();
+  final TextEditingController _phoneController = TextEditingController();
+  final TextEditingController _fullnameController = TextEditingController();
   String? _nameCtrl;
   String? _emailCtrl;
-
+  String? _phoneCtrl;
   @override
   Widget build(BuildContext context) {
     return LayoutBuilder(
@@ -119,7 +121,8 @@ class _SignUpFormState extends State<SignUpForm> {
                                           alignment: Alignment.centerLeft),
                                       SizedBox(height: 30),
                                       Center(
-                                        child: Form(
+                                        child: Form( 
+                                          controller : _emailController, 
                                           key: _formKey,
                                           child: TextFormField(
                                             autovalidateMode: AutovalidateMode.always,
@@ -131,7 +134,7 @@ class _SignUpFormState extends State<SignUpForm> {
                                                 return 'Your Email must be atleast 8 charachters long!';
                                               }
                                             },
-                                            onSaved: (value) {
+                                            onChange: (value) {
                                               _emailCtrl = value!;
                                             },
                                           ),
@@ -180,7 +183,8 @@ class _SignUpFormState extends State<SignUpForm> {
                                       ),
                                       SizedBox(height: 30),
                                       Center(
-                                        child: Form(
+                                        child: Form( 
+                                          controller : _phoneController,
                                           key: _formKey,
                                           child: TextFormField(
                                             autovalidateMode: AutovalidateMode.always,
@@ -192,8 +196,8 @@ class _SignUpFormState extends State<SignUpForm> {
                                                 return 'Your Phone must be atleast 8 charachters long!';
                                               }
                                             },
-                                            onSaved: (value) {
-                                              _emailCtrl = value!;
+                                            onChange: (value) {
+                                              _phoneCtrl = value!;
                                             },
                                           ),
                                         ),
@@ -228,7 +232,8 @@ class _SignUpFormState extends State<SignUpForm> {
                                 alignment: Alignment.centerLeft,
                                       ),
                                       SizedBox(height: 30), 
-                                Form(
+                                Form( 
+                              controller : _fullnameController,
                               key: _formKey,
                               child: TextFormField(
                                 autovalidateMode: AutovalidateMode.always,
@@ -240,7 +245,7 @@ class _SignUpFormState extends State<SignUpForm> {
                                     return 'Your name must be atleast 2 charachters long!';
                                   }
                                 },
-                                onSaved: (value) {
+                                onChange: (value) {
                                   _nameCtrl = value!;
                                 },
                               ),
