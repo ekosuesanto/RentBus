@@ -225,7 +225,9 @@ class _SignUpFormState extends State<SignUpForm> {
                                             )
                                           ],
                                         ),
-                                        ), 
+                                alignment: Alignment.centerLeft,
+                                      ),
+                                      SizedBox(height: 30), 
                                 Form(
                               key: _formKey,
                               child: TextFormField(
