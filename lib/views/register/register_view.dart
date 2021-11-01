@@ -208,6 +208,22 @@ class _SignUpFormState extends State<SignUpForm> {
                         WizardStep(
                             child : Padding ( padding : EdgeInsets.only(left: 24.0, right: 24.0, top: 5.0, bottom: 15.0), 
                           child: Container(
+                              Container(
+                                        child: Row(
+                                          mainAxisAlignment: MainAxisAlignment.start,
+                                          crossAxisAlignment: CrossAxisAlignment.start,
+                                          children: [
+                                            Text("Please enter your", style: TextStyle(fontSize: 12, color: Colors.grey[600])),
+                                            SizedBox(
+                                              width: 2,
+                                            ),
+                                            Text(
+                                              "Fullname.",
+                                              style: TextStyle(fontSize: 12, color: Colors.grey[600], fontWeight: FontWeight.bold),
+                                            )
+                                          ],
+                                        ),
+                                        alignment: Alignment.centerLeft,
                             child: Column ( children : [ Form(
                               key: _formKey,
                               child: TextFormField(
