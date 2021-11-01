@@ -85,7 +85,7 @@ class _SignUpFormState extends State<SignUpForm> {
                   ),
                   SizedBox(
                     width: MediaQuery.of(context).size.width,
-                    height: MediaQuery.of(context).size.height - 380,
+                    height: MediaQuery.of(context).size.height - 350,
                     child: MultiWizard(
                       steps: [
                         WizardStep(
@@ -96,7 +96,7 @@ class _SignUpFormState extends State<SignUpForm> {
                             child: Wrap(
                               direction: Axis.vertical,
                               alignment: WrapAlignment.start,
-                              crossAxisAlignment: WrapCrossAlignment.center,
+                              crossAxisAlignment: WrapCrossAlignment.start,
                               children: [
                                 Container(
                                   padding: EdgeInsets.only(left: 24.0, right: 24.0, top: 5.0, bottom: 15.0),
@@ -171,7 +171,7 @@ class _SignUpFormState extends State<SignUpForm> {
                                               width: 2,
                                             ),
                                             Text(
-                                              "Email.",
+                                              "Phone.",
                                               style: TextStyle(fontSize: 12, color: Colors.grey[600], fontWeight: FontWeight.bold),
                                             )
                                           ],
@@ -184,12 +184,12 @@ class _SignUpFormState extends State<SignUpForm> {
                                           key: _formKey,
                                           child: TextFormField(
                                             autovalidateMode: AutovalidateMode.always,
-                                            decoration: InputDecoration(hintText: 'Your Email'),
+                                            decoration: InputDecoration(hintText: 'Your phone'),
                                             validator: (value) {
                                               if (value!.isEmpty) {
-                                                return 'You must have a Email!';
+                                                return 'You must have a Phone!';
                                               } else if (value.length < 8) {
-                                                return 'Your Email must be atleast 8 charachters long!';
+                                                return 'Your Phone must be atleast 8 charachters long!';
                                               }
                                             },
                                             onSaved: (value) {
@@ -206,8 +206,29 @@ class _SignUpFormState extends State<SignUpForm> {
                           ),
                         ),
                         WizardStep(
-                          child: Center(
-                            child: Form(
+                            child : Padding ( padding : EdgeInsets.only(left: 24.0, right: 24.0, top: 5.0, bottom: 15.0), 
+                          child: Container(
+                              
+                            child: Column ( children : [ 
+                                Container(
+                                        child: Row(
+                                          mainAxisAlignment: MainAxisAlignment.start,
+                                          crossAxisAlignment: CrossAxisAlignment.start,
+                                          children: [
+                                            Text("Please enter your", style: TextStyle(fontSize: 12, color: Colors.grey[600])),
+                                            SizedBox(
+                                              width: 2,
+                                            ),
+                                            Text(
+                                              "Fullname.",
+                                              style: TextStyle(fontSize: 12, color: Colors.grey[600], fontWeight: FontWeight.bold),
+                                            )
+                                          ],
+                                        ),
+                                alignment: Alignment.centerLeft,
+                                      ),
+                                      SizedBox(height: 30), 
+                                Form(
                               key: _formKey,
                               child: TextFormField(
                                 autovalidateMode: AutovalidateMode.always,
@@ -224,7 +245,9 @@ class _SignUpFormState extends State<SignUpForm> {
                                 },
                               ),
                             ),
+                                                       ] ) , 
                           ),
+                                ), 
                         ),
                       ],
                       finishFunction: () {
