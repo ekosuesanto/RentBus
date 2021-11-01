@@ -125,7 +125,7 @@ class _SignUpFormState extends State<SignUpForm> {
                                            
                                           key: _formKey,
                                           child: TextFormField(
-                            controller : _emailController,   keyboardType: TextInputType.emailAddress ,autovalidateMode: AutovalidateMode.UserInteraction,
+                            controller : _emailController,   keyboardType: TextInputType.emailAddress ,autovalidateMode: AutovalidateMode.onUserInteraction,
                                             decoration: InputDecoration(hintText: 'Your Email'),
                                             validator: (value) {
                                               if (value!.isEmpty) {
