@@ -125,7 +125,7 @@ class _SignUpFormState extends State<SignUpForm> {
                                            
                                           key: _formKey,
                                           child: TextFormField(
-                            controller : _emailController,                autovalidateMode: AutovalidateMode.always,
+                            controller : _emailController,                autovalidateMode: AutovalidateMode.onUserInteraction,
                                             decoration: InputDecoration(hintText: 'Your Email'),
                                             validator: (value) {
                                               if (value!.isEmpty) {
@@ -187,7 +187,7 @@ class _SignUpFormState extends State<SignUpForm> {
                                           
                                           key: _formKey,
                                           child: TextFormField(
-     controller : _phoneController,                                      autovalidateMode: AutovalidateMode.always,
+     controller : _phoneController,                                      autovalidateMode: AutovalidateMode.onUserInteraction,
                                             decoration: InputDecoration(hintText: 'Your phone'),
                                             validator: (value) {
                                               if (value!.isEmpty) {
@@ -236,7 +236,7 @@ class _SignUpFormState extends State<SignUpForm> {
                               
                               key: _formKey,
                               child: TextFormField(
-    controller : _fullnameController,                            autovalidateMode: AutovalidateMode.always,
+    controller : _fullnameController,                            autovalidateMode: AutovalidateMode.onUserInteraction,
                                 decoration: InputDecoration(hintText: 'Your name'),
                                 validator: (value) {
                                   if (value!.isEmpty) {
