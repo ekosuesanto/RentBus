@@ -2,8 +2,6 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:page_transition/page_transition.dart';
-import 'package:helloworld/views/register/register_view.dart';
 
 class SignIn extends StatelessWidget {
   Widget build(BuildContext context) {
@@ -29,9 +27,8 @@ class _SignInFormState extends State<SignInForm> {
     return LayoutBuilder(builder: (context, constraint) {
       return SingleChildScrollView(
         physics: ScrollPhysics(),
-        reverse: false,
-        primary:true, 
-        keyboardDismissBehavior: ScrollViewKeyboardDismissBehavior.manual,
+        reverse: true,
+        keyboardDismissBehavior: ScrollViewKeyboardDismissBehavior.onDrag,
         child: ConstrainedBox(
           constraints: BoxConstraints(
             minHeight: constraint.maxHeight,
@@ -44,7 +41,7 @@ class _SignInFormState extends State<SignInForm> {
                 Container(
                   alignment: Alignment.bottomCenter,
                   width: MediaQuery.of(context).size.width,
-                  height: 250,
+                  height: 300,
                   child: Image(
                       image: AssetImage(
                           'assets/onboarding/one-week-before-your-employee-s-first-day.png')),
@@ -62,13 +59,6 @@ class _SignInFormState extends State<SignInForm> {
                         ),
                         alignment: Alignment.centerLeft,
                       ),
-                      SizedBox(height: 5), 
-                      Container(child: Row( mainAxisAlignment: MainAxisAlignment.start,
-              crossAxisAlignment: CrossAxisAlignment.start,children: [ 
-                          Text("Already account? Please",style:TextStyle(fontSize:12,color:Colors.grey[600])),
-                  SizedBox(width:2), 
-                          Text("Sign In.",style:TextStyle(fontSize:12,color:Colors.grey[600], fontWeight: FontWeight.bold),)
-                      ]),alignment: Alignment.centerLeft),
                       SizedBox(
                         height: 40,
                       ),
@@ -85,7 +75,7 @@ class _SignInFormState extends State<SignInForm> {
                                     BorderRadius.all(Radius.circular(40.0))),
                             focusedBorder: OutlineInputBorder(
                                 borderSide: BorderSide(
-                                    color:Colors.grey,
+                                    color: Color(0xFFD2B4DE),
                                     width: 2.0,
                                     style: BorderStyle.solid),
                                 borderRadius:
@@ -116,7 +106,7 @@ class _SignInFormState extends State<SignInForm> {
                                     BorderRadius.all(Radius.circular(40.0))),
                             focusedBorder: OutlineInputBorder(
                                 borderSide: BorderSide(
-                                    color: Colors.grey,
+                                    color: Color(0xFFD2B4DE),
                                     width: 2.0,
                                     style: BorderStyle.solid),
                                 borderRadius:
@@ -131,7 +121,7 @@ class _SignInFormState extends State<SignInForm> {
                       ),
                       SizedBox(
                         height: 20,
-                      ) , 
+                      ),
                       GestureDetector(
                         onTap: () {},
                         child: Container(
@@ -139,8 +129,8 @@ class _SignInFormState extends State<SignInForm> {
                           child: Text(
                             "Forgot credential?",
                             style: TextStyle(
-                                fontWeight: FontWeight.bold,
-                                color: Colors.grey[800] ),
+                                fontWeight: FontWeight.w400,
+                                color: Color(0xFFD2B4DE)),
                           ),
                         ),
                       ),
@@ -152,20 +142,11 @@ class _SignInFormState extends State<SignInForm> {
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
                             OutlinedButton(
-                              onPressed: () { Navigator.push(
-                  context,
-                  PageTransition(
-                      duration: Duration( milliseconds: 1500),
-                        reverseDuration: Duration(milliseconds: 1500),
-                    type: PageTransitionType.rightToLeft,
-                    child: RegisterView(),
-                  ),
-                );
-                              },
+                              onPressed: () {},
                               style: ButtonStyle(
                                 side: MaterialStateProperty.all<BorderSide>(
                                   BorderSide(
-                                      color: Colors.grey.shade800,
+                                      color: Colors.deepPurple.shade200,
                                       width: 2,
                                       style: BorderStyle.solid),
                                 ),
@@ -174,7 +155,7 @@ class _SignInFormState extends State<SignInForm> {
                                   RoundedRectangleBorder(
                                     borderRadius: BorderRadius.circular(30),
                                     side: BorderSide(
-                                        color: Colors.grey.shade800,
+                                        color: Colors.deepPurple.shade200,
                                         width: 2,
                                         style: BorderStyle.solid),
                                   ),
@@ -194,7 +175,7 @@ class _SignInFormState extends State<SignInForm> {
                                   style: TextStyle(
                                       fontWeight: FontWeight.bold,
                                       fontSize: 16,
-                                      color: Colors.black),
+                                      color: Color(0xFF8E44AD)),
                                 ),
                               ),
                             ),
@@ -205,14 +186,14 @@ class _SignInFormState extends State<SignInForm> {
                               style: ButtonStyle(
                                   backgroundColor:
                                       MaterialStateProperty.all<Color>(
-                                          Colors.black),
+                                          Colors.deepPurple.shade400),
                                   shape: MaterialStateProperty.all<
                                           RoundedRectangleBorder>(
                                       RoundedRectangleBorder(
                                           borderRadius:
                                               BorderRadius.circular(30),
                                           side: BorderSide(
-                                              color: Colors.white)))),
+                                              color: Colors.black12)))),
                               onPressed: () {},
                               child: Container(
                                 width:
