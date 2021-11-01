@@ -171,7 +171,7 @@ class _SignUpFormState extends State<SignUpForm> {
                                               width: 2,
                                             ),
                                             Text(
-                                              "Email.",
+                                              "Phone.",
                                               style: TextStyle(fontSize: 12, color: Colors.grey[600], fontWeight: FontWeight.bold),
                                             )
                                           ],
@@ -184,12 +184,12 @@ class _SignUpFormState extends State<SignUpForm> {
                                           key: _formKey,
                                           child: TextFormField(
                                             autovalidateMode: AutovalidateMode.always,
-                                            decoration: InputDecoration(hintText: 'Your Email'),
+                                            decoration: InputDecoration(hintText: 'Your phone'),
                                             validator: (value) {
                                               if (value!.isEmpty) {
-                                                return 'You must have a Email!';
+                                                return 'You must have a Phone!';
                                               } else if (value.length < 8) {
-                                                return 'Your Email must be atleast 8 charachters long!';
+                                                return 'Your Phone must be atleast 8 charachters long!';
                                               }
                                             },
                                             onSaved: (value) {
