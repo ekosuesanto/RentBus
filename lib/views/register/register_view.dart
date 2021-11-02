@@ -121,8 +121,8 @@ class _SignUpFormState extends State<SignUpForm> {
                           WizardStep( 
                             showPrevious: false,
                             nextFunction: (){ 
-                                if (_formKey.currentState.validate()) {
-                _formKey.currentStatecurrentState.save();
+                                if (_formKey.currentState!.validate()) {
+                _formKey.currentState!.save();
                                     }
                             },
                             child: Column(
