@@ -381,7 +381,11 @@ class _SignUpFormState extends State<SignUpForm> {
                                   ),
                                 ),
                               ],
-                              finishFunction: () {
+                              
+                            ),
+                          ),
+                        ],
+                        finishFunction: () {
               if (_formKey.currentState!.validate()) {
                 _formKey.currentState!.save();
                 ScaffoldMessenger.of(context).showSnackBar(SnackBar(
@@ -390,9 +394,6 @@ class _SignUpFormState extends State<SignUpForm> {
                 ));
               }
             },
-                            ),
-                          ),
-                        ],
                       ),
                     ),
                   ),
