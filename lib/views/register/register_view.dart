@@ -191,7 +191,7 @@ class _SignUpFormState extends State<SignUpForm> {
                                     Text("Already account? Please "), 
                                         GestureDetector ( 
                                         onTap:() {}, 
-                                        Text("Sign In",style: TextStyle(fontWeight: FontWeight.bold,),), 
+child :                                       Text("Sign In",style: TextStyle(fontWeight: FontWeight.bold,),), 
                                         ) , 
                                     ]
                                 ), 
