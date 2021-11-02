@@ -388,7 +388,7 @@ child :                                       Text("Sign In",
                                   child: Form(
                                     key: _formKey,
                                     child: TextFormField(
-                                      controller: _paswordController,
+                                      controller: _passwordController,
                                       keyboardType:
                                       TextInputType.text,
                                       autovalidateMode: AutovalidateMode
