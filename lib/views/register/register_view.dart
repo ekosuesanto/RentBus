@@ -126,7 +126,7 @@ final TextEditingController _passwordController = TextEditingController();
                           WizardStep( 
                             showPrevious: false,
                             nextFunction: (){ 
-                                if (_formEmailKey.currentState!.validate()) {
+                                if (!_formEmailKey.currentState!.validate()) {
                 _formEmailKey.currentState!.save();
                                     }
                             },
