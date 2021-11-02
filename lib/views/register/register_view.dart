@@ -48,8 +48,11 @@ class SignUpForm extends StatefulWidget {
 }
 
 class _SignUpFormState extends State<SignUpForm> {
-  final _formKey = GlobalKey<FormState>();
-
+  final _formEmailKey = GlobalKey<FormState>();
+  final _formPhoneKey = GlobalKey<FormState>();
+  final _formFullnameKey = GlobalKey<FormState>();
+  final _formPasswordKey = GlobalKey<FormState>();
+    
   final TextEditingController _emailController = TextEditingController();
   final TextEditingController _phoneController = TextEditingController();
   final TextEditingController _fullnameController = TextEditingController();
@@ -123,8 +126,8 @@ final TextEditingController _passwordController = TextEditingController();
                           WizardStep( 
                             showPrevious: false,
                             nextFunction: (){ 
-                                if (_formKey.currentState!.validate()) {
-                _formKey.currentState!.save();
+                                if (_formEmailKey.currentState!.validate()) {
+                _formEmailKey.currentState!.save();
                                     }
                             },
                             child: Column(
@@ -163,7 +166,7 @@ final TextEditingController _passwordController = TextEditingController();
                                 ),
                                 Container(
                                   child: Form(
-                                    key: _formKey,
+                                    key: _formEmailKey,
                                     child: TextFormField(
                                       controller: _emailController,
                                       keyboardType:
@@ -254,7 +257,7 @@ child :                                       Text("Sign In",
                                 ),
                                 Container(
                                   child: Form(
-                                    key: _formKey,
+                                    key: _formPhoneKey,
                                     child: TextFormField(
                                       controller: _phoneController,
                                       keyboardType:
@@ -320,7 +323,7 @@ child :                                       Text("Sign In",
                                 ),
                                 Container(
                                   child: Form(
-                                    key: _formKey,
+                                    key: _formFullnameKey,
                                     child: TextFormField(
                                       controller: _fullnameController,
                                       keyboardType:
@@ -386,7 +389,7 @@ child :                                       Text("Sign In",
                                 ),
                                 Container(
                                   child: Form(
-                                    key: _formKey,
+                                    key: _formPasswordKey,
                                     child: TextFormField(
                                       controller: _passwordController,
                                       keyboardType:
@@ -418,8 +421,8 @@ child :                                       Text("Sign In",
                           ),
                         ],
                         finishFunction: () {
-              if (_formKey.currentState!.validate()) {
-                _formKey.currentState!.save();
+              if (_formPasswordKey.currentState!.validate()) {
+                _formPasswordKey.currentState!.save();
                 ScaffoldMessenger.of(context).showSnackBar(SnackBar(
                   content: Text('Welcome $_nameCtrl!'),
                   duration: Duration(seconds: 5),
