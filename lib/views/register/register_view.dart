@@ -197,12 +197,14 @@ class _SignUpFormState extends State<SignUpForm> {
                   PageTransition(
                       duration: Duration( milliseconds: 1500),
                         reverseDuration: Duration(milliseconds: 1500),
-                    type: PageTransitionType.rightToLeft,
+                    type: PageTransitionType.leftToRight,
                     child: SignIn(),
                   ),
                 );
                                         }, 
-child :                                       Text("Sign In",style: TextStyle(fontWeight: FontWeight.bold,),), 
+child :                                       Text("Sign In", 
+                                                   style: TextStyle( 
+    fontWeight: FontWeight.bold,),), 
                                         ) , 
                                     ]
                                 ), 
