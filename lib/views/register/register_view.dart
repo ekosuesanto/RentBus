@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:multi_wizard/multi_wizard.dart';
+import 'package:page_transition/page_transition.dart';
 import 'package:helloworld/views/auth/sign_in.dart';
 
 class RegisterView extends StatelessWidget {
