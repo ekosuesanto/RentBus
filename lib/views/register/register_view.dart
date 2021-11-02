@@ -111,7 +111,7 @@ class _SignUpFormState extends State<SignUpForm> {
                       left: 24.0,
                       right: 24.0,
                       top: 5.0,
-                      bottom: 30.0,
+
                     ),
                     child: SizedBox(
                       width: MediaQuery.of(context).size.width,
@@ -120,7 +120,11 @@ class _SignUpFormState extends State<SignUpForm> {
                         steps: [
                           WizardStep( 
                             showPrevious: false,
-                            nextFunction: () => print('You pressed the next button'),
+                            nextFunction: (){ 
+                                if (_formKey.currentState!.validate()) {
+                _formKey.currentState!.save();
+                                    }
+                            },
                             child: Column(
                               children: [
                                 Container(
@@ -196,7 +200,7 @@ class _SignUpFormState extends State<SignUpForm> {
                   context,
                   PageTransition(
                       duration: Duration( milliseconds: 1500),
-                        reverseDuration: Duration(milliseconds: 1500),
+                      reverseDuration: Duration(milliseconds: 1500),
                     type: PageTransitionType.leftToRight,
                     child: SignIn(),
                   ),
