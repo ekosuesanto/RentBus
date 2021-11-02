@@ -172,8 +172,8 @@ final TextEditingController _passwordController = TextEditingController();
                                       controller: _emailController,
                                       keyboardType:
                                       TextInputType.emailAddress,
-                                      autovalidateMode: AutovalidateMode
-                                          .onUserInteraction,
+                                      autovalidateMode: AutovalidateMode.always, 
+                                         
                                       decoration: InputDecoration(
                                           hintText: 'Your Email'),
                                       validator: (value) {
@@ -263,8 +263,7 @@ child :                                       Text("Sign In",
                                       controller: _phoneController,
                                       keyboardType:
                                       TextInputType.phone,
-                                      autovalidateMode: AutovalidateMode
-                                          .onUserInteraction,
+                                      autovalidateMode: AutovalidateMode.always, 
                                       decoration: InputDecoration(
                                           hintText: 'Your Phone'),
                                       validator: (value) {
@@ -329,8 +328,7 @@ child :                                       Text("Sign In",
                                       controller: _fullnameController,
                                       keyboardType:
                                       TextInputType.text,
-                                      autovalidateMode: AutovalidateMode
-                                          .onUserInteraction,
+                                      autovalidateMode: AutovalidateMode.always, 
                                       decoration: InputDecoration(
                                           hintText: 'Your Fullname'),
                                       validator: (value) {
@@ -395,8 +393,7 @@ child :                                       Text("Sign In",
                                       controller: _passwordController,
                                       keyboardType:
                                       TextInputType.text,
-                                      autovalidateMode: AutovalidateMode
-                                          .onUserInteraction,
+                                      autovalidateMode: AutovalidateMode.always, 
                                       decoration: InputDecoration(
                                           hintText: 'Your Password'),
                                       validator: (value) {
