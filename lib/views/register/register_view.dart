@@ -53,12 +53,14 @@ class _SignUpFormState extends State<SignUpForm> {
   final TextEditingController _emailController = TextEditingController();
   final TextEditingController _phoneController = TextEditingController();
   final TextEditingController _fullnameController = TextEditingController();
+final TextEditingController _passwordController = TextEditingController();
 
-  late bool emailvalid, phonevalid, fullnamevalid = false;
+  late bool emailvalid, phonevalid, fullnamevalid,passwordvalid = false;
 
   String? _nameCtrl;
   String? _emailCtrl;
-  String? _phoneCtrl;
+  String? _phoneCtrl; 
+  String? _passwordCtrl;
   @override
   Widget build(BuildContext context) {
     return LayoutBuilder(
@@ -386,26 +388,26 @@ child :                                       Text("Sign In",
                                   child: Form(
                                     key: _formKey,
                                     child: TextFormField(
-                                      controller: _emailController,
+                                      controller: _paswordController,
                                       keyboardType:
-                                      TextInputType.emailAddress,
+                                      TextInputType.text,
                                       autovalidateMode: AutovalidateMode
                                           .onUserInteraction,
                                       decoration: InputDecoration(
                                           hintText: 'Your Password'),
                                       validator: (value) {
                                         if (value!.isEmpty) {
-                                          emailvalid = false;
+                                          passwordvalid = false;
                                           return 'You must have a Password!';
                                         } else if (value.length < 6) {
-                                          emailvalid = false;
+                                          passwordvalid = false;
                                           return 'Your Password must be atleast 6 charachters long!';
                                         } else {
-                                          emailvalid = true;
+                                          passwordvalid = true;
                                         }
                                       },
                                       onChanged: (value) {
-                                        _emailCtrl = value;
+                                        _passwordCtrl = value;
                                       },
                                     ),
                                   ),
