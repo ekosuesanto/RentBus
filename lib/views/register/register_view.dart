@@ -182,6 +182,19 @@ class _SignUpFormState extends State<SignUpForm> {
                                     ),
                                   ),
                                 ),
+                                SizedBox( 
+                                    height: 15,
+                                ), 
+                               Row( 
+                                   mainAxisAlignment : MainAxisAlignment.end, 
+                                    children : [ 
+                                    Text("Already account? Please "), 
+                                        GestureDetector ( 
+                                        onTap:() {}, 
+                                        Text("Sign In",style: TextStyle(fontWeight:FontWeight.bold),), 
+                                        ) , 
+                                    ]
+                                ), 
                               ],
                             ),
                           ),
