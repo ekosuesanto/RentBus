@@ -263,17 +263,17 @@ child :                                       Text("Sign In",
                                           hintText: 'Your Phone'),
                                       validator: (value) {
                                         if (value!.isEmpty) {
-                                          emailvalid = false;
-                                          return 'You must have a Email!';
+                                          phonevalid = false;
+                                          return 'You must have a Phone!';
                                         } else if (value.length < 8) {
-                                          emailvalid = false;
-                                          return 'Your Email must be atleast 8 charachters long!';
+                                          phonevalid = false;
+                                          return 'Your Phone must be atleast 8 charachters long!';
                                         } else {
-                                          emailvalid = true;
+                                          phonevalid = true;
                                         }
                                       },
                                       onChanged: (value) {
-                                        _emailCtrl = value;
+                                        _phoneCtrl = value;
                                       },
                                     ),
                                   ),
@@ -302,7 +302,7 @@ child :                                       Text("Sign In",
                                         width: 2,
                                       ),
                                       Text(
-                                        "Email.",
+                                        "Fullname.",
                                         style: TextStyle(
                                           fontSize: 12,
                                           color: Colors.grey[600],
@@ -320,26 +320,26 @@ child :                                       Text("Sign In",
                                   child: Form(
                                     key: _formKey,
                                     child: TextFormField(
-                                      controller: _emailController,
+                                      controller: _fullnameController,
                                       keyboardType:
-                                      TextInputType.emailAddress,
+                                      TextInputType.text,
                                       autovalidateMode: AutovalidateMode
                                           .onUserInteraction,
                                       decoration: InputDecoration(
-                                          hintText: 'Your Email'),
+                                          hintText: 'Your Fullname'),
                                       validator: (value) {
                                         if (value!.isEmpty) {
-                                          emailvalid = false;
-                                          return 'You must have a Email!';
+                                          fullnamevalid = false;
+                                          return 'You must have a Fullname!';
                                         } else if (value.length < 8) {
-                                          emailvalid = false;
-                                          return 'Your Email must be atleast 8 charachters long!';
+                                          fullnamevalid = false;
+                                          return 'Your Fullname must be atleast 8 charachters long!';
                                         } else {
-                                          emailvalid = true;
+                                          fullnamevalid = true;
                                         }
                                       },
                                       onChanged: (value) {
-                                        _emailCtrl = value;
+                                        _nameCtrl = value;
                                       },
                                     ),
                                   ),
@@ -368,7 +368,7 @@ child :                                       Text("Sign In",
                                         width: 2,
                                       ),
                                       Text(
-                                        "Email.",
+                                        "Password.",
                                         style: TextStyle(
                                           fontSize: 12,
                                           color: Colors.grey[600],
@@ -392,14 +392,14 @@ child :                                       Text("Sign In",
                                       autovalidateMode: AutovalidateMode
                                           .onUserInteraction,
                                       decoration: InputDecoration(
-                                          hintText: 'Your Email'),
+                                          hintText: 'Your Password'),
                                       validator: (value) {
                                         if (value!.isEmpty) {
                                           emailvalid = false;
-                                          return 'You must have a Email!';
-                                        } else if (value.length < 8) {
+                                          return 'You must have a Password!';
+                                        } else if (value.length < 6) {
                                           emailvalid = false;
-                                          return 'Your Email must be atleast 8 charachters long!';
+                                          return 'Your Password must be atleast 6 charachters long!';
                                         } else {
                                           emailvalid = true;
                                         }
