@@ -389,7 +389,7 @@ class _SignUpFormState extends State<SignUpForm> {
               if (_formKey.currentState!.validate()) {
                 _formKey.currentState!.save();
                 ScaffoldMessenger.of(context).showSnackBar(SnackBar(
-                  content: Text('Welcome $_namaCtrl!'),
+                  content: Text('Welcome $_nameCtrl!'),
                   duration: Duration(seconds: 5),
                 ));
               }
