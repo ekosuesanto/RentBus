@@ -256,11 +256,11 @@ child :                                       Text("Sign In",
                                     child: TextFormField(
                                       controller: _emailController,
                                       keyboardType:
-                                      TextInputType.emailAddress,
+                                      TextInputType.phone,
                                       autovalidateMode: AutovalidateMode
                                           .onUserInteraction,
                                       decoration: InputDecoration(
-                                          hintText: 'Your Email'),
+                                          hintText: 'Your Phone'),
                                       validator: (value) {
                                         if (value!.isEmpty) {
                                           emailvalid = false;
