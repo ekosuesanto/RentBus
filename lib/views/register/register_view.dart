@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:multi_wizard/multi_wizard.dart';
-import 'package:helloworld/views/auth/sign_in.dart';
+//import 'package:rosalia_indah_transport/views/auth/sign_in.dart';
 
 class RegisterView extends StatelessWidget {
   Widget build(BuildContext context) {
@@ -23,11 +23,13 @@ class RegisterView extends StatelessWidget {
             leading: Builder(
               builder: (BuildContext context) {
                 return IconButton(
-                  icon: const Icon(Icons.chevron_left, color: Color(0xFF000000)),
+                  icon:
+                      const Icon(Icons.chevron_left, color: Color(0xFF000000)),
                   onPressed: () {
                     Scaffold.of(context).openDrawer();
                   },
-                  tooltip: MaterialLocalizations.of(context).openAppDrawerTooltip,
+                  tooltip:
+                      MaterialLocalizations.of(context).openAppDrawerTooltip,
                 );
               },
             ),
@@ -46,9 +48,13 @@ class SignUpForm extends StatefulWidget {
 
 class _SignUpFormState extends State<SignUpForm> {
   final _formKey = GlobalKey<FormState>();
+
   final TextEditingController _emailController = TextEditingController();
   final TextEditingController _phoneController = TextEditingController();
   final TextEditingController _fullnameController = TextEditingController();
+
+  late bool emailvalid, phonevalid, fullnamevalid = false;
+
   String? _nameCtrl;
   String? _emailCtrl;
   String? _phoneCtrl;
@@ -59,7 +65,7 @@ class _SignUpFormState extends State<SignUpForm> {
         return SingleChildScrollView(
           physics: ScrollPhysics(),
           reverse: false,
-          primary: true,
+          primary: false,
           keyboardDismissBehavior: ScrollViewKeyboardDismissBehavior.manual,
           child: ConstrainedBox(
             constraints: BoxConstraints(
@@ -67,203 +73,327 @@ class _SignUpFormState extends State<SignUpForm> {
             ),
             child: IntrinsicHeight(
               child: Column(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                mainAxisAlignment: MainAxisAlignment.start,
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Container(
-                    alignment: Alignment.bottomCenter,
-                    width: MediaQuery.of(context).size.width,
-                    height: 200,
-                    child: Image(image: AssetImage('assets/onboarding/handing-out-offer-letter.png')),
+                  Column(
+                    children: [
+                      Container(
+                        alignment: Alignment.bottomCenter,
+                        width: MediaQuery.of(context).size.width,
+                        child: Image(
+                          image: AssetImage(
+                              'assets/onboarding/handing-out-offer-letter.png'),
+                        ),
+                      ),
+                      Container(
+                        padding: EdgeInsets.only(
+                          left: 24.0,
+                          right: 24.0,
+                          top: 30.0,
+                          bottom: 0,
+                        ),
+                        width: MediaQuery.of(context).size.width,
+                        child: Text(
+                          "Sign Up",
+                          style: TextStyle(
+                            fontWeight: FontWeight.bold,
+                            fontSize: 30,
+                          ),
+                        ),
+                        alignment: Alignment.centerLeft,
+                      ),
+                    ],
                   ),
                   Container(
-                    padding: EdgeInsets.only(left: 24.0, right: 24.0, top: 30.0, bottom: 0),
-                    width: MediaQuery.of(context).size.width,
-                    child: Text(
-                      "Sign Up",
-                      style: TextStyle(fontWeight: FontWeight.bold, fontSize: 30),
+                    padding: EdgeInsets.only(
+                      left: 24.0,
+                      right: 24.0,
+                      top: 5.0,
+                      bottom: 30.0,
                     ),
-                    alignment: Alignment.centerLeft,
-                  ),
-                  SizedBox(
-                    width: MediaQuery.of(context).size.width,
-                    height: MediaQuery.of(context).size.height - 330,
-                    child: MultiWizard(
-                      steps: [
-                        WizardStep(
-                          showPrevious: false, // Removes the previous button
-                          nextFunction: () => print('You pressed the next button'),
-                          child: Container(
-                            height: MediaQuery.of(context).size.height,
-                            child: Wrap(
-                              direction: Axis.vertical,
-                              alignment: WrapAlignment.start,
-                              crossAxisAlignment: WrapCrossAlignment.start,
+                    child: SizedBox(
+                      width: MediaQuery.of(context).size.width,
+                      height: MediaQuery.of(context).size.height / 2,
+                      child: MultiWizard(
+                        steps: [
+                          WizardStep( 
+                            showPrevious: false,
+                            nextFunction: () => print('You pressed the next button'),
+                            child: Column(
                               children: [
                                 Container(
-                                  padding: EdgeInsets.only(left: 24.0, right: 24.0, top: 5.0, bottom: 15.0),
-                                  width: MediaQuery.of(context).size.width,
-                                  child: Column(
-                                    mainAxisAlignment: MainAxisAlignment.start,
-                                    crossAxisAlignment: CrossAxisAlignment.start,
+                                  child: Row(
+                                    mainAxisAlignment:
+                                    MainAxisAlignment.start,
+                                    crossAxisAlignment:
+                                    CrossAxisAlignment.start,
                                     children: [
-                                      Container(
-                                          child: Row(mainAxisAlignment: MainAxisAlignment.start, crossAxisAlignment: CrossAxisAlignment.start, children: [
-                                            Text("Please enter your", style: TextStyle(fontSize: 12, color: Colors.grey[600])),
-                                            SizedBox(
-                                              width: 2,
-                                            ),
-                                            Text(
-                                              "Email.",
-                                              style: TextStyle(fontSize: 12, color: Colors.grey[600], fontWeight: FontWeight.bold),
-                                            )
-                                          ]),
-                                          alignment: Alignment.centerLeft),
-                                      SizedBox(height: 30),
-                                      Center(
-                                        child: Form( 
-                                           
-                                          key: _formKey,
-                                          child: TextFormField(
-                            controller : _emailController,   keyboardType: TextInputType.emailAddress ,autovalidateMode: AutovalidateMode.onUserInteraction,
-                                            decoration: InputDecoration(hintText: 'Your Email'),
-                                            validator: (value) {
-                                              if (value!.isEmpty) {
-                                                return 'You must have a Email!';
-                                              } else if (value.length < 8) {
-                                                return 'Your Email must be atleast 8 charachters long!';
-                                              }
-                                            },
-                                            onChanged: (value) {
-                                              _emailCtrl = value!;
-                                            },
-                                          ),
+                                      Text(
+                                        "Please enter your",
+                                        style: TextStyle(
+                                          fontSize: 12,
+                                          color: Colors.grey[600],
                                         ),
                                       ),
+                                      SizedBox(
+                                        width: 2,
+                                      ),
+                                      Text(
+                                        "Email.",
+                                        style: TextStyle(
+                                          fontSize: 12,
+                                          color: Colors.grey[600],
+                                          fontWeight: FontWeight.bold,
+                                        ),
+                                      )
                                     ],
+                                  ),
+                                  alignment: Alignment.centerLeft,
+                                ),
+                                SizedBox(
+                                  height: 30,
+                                ),
+                                Container(
+                                  child: Form(
+                                    key: _formKey,
+                                    child: TextFormField(
+                                      controller: _emailController,
+                                      keyboardType:
+                                      TextInputType.emailAddress,
+                                      autovalidateMode: AutovalidateMode
+                                          .onUserInteraction,
+                                      decoration: InputDecoration(
+                                          hintText: 'Your Email'),
+                                      validator: (value) {
+                                        if (value!.isEmpty) {
+                                          emailvalid = false;
+                                          return 'You must have a Email!';
+                                        } else if (value.length < 8) {
+                                          emailvalid = false;
+                                          return 'Your Email must be atleast 8 charachters long!';
+                                        } else {
+                                          emailvalid = true;
+                                        }
+                                      },
+                                      onChanged: (value) {
+                                        _emailCtrl = value;
+                                      },
+                                    ),
                                   ),
                                 ),
                               ],
                             ),
                           ),
-                        ),
-                        WizardStep(
-                          showPrevious: true, // Removes the previous button
-                          nextFunction: () => print('You pressed the next button'),
-                          child: Container(
-                            height: double.infinity,
-                            child: Wrap(
-                              direction: Axis.vertical,
-                              alignment: WrapAlignment.start,
-                              crossAxisAlignment: WrapCrossAlignment.center,
+                          WizardStep(
+                            child: Column(
                               children: [
                                 Container(
-                                  padding: EdgeInsets.only(left: 24.0, right: 24.0, top: 5.0, bottom: 15.0),
-                                  width: MediaQuery.of(context).size.width,
-                                  child: Column(
-                                    mainAxisAlignment: MainAxisAlignment.start,
-                                    crossAxisAlignment: CrossAxisAlignment.start,
+                                  child: Row(
+                                    mainAxisAlignment:
+                                    MainAxisAlignment.start,
+                                    crossAxisAlignment:
+                                    CrossAxisAlignment.start,
                                     children: [
-                                      Container(
-                                        child: Row(
-                                          mainAxisAlignment: MainAxisAlignment.start,
-                                          crossAxisAlignment: CrossAxisAlignment.start,
-                                          children: [
-                                            Text("Please enter your", style: TextStyle(fontSize: 12, color: Colors.grey[600])),
-                                            SizedBox(
-                                              width: 2,
-                                            ),
-                                            Text(
-                                              "Phone.",
-                                              style: TextStyle(fontSize: 12, color: Colors.grey[600], fontWeight: FontWeight.bold),
-                                            )
-                                          ],
-                                        ),
-                                        alignment: Alignment.centerLeft,
-                                      ),
-                                      SizedBox(height: 30),
-                                      Center(
-                                        child: Form( 
-                                          
-                                          key: _formKey,
-                                          child: TextFormField(
-     controller : _phoneController,  keyboardType: TextInputType.phone ,                                   autovalidateMode: AutovalidateMode.onUserInteraction,
-                                            decoration: InputDecoration(hintText: 'Your phone'),
-                                            validator: (value) {
-                                              if (value!.isEmpty) {
-                                                return 'You must have a Phone!';
-                                              } else if (value.length < 8) {
-                                                return 'Your Phone must be atleast 8 charachters long!';
-                                              }
-                                            },
-                                            onChanged: (value) {
-                                              _phoneCtrl = value!;
-                                            },
-                                          ),
+                                      Text(
+                                        "Please enter your",
+                                        style: TextStyle(
+                                          fontSize: 12,
+                                          color: Colors.grey[600],
                                         ),
                                       ),
+                                      SizedBox(
+                                        width: 2,
+                                      ),
+                                      Text(
+                                        "Phone.",
+                                        style: TextStyle(
+                                          fontSize: 12,
+                                          color: Colors.grey[600],
+                                          fontWeight: FontWeight.bold,
+                                        ),
+                                      )
                                     ],
+                                  ),
+                                  alignment: Alignment.centerLeft,
+                                ),
+                                SizedBox(
+                                  height: 30,
+                                ),
+                                Container(
+                                  child: Form(
+                                    key: _formKey,
+                                    child: TextFormField(
+                                      controller: _emailController,
+                                      keyboardType:
+                                      TextInputType.emailAddress,
+                                      autovalidateMode: AutovalidateMode
+                                          .onUserInteraction,
+                                      decoration: InputDecoration(
+                                          hintText: 'Your Email'),
+                                      validator: (value) {
+                                        if (value!.isEmpty) {
+                                          emailvalid = false;
+                                          return 'You must have a Email!';
+                                        } else if (value.length < 8) {
+                                          emailvalid = false;
+                                          return 'Your Email must be atleast 8 charachters long!';
+                                        } else {
+                                          emailvalid = true;
+                                        }
+                                      },
+                                      onChanged: (value) {
+                                        _emailCtrl = value;
+                                      },
+                                    ),
                                   ),
                                 ),
                               ],
                             ),
                           ),
-                        ),
-                        WizardStep(
-                            child : Padding ( padding : EdgeInsets.only(left: 24.0, right: 24.0, top: 5.0, bottom: 15.0), 
-                          child: Container(
-                              
-                            child: Column ( children : [ 
+                          WizardStep(
+                            child: Column(
+                              children: [
                                 Container(
-                                        child: Row(
-                                          mainAxisAlignment: MainAxisAlignment.start,
-                                          crossAxisAlignment: CrossAxisAlignment.start,
-                                          children: [
-                                            Text("Please enter your", style: TextStyle(fontSize: 12, color: Colors.grey[600])),
-                                            SizedBox(
-                                              width: 2,
-                                            ),
-                                            Text(
-                                              "Fullname.",
-                                              style: TextStyle(fontSize: 12, color: Colors.grey[600], fontWeight: FontWeight.bold),
-                                            )
-                                          ],
+                                  child: Row(
+                                    mainAxisAlignment:
+                                    MainAxisAlignment.start,
+                                    crossAxisAlignment:
+                                    CrossAxisAlignment.start,
+                                    children: [
+                                      Text(
+                                        "Please enter your",
+                                        style: TextStyle(
+                                          fontSize: 12,
+                                          color: Colors.grey[600],
                                         ),
-                                alignment: Alignment.centerLeft,
                                       ),
-                                      SizedBox(height: 30), 
-                                Form( 
-                              
-                              key: _formKey,
-                              child: TextFormField(
-    controller : _fullnameController,    keyboardType: TextInputType.text ,                        autovalidateMode: AutovalidateMode.onUserInteraction,
-                                decoration: InputDecoration(hintText: 'Your name'),
-                                validator: (value) {
-                                  if (value!.isEmpty) {
-                                    return 'You must have a name!';
-                                  } else if (value.length < 2) {
-                                    return 'Your name must be atleast 2 charachters long!';
-                                  }
-                                },
-                                onChanged: (value) {
-                                  _nameCtrl = value!;
-                                },
-                              ),
+                                      SizedBox(
+                                        width: 2,
+                                      ),
+                                      Text(
+                                        "Email.",
+                                        style: TextStyle(
+                                          fontSize: 12,
+                                          color: Colors.grey[600],
+                                          fontWeight: FontWeight.bold,
+                                        ),
+                                      )
+                                    ],
+                                  ),
+                                  alignment: Alignment.centerLeft,
+                                ),
+                                SizedBox(
+                                  height: 30,
+                                ),
+                                Container(
+                                  child: Form(
+                                    key: _formKey,
+                                    child: TextFormField(
+                                      controller: _emailController,
+                                      keyboardType:
+                                      TextInputType.emailAddress,
+                                      autovalidateMode: AutovalidateMode
+                                          .onUserInteraction,
+                                      decoration: InputDecoration(
+                                          hintText: 'Your Email'),
+                                      validator: (value) {
+                                        if (value!.isEmpty) {
+                                          emailvalid = false;
+                                          return 'You must have a Email!';
+                                        } else if (value.length < 8) {
+                                          emailvalid = false;
+                                          return 'Your Email must be atleast 8 charachters long!';
+                                        } else {
+                                          emailvalid = true;
+                                        }
+                                      },
+                                      onChanged: (value) {
+                                        _emailCtrl = value;
+                                      },
+                                    ),
+                                  ),
+                                ),
+                              ],
                             ),
-                                                       ] ) , 
                           ),
-                                ), 
-                        ),
-                      ],
-                      finishFunction: () {
-                        if (_formKey.currentState!.validate()) {
-                          _formKey.currentState!.save();
-                          ScaffoldMessenger.of(context).showSnackBar(SnackBar(
-                            content: Text('Welcome $_nameCtrl!'),
-                            duration: Duration(seconds: 5),
-                          ));
-                        }
-                      },
+                          WizardStep(
+                            child: Column(
+                              children: [
+                                Container(
+                                  child: Row(
+                                    mainAxisAlignment:
+                                    MainAxisAlignment.start,
+                                    crossAxisAlignment:
+                                    CrossAxisAlignment.start,
+                                    children: [
+                                      Text(
+                                        "Please enter your",
+                                        style: TextStyle(
+                                          fontSize: 12,
+                                          color: Colors.grey[600],
+                                        ),
+                                      ),
+                                      SizedBox(
+                                        width: 2,
+                                      ),
+                                      Text(
+                                        "Email.",
+                                        style: TextStyle(
+                                          fontSize: 12,
+                                          color: Colors.grey[600],
+                                          fontWeight: FontWeight.bold,
+                                        ),
+                                      )
+                                    ],
+                                  ),
+                                  alignment: Alignment.centerLeft,
+                                ),
+                                SizedBox(
+                                  height: 30,
+                                ),
+                                Container(
+                                  child: Form(
+                                    key: _formKey,
+                                    child: TextFormField(
+                                      controller: _emailController,
+                                      keyboardType:
+                                      TextInputType.emailAddress,
+                                      autovalidateMode: AutovalidateMode
+                                          .onUserInteraction,
+                                      decoration: InputDecoration(
+                                          hintText: 'Your Email'),
+                                      validator: (value) {
+                                        if (value!.isEmpty) {
+                                          emailvalid = false;
+                                          return 'You must have a Email!';
+                                        } else if (value.length < 8) {
+                                          emailvalid = false;
+                                          return 'Your Email must be atleast 8 charachters long!';
+                                        } else {
+                                          emailvalid = true;
+                                        }
+                                      },
+                                      onChanged: (value) {
+                                        _emailCtrl = value;
+                                      },
+                                    ),
+                                  ),
+                                ),
+                              ],
+                              finishFunction: () {
+              if (_formKey.currentState!.validate()) {
+                _formKey.currentState!.save();
+                ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+                  content: Text('Welcome $_namaCtrl!'),
+                  duration: Duration(seconds: 5),
+                ));
+              }
+            },
+                            ),
+                          ),
+                        ],
+                      ),
                     ),
                   ),
                 ],
