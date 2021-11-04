@@ -143,7 +143,7 @@ class _SignUpFormState extends State<SignUpForm> {
                                 Container( 
                                   padding: EdgeInsets.only(
                             
-                            top: 20.0,
+                            top: 12.0,
                             
                           ),
                                   child: Row(
@@ -267,7 +267,7 @@ class _SignUpFormState extends State<SignUpForm> {
                                 Container( 
                                   padding: EdgeInsets.only(
                             
-                            top: 20.0,
+                            top: 12.0,
                             
                           ),
                                   child: Row(
@@ -361,7 +361,7 @@ class _SignUpFormState extends State<SignUpForm> {
                                 Container( 
                                   padding: EdgeInsets.only(
                             
-                            top: 20.0,
+                            top: 12.0,
                             
                           ),
                                   child: Row(
@@ -446,7 +446,7 @@ class _SignUpFormState extends State<SignUpForm> {
                                 Container( 
                                   padding: EdgeInsets.only(
                             
-                            top: 20.0,
+                            top: 12.0,
                             
                           ),
                                   child: Row(
