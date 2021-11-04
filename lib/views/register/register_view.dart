@@ -54,11 +54,11 @@ class _SignUpFormState extends State<SignUpForm> {
   final _formFullnameKey = GlobalKey<FormState>();
   final _formPasswordKey = GlobalKey<FormState>();
 
-  final TextEditingController _emailController = TextEditingController();
-  final TextEditingController _phoneController = TextEditingController();
-  final TextEditingController _fullnameController = TextEditingController();
-  final TextEditingController _passwordController = TextEditingController();
-  final TextEditingController _passwordConfirmController = TextEditingController();
+  final TextEditingController _emailController = new TextEditingController();
+  final TextEditingController _phoneController = new TextEditingController();
+  final TextEditingController _fullnameController = new TextEditingController();
+  final TextEditingController _passwordController = new TextEditingController();
+  final TextEditingController _passwordConfirmController = new TextEditingController();
   late bool emailvalid, phonevalid, fullnamevalid, passwordvalid = false;
 
   String? _nameCtrl;
@@ -122,8 +122,8 @@ class _SignUpFormState extends State<SignUpForm> {
                       WizardStep(
                         showPrevious: false,
                         nextFunction: () {
-                          if (_nameCtrl!.length > 2) {
-                            _formFullnameKey.currentState!.save();
+                          if (_nameCtrl !=null) {
+                            _fullnameController.currentState!.save();
                             
                           }
                           
@@ -191,9 +191,15 @@ class _SignUpFormState extends State<SignUpForm> {
                                         return null;
                                       },
                                       onChanged: (value) {
+                                          if(value.length > 2){ 
+                                              setState((){
+              _nameCtrl = value;
+          });
+                                          }else{
           setState((){
-              _nameCtrl = new value!;
-          });                              
+              _nameCtrl = null;
+          }); 
+                                              }
                                       },
                                     ),
                                   ),
