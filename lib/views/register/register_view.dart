@@ -140,7 +140,12 @@ class _SignUpFormState extends State<SignUpForm> {
                             height: MediaQuery.of(context).size.height / 2,
                             child: Column(
                               children: [
-                                Container(
+                                Container( 
+                                  padding: EdgeInsets.only(
+                            
+                            top: 20.0,
+                            
+                          ),
                                   child: Row(
                                     mainAxisAlignment: MainAxisAlignment.start,
                                     crossAxisAlignment:
@@ -259,7 +264,12 @@ class _SignUpFormState extends State<SignUpForm> {
                             height: MediaQuery.of(context).size.height / 2,
                             child: Column(
                               children: [
-                                Container(
+                                Container( 
+                                  padding: EdgeInsets.only(
+                            
+                            top: 20.0,
+                            
+                          ),
                                   child: Row(
                                     mainAxisAlignment: MainAxisAlignment.start,
                                     crossAxisAlignment:
@@ -348,7 +358,12 @@ class _SignUpFormState extends State<SignUpForm> {
                             height: MediaQuery.of(context).size.height / 2,
                             child: Column(
                               children: [
-                                Container(
+                                Container( 
+                                  padding: EdgeInsets.only(
+                            
+                            top: 20.0,
+                            
+                          ),
                                   child: Row(
                                     mainAxisAlignment: MainAxisAlignment.start,
                                     crossAxisAlignment:
@@ -428,7 +443,12 @@ class _SignUpFormState extends State<SignUpForm> {
                             height: MediaQuery.of(context).size.height / 2,
                             child: Column(
                               children: [
-                                Container(
+                                Container( 
+                                  padding: EdgeInsets.only(
+                            
+                            top: 20.0,
+                            
+                          ),
                                   child: Row(
                                     mainAxisAlignment: MainAxisAlignment.start,
                                     crossAxisAlignment:
