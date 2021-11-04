@@ -122,11 +122,12 @@ class _SignUpFormState extends State<SignUpForm> {
                       WizardStep(
                         showPrevious: false,
                         nextFunction: () {
-                          if (_fullnameController.text.length > 2) {
+                          if (_nameCtrl!.length > 2) {
                             _formFullnameKey.currentState!.save();
                             
                           }
-                          return null;
+                          
+                          
                         },
                         child: Padding(
                           padding: EdgeInsets.only(
@@ -186,10 +187,13 @@ class _SignUpFormState extends State<SignUpForm> {
                                           return 'You must have a Fullname!';
                                         } else if (value.length < 3) {
                                           return 'Your Fullname must be atleast 3 charachters long!';
-                                        }
+                                        } 
+                                        return null;
                                       },
                                       onChanged: (value) {
-                                        _nameCtrl = value;
+          setState((){
+              _nameCtrl = new value!;
+          });                              
                                       },
                                     ),
                                   ),
