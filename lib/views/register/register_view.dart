@@ -124,10 +124,9 @@ class _SignUpFormState extends State<SignUpForm> {
                         nextFunction: () {
                           if (_fullnameController.text.length > 2) {
                             _formFullnameKey.currentState!.save();
-                            print (_fullnameController.text.length);
-                          }else{
-                            print (_fullnameController.text.length);
+                            
                           }
+                          return null;
                         },
                         child: Padding(
                           padding: EdgeInsets.only(
