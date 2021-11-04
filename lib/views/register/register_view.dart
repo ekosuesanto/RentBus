@@ -217,7 +217,7 @@ class _SignUpFormState extends State<SignUpForm> {
                                     children: [
                                       Text("Already account? Please ",style: TextStyle(
 
-                                          fontSize: 12,
+                                          
 
                                           color: Colors.grey[600],
 
