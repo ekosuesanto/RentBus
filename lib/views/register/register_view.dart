@@ -308,7 +308,7 @@ class _SignUpFormState extends State<SignUpForm> {
                                         }
                                       },
                                       onChanged: (value) {
-                                        if(value!.length > 2){ 
+                                        if(value!.length > 7){ 
                                               setState((){
               _emailCtrl = value;
           });
