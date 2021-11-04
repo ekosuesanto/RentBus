@@ -537,8 +537,8 @@ class _SignUpFormState extends State<SignUpForm> {
                           content: Text('Welcome $_nameCtrl!'),
                           duration: Duration(seconds: 5),
                         ));
-                                                                                        
-                      }, 
+                                                                          }              
+                      }
                     },
                   ),
                 ),
