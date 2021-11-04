@@ -415,7 +415,7 @@ class _SignUpFormState extends State<SignUpForm> {
                       ),
                       WizardStep(
                         previousFunction: () {
-                          _formPasswordKey.currentState!.reset();
+                         if( _confirmpasswordCtrl!.length >=6 && _confirmpasswordCtrl == _passwordCtrl){_formPasswordKey.currentState!.save(); }
                         },
                         child: Padding(
                           padding: EdgeInsets.only(
@@ -480,7 +480,15 @@ class _SignUpFormState extends State<SignUpForm> {
                                             }
                                           },
                                           onChanged: (value) {
-                                            _passwordCtrl = value;
+                                            if(value!.length >= 6){ 
+                                              setState((){
+              _passwordCtrl = value;
+          });
+                                          }else{
+          setState((){
+              _passwordCtrl = null;
+          }); 
+                                              }
                                           },
                                         ),
                                         SizedBox(
@@ -502,7 +510,15 @@ class _SignUpFormState extends State<SignUpForm> {
                                             }
                                           },
                                           onChanged: (value) {
-                                            _confirmpasswordCtrl = value;
+ if(value!.length >=6 && value== _passwordCtrl){ 
+           setState((){
+              _confirmpasswordCtrl = value;
+          });                         
+ }else{
+          setState((){
+              _confirmpasswordCtrl = null;
+          });           
+                                              }
                                           },
                                         )
                                       ],
