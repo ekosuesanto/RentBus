@@ -505,6 +505,8 @@ class _SignUpFormState extends State<SignUpForm> {
                                               return 'You must have a Password!';
                                             } else if (value.length < 6) {
                                               return 'Confirm your Password must be atleast 6 charachters long!';
+                                            }else if (value != _passwordCtrl) {
+                                              return 'Password don\'t ma!';
                                             }
                                           },
                                           onChanged: (value) {
