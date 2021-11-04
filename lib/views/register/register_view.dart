@@ -414,9 +414,7 @@ class _SignUpFormState extends State<SignUpForm> {
                         ),
                       ),
                       WizardStep(
-                        previousFunction: () {
-                         if( _confirmpasswordCtrl!.length >=6 && _confirmpasswordCtrl == _passwordCtrl){_formPasswordKey.currentState!.save(); }
-                        },
+                        
                         child: Padding(
                           padding: EdgeInsets.only(
                             left: 24.0,
@@ -534,12 +532,13 @@ class _SignUpFormState extends State<SignUpForm> {
                     ],
                     finishFunction: () {
                       if (_formPasswordKey.currentState!.validate()) {
-                        _formPasswordKey.currentState!.save();
+                 if(_confirmpasswordCtrl!.length >=6 && _confirmpasswordCtrl == _passwordCtrl){ _formPasswordKey.currentState!.save();
                         ScaffoldMessenger.of(context).showSnackBar(SnackBar(
                           content: Text('Welcome $_nameCtrl!'),
                           duration: Duration(seconds: 5),
                         ));
-                      }
+                                                                                               }, 
+                      }, 
                     },
                   ),
                 ),
