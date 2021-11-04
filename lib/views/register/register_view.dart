@@ -123,7 +123,7 @@ class _SignUpFormState extends State<SignUpForm> {
                         showPrevious: false,
                         nextFunction: () {
                           if (_nameCtrl !=null) {
-                            _fullnameController.currentState!.save();
+                            _formFullnameKey.currentState!.save();
                             
                           }
                           
