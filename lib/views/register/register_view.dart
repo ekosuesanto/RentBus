@@ -305,7 +305,9 @@ class _SignUpFormState extends State<SignUpForm> {
                                           return 'You must have a Email!';
                                         } else if (value.length < 8) {
                                           return 'Your Email must be atleast 8 charachters long!';
-                                        }
+                                        }else if(!RegExp("^[a-zA-Z0-9.!#%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,253}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,253}[a-zA-Z0-9])?)*").hasMatch(value)){
+          return 'Enter a valid email address';
+        }
                                       },
                                       onChanged: (value) {
                                         if(value!.length > 7){ 
