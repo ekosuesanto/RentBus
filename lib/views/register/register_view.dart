@@ -122,7 +122,7 @@ class _SignUpFormState extends State<SignUpForm> {
                       WizardStep(
                         showPrevious: false,
                         nextFunction: () {
-                          if (_nameCtrl!.length > 3) {
+                          if (_nameCtrl!.length >= 3) {
                             _formFullnameKey.currentState!.save();
                             
                           }
