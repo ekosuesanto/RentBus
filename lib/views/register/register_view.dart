@@ -308,9 +308,15 @@ class _SignUpFormState extends State<SignUpForm> {
                                         }
                                       },
                                       onChanged: (value) {
-                                        setState(() {
-                                          _emailCtrl = value;
-                                        });
+                                        if(value!.length > 2){ 
+                                              setState((){
+              _emailCtrl = value;
+          });
+                                          }else{
+          setState((){
+              _emailCtrl = null;
+          }); 
+                                              }
                                       },
                                     ),
                                   ),
