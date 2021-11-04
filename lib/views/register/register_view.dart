@@ -328,7 +328,7 @@ class _SignUpFormState extends State<SignUpForm> {
                       ),
                       WizardStep(
                         nextFunction: () {
-                          if (_phoneCtrl!.length > 8) {
+                          if (_phoneCtrl!.length >= 8) {
                             _formPhoneKey.currentState!.save();
                           }
                         },
@@ -395,7 +395,15 @@ class _SignUpFormState extends State<SignUpForm> {
                                         }
                                       },
                                       onChanged: (value) {
-                                        _phoneCtrl = value;
+                                        if(value!.length >= 8){ 
+                                              setState((){
+              _phoneCtrl = value;
+          });
+                                          }else{
+          setState((){
+              _phoneCtrl = null;
+          }); 
+                                              }
                                       },
                                     ),
                                   ),
