@@ -215,7 +215,13 @@ class _SignUpFormState extends State<SignUpForm> {
                                 Row(
                                     mainAxisAlignment: MainAxisAlignment.end,
                                     children: [
-                                      Text("Already account? Please "),
+                                      Text("Already account? Please ",style: TextStyle(
+
+                                          fontSize: 12,
+
+                                          color: Colors.grey[600],
+
+                                        ),),
                                       GestureDetector(
                                         onTap: () {
                                           Navigator.push(
