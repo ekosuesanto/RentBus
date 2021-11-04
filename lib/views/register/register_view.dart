@@ -1,8 +1,9 @@
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:multi_wizard/multi_wizard.dart';
 import 'package:page_transition/page_transition.dart';
-import 'package:helloworld/views/auth/sign_in.dart';
+import 'package:rosalia_indah_transport/views/auth/sign_in.dart';
 
 class RegisterView extends StatelessWidget {
   Widget build(BuildContext context) {
@@ -18,23 +19,23 @@ class RegisterView extends StatelessWidget {
       ),
       debugShowCheckedModeBanner: false,
       home: Scaffold(
-          appBar: AppBar(
-            backgroundColor: Colors.transparent,
-            elevation: 0,
-            leading: Builder(
-              builder: (BuildContext context) {
-                return IconButton(
-                  icon:
-                      const Icon(Icons.chevron_left, color: Color(0xFF000000)),
-                  onPressed: () {
-                    Scaffold.of(context).openDrawer();
-                  },
-                  tooltip:
-                      MaterialLocalizations.of(context).openAppDrawerTooltip,
-                );
-              },
-            ),
-          ),
+          // appBar: AppBar(
+          //   backgroundColor: Colors.transparent,
+          //   elevation: 0,
+          //   leading: Builder(
+          //     builder: (BuildContext context) {
+          //       return IconButton(
+          //         icon:
+          //             const Icon(Icons.chevron_left, color: Color(0xFF000000)),
+          //         onPressed: () {
+          //           Scaffold.of(context).openDrawer();
+          //         },
+          //         tooltip:
+          //             MaterialLocalizations.of(context).openAppDrawerTooltip,
+          //       );
+          //     },
+          //   ),
+          // ),
           body: SignUpForm()),
     );
   }
@@ -52,41 +53,42 @@ class _SignUpFormState extends State<SignUpForm> {
   final _formPhoneKey = GlobalKey<FormState>();
   final _formFullnameKey = GlobalKey<FormState>();
   final _formPasswordKey = GlobalKey<FormState>();
-    
+
   final TextEditingController _emailController = TextEditingController();
   final TextEditingController _phoneController = TextEditingController();
   final TextEditingController _fullnameController = TextEditingController();
-final TextEditingController _passwordController = TextEditingController();
-
-  late bool emailvalid, phonevalid, fullnamevalid,passwordvalid = false;
+  final TextEditingController _passwordController = TextEditingController();
+  final TextEditingController _passwordConfirmController = TextEditingController();
+  late bool emailvalid, phonevalid, fullnamevalid, passwordvalid = false;
 
   String? _nameCtrl;
   String? _emailCtrl;
-  String? _phoneCtrl; 
+  String? _phoneCtrl;
   String? _passwordCtrl;
+  String? _confirmpasswordCtrl;
+
   @override
   Widget build(BuildContext context) {
     return LayoutBuilder(
       builder: (context, constraint) {
         return SingleChildScrollView(
           physics: ScrollPhysics(),
+          dragStartBehavior: DragStartBehavior.down,
           reverse: false,
           primary: false,
-          keyboardDismissBehavior: ScrollViewKeyboardDismissBehavior.manual,
-          child: ConstrainedBox(
-            constraints: BoxConstraints(
-              minHeight: constraint.maxHeight,
-            ),
-            child: IntrinsicHeight(
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.start,
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Column(
+          child: Container(
+            height: MediaQuery.of(context).size.height,
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.start,
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Container(
+                  width: MediaQuery.of(context).size.width,
+                  height: MediaQuery.of(context).size.height / 2,
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.end,
                     children: [
                       Container(
-                        alignment: Alignment.bottomCenter,
-                        width: MediaQuery.of(context).size.width,
                         child: Image(
                           image: AssetImage(
                               'assets/onboarding/handing-out-offer-letter.png'),
@@ -111,34 +113,148 @@ final TextEditingController _passwordController = TextEditingController();
                       ),
                     ],
                   ),
-                  Container(
-                    padding: EdgeInsets.only(
-                      left: 24.0,
-                      right: 24.0,
-                      top: 5.0,
-
-                    ),
-                    child: SizedBox(
-                      width: MediaQuery.of(context).size.width,
-                      height: MediaQuery.of(context).size.height / 2,
-                      child: MultiWizard(
-                        steps: [
-                          WizardStep( 
-                            showPrevious: false,
-                            nextFunction: (){ 
-                                if (emailvalid) {
-                return true;
-                                    }
-                                return false;
-                            },
+                ),
+                Container(
+                  width: MediaQuery.of(context).size.width,
+                  height: MediaQuery.of(context).size.height / 2,
+                  child: MultiWizard(
+                    steps: [
+                      WizardStep(
+                        showPrevious: false,
+                        nextFunction: () {
+                          if (_fullnameController.text.length > 2) {
+                            _formFullnameKey.currentState!.save();
+                            print (_fullnameController.text.length);
+                          }else{
+                            print (_fullnameController.text.length);
+                          }
+                        },
+                        child: Padding(
+                          padding: EdgeInsets.only(
+                            left: 24.0,
+                            right: 24.0,
+                            top: 0.0,
+                            bottom: 0,
+                          ),
+                          child: Container(
+                            height: MediaQuery.of(context).size.height / 2,
                             child: Column(
                               children: [
                                 Container(
                                   child: Row(
-                                    mainAxisAlignment:
-                                    MainAxisAlignment.start,
+                                    mainAxisAlignment: MainAxisAlignment.start,
                                     crossAxisAlignment:
-                                    CrossAxisAlignment.start,
+                                        CrossAxisAlignment.start,
+                                    children: [
+                                      Text(
+                                        "Please enter your",
+                                        style: TextStyle(
+                                          fontSize: 12,
+                                          color: Colors.grey[600],
+                                        ),
+                                      ),
+                                      SizedBox(
+                                        width: 2,
+                                      ),
+                                      Text(
+                                        "Fullname.",
+                                        style: TextStyle(
+                                          fontSize: 12,
+                                          color: Colors.grey[600],
+                                          fontWeight: FontWeight.bold,
+                                        ),
+                                      )
+                                    ],
+                                  ),
+                                  alignment: Alignment.centerLeft,
+                                ),
+                                SizedBox(
+                                  height: 30,
+                                ),
+                                Container(
+                                  child: Form(
+                                    key: _formFullnameKey,
+                                    autovalidateMode: AutovalidateMode.always,
+                                    child: TextFormField(
+                                      controller: _fullnameController,
+                                      keyboardType: TextInputType.name,
+                                      autovalidateMode:
+                                          AutovalidateMode.always,
+                                      decoration: InputDecoration(
+                                          hintText: 'Your Fullname'),
+                                      validator: (value) {
+                                        if (value!.isEmpty) {
+                                          return 'You must have a Fullname!';
+                                        } else if (value.length < 3) {
+                                          return 'Your Fullname must be atleast 3 charachters long!';
+                                        }
+                                      },
+                                      onChanged: (value) {
+                                        _nameCtrl = value;
+                                      },
+                                    ),
+                                  ),
+                                ),
+                                SizedBox(
+                                  height: 15,
+                                ),
+                                Row(
+                                    mainAxisAlignment: MainAxisAlignment.end,
+                                    children: [
+                                      Text("Already account? Please "),
+                                      GestureDetector(
+                                        onTap: () {
+                                          Navigator.push(
+                                            context,
+                                            PageTransition(
+                                              duration:
+                                                  Duration(milliseconds: 1500),
+                                              reverseDuration:
+                                                  Duration(milliseconds: 1500),
+                                              type: PageTransitionType
+                                                  .leftToRight,
+                                              child: SignIn(),
+                                            ),
+                                          );
+                                        },
+                                        child: Text(
+                                          "Sign In",
+                                          style: TextStyle(
+                                            fontWeight: FontWeight.bold,
+                                          ),
+                                        ),
+                                      ),
+                                    ]),
+                              ],
+                            ),
+                          ),
+                        ),
+                      ),
+                      WizardStep(
+                        nextFunction: () {
+                          if (_emailCtrl!.length > 7) {
+                            _formEmailKey.currentState!.save();
+                          }
+                        },
+                        previousFunction: () {
+                            _formEmailKey.currentState!.reset();
+                        },
+                        child: Padding(
+                          padding: EdgeInsets.only(
+                            left: 24.0,
+                            right: 24.0,
+                            top: 0.0,
+                            bottom: 0,
+                          ),
+                          child: Container(
+                            height: MediaQuery.of(context).size.height / 2,
+                            child: Column(
+                              children: [
+                                Container(
+                                  child: Row(
+                                    mainAxisAlignment: MainAxisAlignment.start,
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
                                     children: [
                                       Text(
                                         "Please enter your",
@@ -170,66 +286,56 @@ final TextEditingController _passwordController = TextEditingController();
                                     key: _formEmailKey,
                                     child: TextFormField(
                                       controller: _emailController,
-                                      keyboardType:
-                                      TextInputType.emailAddress,
-                                      autovalidateMode: AutovalidateMode.always, 
-                                         
+                                      keyboardType: TextInputType.emailAddress,
+                                      autovalidateMode:
+                                          AutovalidateMode.always,
                                       decoration: InputDecoration(
                                           hintText: 'Your Email'),
                                       validator: (value) {
                                         if (value!.isEmpty) {
-                                          emailvalid = false;
                                           return 'You must have a Email!';
                                         } else if (value.length < 8) {
-                                          emailvalid = false;
                                           return 'Your Email must be atleast 8 charachters long!';
-                                        } else {
-                                          emailvalid = true;
                                         }
                                       },
                                       onChanged: (value) {
-                                        _emailCtrl = value;
+                                        setState(() {
+                                          _emailCtrl = value;
+                                        });
                                       },
                                     ),
                                   ),
                                 ),
-                                SizedBox( 
-                                    height: 15,
-                                ), 
-                               Row( 
-                                   mainAxisAlignment : MainAxisAlignment.end, 
-                                    children : [ 
-                                    Text("Already account? Please "), 
-                                        GestureDetector ( 
-                                        onTap:() { 
-                                        Navigator.push(
-                  context,
-                  PageTransition(
-                      duration: Duration( milliseconds: 1500),
-                      reverseDuration: Duration(milliseconds: 1500),
-                    type: PageTransitionType.leftToRight,
-                    child: SignIn(),
-                  ),
-                );
-                                        }, 
-child :                                       Text("Sign In", 
-                                                   style: TextStyle( 
-    fontWeight: FontWeight.bold,),), 
-                                        ) , 
-                                    ]
-                                ), 
                               ],
                             ),
                           ),
-                          WizardStep(
+                        ),
+                      ),
+                      WizardStep(
+                        nextFunction: () {
+                          if (_phoneCtrl!.length > 8) {
+                            _formPhoneKey.currentState!.save();
+                          }
+                        },
+                        previousFunction: () {
+                          _formPhoneKey.currentState!.reset();
+                        },
+                        child: Padding(
+                          padding: EdgeInsets.only(
+                            left: 24.0,
+                            right: 24.0,
+                            top: 0.0,
+                            bottom: 0,
+                          ),
+                          child: Container(
+                            height: MediaQuery.of(context).size.height / 2,
                             child: Column(
                               children: [
                                 Container(
                                   child: Row(
-                                    mainAxisAlignment:
-                                    MainAxisAlignment.start,
+                                    mainAxisAlignment: MainAxisAlignment.start,
                                     crossAxisAlignment:
-                                    CrossAxisAlignment.start,
+                                        CrossAxisAlignment.start,
                                     children: [
                                       Text(
                                         "Please enter your",
@@ -261,20 +367,16 @@ child :                                       Text("Sign In",
                                     key: _formPhoneKey,
                                     child: TextFormField(
                                       controller: _phoneController,
-                                      keyboardType:
-                                      TextInputType.phone,
-                                      autovalidateMode: AutovalidateMode.always, 
+                                      keyboardType: TextInputType.phone,
+                                      autovalidateMode:
+                                          AutovalidateMode.always,
                                       decoration: InputDecoration(
                                           hintText: 'Your Phone'),
                                       validator: (value) {
                                         if (value!.isEmpty) {
-                                          phonevalid = false;
                                           return 'You must have a Phone!';
                                         } else if (value.length < 8) {
-                                          phonevalid = false;
                                           return 'Your Phone must be atleast 8 charachters long!';
-                                        } else {
-                                          phonevalid = true;
                                         }
                                       },
                                       onChanged: (value) {
@@ -286,80 +388,28 @@ child :                                       Text("Sign In",
                               ],
                             ),
                           ),
-                          WizardStep(
-                            child: Column(
-                              children: [
-                                Container(
-                                  child: Row(
-                                    mainAxisAlignment:
-                                    MainAxisAlignment.start,
-                                    crossAxisAlignment:
-                                    CrossAxisAlignment.start,
-                                    children: [
-                                      Text(
-                                        "Please enter your",
-                                        style: TextStyle(
-                                          fontSize: 12,
-                                          color: Colors.grey[600],
-                                        ),
-                                      ),
-                                      SizedBox(
-                                        width: 2,
-                                      ),
-                                      Text(
-                                        "Fullname.",
-                                        style: TextStyle(
-                                          fontSize: 12,
-                                          color: Colors.grey[600],
-                                          fontWeight: FontWeight.bold,
-                                        ),
-                                      )
-                                    ],
-                                  ),
-                                  alignment: Alignment.centerLeft,
-                                ),
-                                SizedBox(
-                                  height: 30,
-                                ),
-                                Container(
-                                  child: Form(
-                                    key: _formFullnameKey,
-                                    child: TextFormField(
-                                      controller: _fullnameController,
-                                      keyboardType:
-                                      TextInputType.text,
-                                      autovalidateMode: AutovalidateMode.always, 
-                                      decoration: InputDecoration(
-                                          hintText: 'Your Fullname'),
-                                      validator: (value) {
-                                        if (value!.isEmpty) {
-                                          fullnamevalid = false;
-                                          return 'You must have a Fullname!';
-                                        } else if (value.length < 8) {
-                                          fullnamevalid = false;
-                                          return 'Your Fullname must be atleast 8 charachters long!';
-                                        } else {
-                                          fullnamevalid = true;
-                                        }
-                                      },
-                                      onChanged: (value) {
-                                        _nameCtrl = value;
-                                      },
-                                    ),
-                                  ),
-                                ),
-                              ],
-                            ),
+                        ),
+                      ),
+                      WizardStep(
+                        previousFunction: () {
+                          _formPasswordKey.currentState!.reset();
+                        },
+                        child: Padding(
+                          padding: EdgeInsets.only(
+                            left: 24.0,
+                            right: 24.0,
+                            top: 0.0,
+                            bottom: 0,
                           ),
-                          WizardStep(
+                          child: Container(
+                            height: MediaQuery.of(context).size.height / 2,
                             child: Column(
                               children: [
                                 Container(
                                   child: Row(
-                                    mainAxisAlignment:
-                                    MainAxisAlignment.start,
+                                    mainAxisAlignment: MainAxisAlignment.start,
                                     crossAxisAlignment:
-                                    CrossAxisAlignment.start,
+                                        CrossAxisAlignment.start,
                                     children: [
                                       Text(
                                         "Please enter your",
@@ -389,49 +439,72 @@ child :                                       Text("Sign In",
                                 Container(
                                   child: Form(
                                     key: _formPasswordKey,
-                                    child: TextFormField(
-                                      controller: _passwordController,
-                                      keyboardType:
-                                      TextInputType.text,
-                                      autovalidateMode: AutovalidateMode.always, 
-                                      decoration: InputDecoration(
-                                          hintText: 'Your Password'),
-                                      validator: (value) {
-                                        if (value!.isEmpty) {
-                                          passwordvalid = false;
-                                          return 'You must have a Password!';
-                                        } else if (value.length < 6) {
-                                          passwordvalid = false;
-                                          return 'Your Password must be atleast 6 charachters long!';
-                                        } else {
-                                          passwordvalid = true;
-                                        }
-                                      },
-                                      onChanged: (value) {
-                                        _passwordCtrl = value;
-                                      },
+                                    child: Column(
+                                      children: [
+                                        TextFormField(
+                                          controller: _passwordController,
+                                          obscureText: true,
+                                          keyboardType: TextInputType.text,
+                                          autovalidateMode: AutovalidateMode
+                                              .always,
+                                          decoration: InputDecoration(
+                                              hintText: 'Your Password'),
+                                          validator: (value) {
+                                            if (value!.isEmpty) {
+                                              return 'You must have a Password!';
+                                            } else if (value.length < 6) {
+                                              return 'Your Password must be atleast 6 charachters long!';
+                                            }
+                                          },
+                                          onChanged: (value) {
+                                            _passwordCtrl = value;
+                                          },
+                                        ),
+                                        SizedBox(
+                                          height: 30,
+                                        ),
+                                        TextFormField(
+                                          controller: _passwordConfirmController,
+                                          obscureText: true,
+                                          keyboardType: TextInputType.text,
+                                          autovalidateMode: AutovalidateMode
+                                              .always,
+                                          decoration: InputDecoration(
+                                              hintText: 'Confirm your Password'),
+                                          validator: (value) {
+                                            if (value!.isEmpty) {
+                                              return 'You must have a Password!';
+                                            } else if (value.length < 6) {
+                                              return 'Confirm your Password must be atleast 6 charachters long!';
+                                            }
+                                          },
+                                          onChanged: (value) {
+                                            _confirmpasswordCtrl = value;
+                                          },
+                                        )
+                                      ],
                                     ),
                                   ),
                                 ),
+
                               ],
-                              
                             ),
                           ),
-                        ],
-                        finishFunction: () {
-              if (_formPasswordKey.currentState!.validate()) {
-                _formPasswordKey.currentState!.save();
-                ScaffoldMessenger.of(context).showSnackBar(SnackBar(
-                  content: Text('Welcome $_nameCtrl!'),
-                  duration: Duration(seconds: 5),
-                ));
-              }
-            },
+                        ),
                       ),
-                    ),
+                    ],
+                    finishFunction: () {
+                      if (_formPasswordKey.currentState!.validate()) {
+                        _formPasswordKey.currentState!.save();
+                        ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+                          content: Text('Welcome $_nameCtrl!'),
+                          duration: Duration(seconds: 5),
+                        ));
+                      }
+                    },
                   ),
-                ],
-              ),
+                ),
+              ],
             ),
           ),
         );
