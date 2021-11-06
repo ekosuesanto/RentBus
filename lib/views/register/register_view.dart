@@ -228,9 +228,9 @@ class _SignUpFormState extends State<SignUpForm> {
                                             context,
                                             PageTransition(
                                               duration:
-                                                  Duration(milliseconds: 1500),
+                                                  Duration(milliseconds: 1200),
                                               reverseDuration:
-                                                  Duration(milliseconds: 1500),
+                                                  Duration(milliseconds: 1200),
                                               type: PageTransitionType
                                                   .leftToRight,
                                               child: SignIn(),
