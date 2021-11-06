@@ -11,7 +11,18 @@ class ViewMain extends StatefulWidget
 class _ViewMainState extends State<ViewMain> { 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(home:Scaffold(
+    return MaterialApp( 
+        theme: ThemeData(
+        colorScheme: ColorScheme.fromSwatch(
+          primarySwatch: Colors.blue,
+        ).copyWith(
+          secondary: Colors.green,
+        ),
+        visualDensity: VisualDensity.adaptivePlatformDensity,
+        fontFamily: GoogleFonts.poppins().fontFamily,
+      ),
+      debugShowCheckedModeBanner: false,
+        home:Scaffold(
       body: Container(child: Text("Home"),), 
     ));
   }
