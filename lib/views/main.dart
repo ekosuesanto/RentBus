@@ -34,6 +34,7 @@ class _ViewMainState extends State<ViewMain> {
             
             child: Column( 
               mainAxisAlignment :MainAxisAlignment.spaceBetween, 
+              crossAxisAlignment : CrossAxisAlignment.start, 
               children : [ 
                   Container(child:Text("Container 1"),),
                   Container(child:Text("Container 2"),),
