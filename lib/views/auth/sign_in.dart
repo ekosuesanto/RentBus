@@ -91,7 +91,7 @@ class _SignInFormState extends State<SignInForm> {
                                 borderRadius:
                                     BorderRadius.all(Radius.circular(40.0))),
                             filled: true,
-                            labelText: 'Username',
+                            labelText: 'Email',
                             labelStyle: TextStyle(
                               fontSize: 14,
                             ),
