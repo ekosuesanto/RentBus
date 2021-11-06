@@ -30,8 +30,16 @@ class _ViewMainState extends State<ViewMain> {
           reverse: false,
           primary: false,
           child: Container( 
-            width : MediaQuery.of(context).size.width, 
-            child: Text("Home"),
+            width : MediaQuery.of(context).size.width,
+            
+            child: Column( 
+              mainAxisAlignment :MainAxisAlignment.spaceBetween, 
+              children : [ 
+                  Container(child:Text("Container 1"),),
+                  Container(child:Text("Container 2"),),
+                  Container(child:Text("Container 3"),),
+              ], 
+            ),
           ),
         ), 
       ),
