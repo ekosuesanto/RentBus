@@ -4,6 +4,7 @@ import 'package:flutter/services.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:page_transition/page_transition.dart';
 import 'package:helloworld/views/register/register_view.dart';
+import 'package:helloworld/views/main.dart';
 
 class SignIn extends StatelessWidget {
   Widget build(BuildContext context) {
@@ -91,7 +92,7 @@ class _SignInFormState extends State<SignInForm> {
                                 borderRadius:
                                     BorderRadius.all(Radius.circular(40.0))),
                             filled: true,
-                            labelText: 'Username',
+                            labelText: 'Email',
                             labelStyle: TextStyle(
                               fontSize: 14,
                             ),
@@ -155,8 +156,8 @@ class _SignInFormState extends State<SignInForm> {
                               onPressed: () { Navigator.push(
                   context,
                   PageTransition(
-                      duration: Duration( milliseconds: 1500),
-                        reverseDuration: Duration(milliseconds: 1500),
+                      duration: Duration( milliseconds: 1000),
+                        reverseDuration: Duration(milliseconds: 1000),
                     type: PageTransitionType.rightToLeft,
                     child: RegisterView(),
                   ),
@@ -213,7 +214,17 @@ class _SignInFormState extends State<SignInForm> {
                                               BorderRadius.circular(30),
                                           side: BorderSide(
                                               color: Colors.white)))),
-                              onPressed: () {},
+                              onPressed: () { 
+                                  Navigator.pushReplacement(
+                  context,
+                  PageTransition(
+                      duration: Duration( milliseconds: 1000),
+                        reverseDuration: Duration(milliseconds: 1000),
+                    type: PageTransitionType.rightToLeft,
+                    child: ViewMain(),
+                  ),
+                );
+                              },
                               child: Container(
                                 width:
                                     MediaQuery.of(context).size.width / 2 - 60,

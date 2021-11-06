@@ -140,7 +140,12 @@ class _SignUpFormState extends State<SignUpForm> {
                             height: MediaQuery.of(context).size.height / 2,
                             child: Column(
                               children: [
-                                Container(
+                                Container( 
+                                  padding: EdgeInsets.only(
+                            
+                            top: 5.0,
+                            
+                          ),
                                   child: Row(
                                     mainAxisAlignment: MainAxisAlignment.start,
                                     crossAxisAlignment:
@@ -210,21 +215,17 @@ class _SignUpFormState extends State<SignUpForm> {
                                 Row(
                                     mainAxisAlignment: MainAxisAlignment.end,
                                     children: [
-                                      Text("Already account? Please "),
+                                      Text("Already account? Please ",style: TextStyle(
+
+                                          
+
+                                          color: Colors.grey[600],
+
+                                        ),),
                                       GestureDetector(
                                         onTap: () {
-                                          Navigator.push(
-                                            context,
-                                            PageTransition(
-                                              duration:
-                                                  Duration(milliseconds: 1500),
-                                              reverseDuration:
-                                                  Duration(milliseconds: 1500),
-                                              type: PageTransitionType
-                                                  .leftToRight,
-                                              child: SignIn(),
-                                            ),
-                                          );
+                                          Route route = MaterialPageRoute(builder: (context) => SignIn());
+                                    Navigator.pushReplacement(context, route);
                                         },
                                         child: Text(
                                           "Sign In",
@@ -259,7 +260,12 @@ class _SignUpFormState extends State<SignUpForm> {
                             height: MediaQuery.of(context).size.height / 2,
                             child: Column(
                               children: [
-                                Container(
+                                Container( 
+                                  padding: EdgeInsets.only(
+                            
+                            top: 5.0,
+                            
+                          ),
                                   child: Row(
                                     mainAxisAlignment: MainAxisAlignment.start,
                                     crossAxisAlignment:
@@ -305,7 +311,9 @@ class _SignUpFormState extends State<SignUpForm> {
                                           return 'You must have a Email!';
                                         } else if (value.length < 8) {
                                           return 'Your Email must be atleast 8 charachters long!';
-                                        }
+                                        }else if(!RegExp("^[a-zA-Z0-9.!#%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,253}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,253}[a-zA-Z0-9])?)*").hasMatch(value)){
+          return 'Enter a valid email address';
+        }
                                       },
                                       onChanged: (value) {
                                         if(value!.length > 7){ 
@@ -346,7 +354,12 @@ class _SignUpFormState extends State<SignUpForm> {
                             height: MediaQuery.of(context).size.height / 2,
                             child: Column(
                               children: [
-                                Container(
+                                Container( 
+                                  padding: EdgeInsets.only(
+                            
+                            top: 5.0,
+                            
+                          ),
                                   child: Row(
                                     mainAxisAlignment: MainAxisAlignment.start,
                                     crossAxisAlignment:
@@ -426,7 +439,12 @@ class _SignUpFormState extends State<SignUpForm> {
                             height: MediaQuery.of(context).size.height / 2,
                             child: Column(
                               children: [
-                                Container(
+                                Container( 
+                                  padding: EdgeInsets.only(
+                            
+                            top: 5.0,
+                            
+                          ),
                                   child: Row(
                                     mainAxisAlignment: MainAxisAlignment.start,
                                     crossAxisAlignment:
