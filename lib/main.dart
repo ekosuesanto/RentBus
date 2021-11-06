@@ -6,7 +6,10 @@ import 'package:helloworld/main_page.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
+  SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp])
+    .then((_) {
   runApp(MyApp());
+  });
 }
 
 class MyApp extends StatefulWidget {
