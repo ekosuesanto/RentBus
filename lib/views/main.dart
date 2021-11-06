@@ -14,4 +14,5 @@ class _ViewMainState extends State<ViewMain> {
     return Scaffold(
       body: Container(child: Text("Home"),), 
     );
+  }
 }
