@@ -26,7 +26,7 @@ class _ViewMainState extends State<ViewMain> {
       home:Scaffold(
         body:SingleChildScrollView(
           physics: ScrollPhysics(),
-          dragStartBehavior: DragStartBehavior.down,
+          
           reverse: false,
           primary: false,
           child: Container( 
