@@ -20,11 +20,14 @@ class _ViewMainState extends State<ViewMain> {
           secondary: Colors.green,
         ),
         visualDensity: VisualDensity.adaptivePlatformDensity,
-        fontFamily: GoogleFonts.poppins().fontFamily,
+        
       ),
       debugShowCheckedModeBanner: false,
-        home:Scaffold(
-      body: Container(child: Text("Home"),), 
-    ));
+      home:Scaffold(
+        body: Container( 
+          child: Text("Home"),
+        ), 
+      ),
+    );
   }
 }
