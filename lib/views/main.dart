@@ -24,8 +24,15 @@ class _ViewMainState extends State<ViewMain> {
       ),
       debugShowCheckedModeBanner: false,
       home:Scaffold(
-        body: Container( 
-          child: Text("Home"),
+        body:SingleChildScrollView(
+          physics: ScrollPhysics(),
+          dragStartBehavior: DragStartBehavior.down,
+          reverse: false,
+          primary: false,
+          child: Container( 
+            width : MediaQuery.of(context).size.width, 
+            child: Text("Home"),
+          ),
         ), 
       ),
     );
