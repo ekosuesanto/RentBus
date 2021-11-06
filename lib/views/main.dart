@@ -11,8 +11,8 @@ class ViewMain extends StatefulWidget
 class _ViewMainState extends State<ViewMain> { 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return MaterialApp(home:Scaffold(
       body: Container(child: Text("Home"),), 
-    );
+    ));
   }
 }
