@@ -224,18 +224,8 @@ class _SignUpFormState extends State<SignUpForm> {
                                         ),),
                                       GestureDetector(
                                         onTap: () {
-                                          Navigator.pushReplacement(
-                                            context,
-                                            PageTransition(
-                                              duration:
-                                                  Duration(milliseconds: 1000),
-                                              reverseDuration:
-                                                  Duration(milliseconds: 1000),
-                                              type: PageTransitionType
-                                                  .leftToRight,
-                                              child: SignIn(),
-                                            ),
-                                          );
+                                          Route route = MaterialPageRoute(builder: (context) => SignIn());
+                                    Navigator.pushReplacement(context, route);
                                         },
                                         child: Text(
                                           "Sign In",
