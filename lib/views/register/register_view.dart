@@ -224,7 +224,7 @@ class _SignUpFormState extends State<SignUpForm> {
                                         ),),
                                       GestureDetector(
                                         onTap: () {
-                                          Navigator.pushReplacementNamed(
+                                          Navigator.pushReplacement(
                                             context,
                                             PageTransition(
                                               duration:
