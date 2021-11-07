@@ -132,7 +132,7 @@ class _ViewMainState extends State<ViewMain> {
 
       color: Colors.red,
 
-      size: 24.0, ), ), 
+      size: 32.0, ), ), 
                                     SizedBox(width: 15),
                                     Container( 
 
