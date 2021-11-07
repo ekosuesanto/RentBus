@@ -166,7 +166,7 @@ class _ViewMainState extends State<ViewMain> {
               child : Column( 
                 crossAxisAlignment : CrossAxisAlignment.start, 
                 children : [ 
-                  Container(child: Text("My Trip")),
+                  Container(child: Text("My Trip",style : TextStyle(fontWeight : FontWeight.bold,fontSize:12,))),
                    
                   Container(child: Text("0", style : TextStyle(fontWeight : FontWeight.bold,fontSize:16,color: Colors. red)),), 
                 ], 
