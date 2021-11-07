@@ -41,7 +41,7 @@ class _ViewMainState extends State<ViewMain> {
           ) , 
           (showNotificationIcon) ? 
             Container( 
-              child : Icon(Icons.notifications,
+              child : Icon(Icons.notifications_outline,
       color: Colors.grey,
       size: 24.0, )
             ) : Container(child : Text("")), 
