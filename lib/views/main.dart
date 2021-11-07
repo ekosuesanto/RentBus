@@ -182,6 +182,7 @@ class _ViewMainState extends State<ViewMain> {
                 ),
                 Container ( 
                 width: MediaQuery.of(context).size.width, 
+                padding : EdgeInsets.only(top: 15,bottom:15,right: 20,left: 20) ,
                 decoration: new BoxDecoration(
     
                     color: Colors.grey[200]
