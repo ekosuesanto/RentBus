@@ -115,7 +115,7 @@ class _ViewMainState extends State<ViewMain> {
                       ),
                       Container ( 
                           decoration: new BoxDecoration(
-    borderRadius: new BorderRadius.all(16),
+    borderRadius: new BorderRadius.circular(16),
     
   ),
                           child: BannerCarousel.fullScreen(
