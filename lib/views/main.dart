@@ -101,7 +101,7 @@ class _ViewMainState extends State<ViewMain> {
                         children : [ 
                             _buildCustomProfil("Eko Susanto",AssetImage("assets/icon/default-user-icon.png"),50.0,true),
                           Container( 
-                            padding : EdgeInsets.only(top: 20,bottom:20,right: 30,left: 30) , 
+                            padding : EdgeInsets.only(top: 0,bottom:30,right: 30,left: 30) , 
                               child : Row ( 
                                 mainAxisAlignment :MainAxisAlignment.spaceBetween, 
                                 children : [  
