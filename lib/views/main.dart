@@ -30,7 +30,7 @@ class _ViewMainState extends State<ViewMain> {
               child : Icon(Icons.beach_access,
       color: Colors.grey,
       size: 20.0, )
-            ) : Container() ;
+            ) : Container(child : Text("")) ;
         ], 
       ),
     );
@@ -62,7 +62,7 @@ class _ViewMainState extends State<ViewMain> {
               crossAxisAlignment : CrossAxisAlignment.start, 
               children : [ 
                 Container( 
-                    child:_buildCustomProfil("Eko Susanto","",showNotificationIcontru = true ),
+                    child:_buildCustomProfil("Eko Susanto","assets/icon/default-user-icon.png",showNotificationIcontru = true ),
                 ),
                 Container( 
                     child:Text("Container 2"),
