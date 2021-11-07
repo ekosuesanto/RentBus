@@ -10,6 +10,31 @@ class ViewMain extends StatefulWidget
 }
 
 class _ViewMainState extends State<ViewMain> { 
+  Widget _buildCustomProfil (String fullname, AssetImage logo, {bool showNotificationIcon = false}) {
+    return Container( 
+      child: Row ( 
+        mainAxisAlignment : MainAxisAlignment.spaceBetween, 
+        children : [ 
+          Container( 
+            child: Row( 
+              Container( 
+                  child : Image(image: AssetImage(logo)),
+              ), 
+              Container( 
+                  child : Text(fullname),
+              ), 
+            ), 
+          ) , 
+          (showNotificationIcon) ? 
+            Container( 
+              child : Icon(Icons.beach_access,
+      color: Colors.grey,
+      size: 20.0, )
+            ) : Container() ;
+        ], 
+      ),
+    );
+  }
   @override
   Widget build(BuildContext context) {
     return MaterialApp( 
@@ -33,7 +58,7 @@ class _ViewMainState extends State<ViewMain> {
             width : MediaQuery.of(context).size.width,
             
             child: Column( 
-              mainAxisAlignment :MainAxisAlignment.spaceBetween, 
+              
               crossAxisAlignment : CrossAxisAlignment.start, 
               children : [ 
                 Container( 
