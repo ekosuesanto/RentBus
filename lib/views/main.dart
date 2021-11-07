@@ -43,7 +43,7 @@ class _ViewMainState extends State<ViewMain> {
             Container( 
               child : Icon(Icons.notifications,
       color: Colors.grey,
-      size: 20.0, )
+      size: 24.0, )
             ) : Container(child : Text("")), 
         ], 
       ),
