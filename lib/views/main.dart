@@ -30,7 +30,7 @@ class _ViewMainState extends State<ViewMain> {
               child : Icon(Icons.beach_access,
       color: Colors.grey,
       size: 20.0, )
-            ) : Container(child : Text("")) ;
+            ) : Container(child : Text("")), 
         ], 
       ),
     );
