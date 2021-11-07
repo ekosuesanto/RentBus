@@ -148,7 +148,7 @@ class _ViewMainState extends State<ViewMain> {
                                     child : Row( children : [ 
                                     Container( 
 
-              child : Icon(Icons.redeem_outlined,
+              child : Icon(Icons.book_online_outlined,
 
       color: Colors.red,
 
