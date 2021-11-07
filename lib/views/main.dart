@@ -104,19 +104,23 @@ class _ViewMainState extends State<ViewMain> {
                     ),
                 ),
                 SizedBox( height: 24), 
-                Container(
-                  padding : EdgeInsets.only(top: 0,bottom:15,right: 24,left: 24) ,
-                  child : Text("New Promo") 
-                ), 
+                
                 Container(
                   padding : EdgeInsets.only(top: 0,bottom:15,right: 24,left: 24) , 
-                  child: BannerCarousel.fullScreen(
+                  child: Column( 
+                    children : [ 
+                      Container(
+                        child : Text("New Promo") 
+                      ), 
+                      BannerCarousel.fullScreen(
             banners: BannerImages.listBanners,
             height: 150,
             animation: true,
             initialPage: 0,
             // OR pageController: PageController(initialPage: 6),
           ),
+                    ], 
+                  ),
                 ),
                 Container( 
                     child:Text("Container 3"),
