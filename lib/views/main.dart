@@ -10,7 +10,7 @@ class ViewMain extends StatefulWidget
 }
 
 class _ViewMainState extends State<ViewMain> { 
-  
+  bool showNotificationIcon = true;
     
   Widget _buildCustomProfil (String fullname, String logo, {bool showNotificationIcon = false}) {
     return Container( 
@@ -66,7 +66,7 @@ class _ViewMainState extends State<ViewMain> {
               crossAxisAlignment : CrossAxisAlignment.start, 
               children : [ 
                 Container( 
-                    child:_buildCustomProfil("Eko Susanto","assets/icon/default-user-icon.png",showNotificationIcon = true ),
+                    child:_buildCustomProfil("Eko Susanto","assets/icon/default-user-icon.png",showNotificationIcon),
                 ),
                 Container( 
                     child:Text("Container 2"),
