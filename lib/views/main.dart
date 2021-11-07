@@ -94,7 +94,7 @@ class _ViewMainState extends State<ViewMain> {
     borderRadius: new BorderRadius.only(
         bottomRight: Radius.circular(16),
         bottomLeft: Radius.circular(16),
-      ),),
+      ),
     color: Colors.red,
   ),
                     child: _buildCustomProfil("Eko Susanto",AssetImage("assets/icon/default-user-icon.png"),50.0,true),
