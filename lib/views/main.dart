@@ -97,7 +97,7 @@ class _ViewMainState extends State<ViewMain> {
                   child: BannerCarousel.fullScreen(
             banners: BannerImages.listBanners,
             height: 80,
-            animation: false,
+            animation: true,
             initialPage: 1,
             // OR pageController: PageController(initialPage: 6),
           ),
