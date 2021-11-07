@@ -124,7 +124,7 @@ class _ViewMainState extends State<ViewMain> {
                                   VerticalDivider(),
                                   Container( 
                                     padding : EdgeInsets.only(top: 20,bottom:20,right: 30,left: 30) , 
-                                    width : MediaQuery.of(context).size.width * 0.4 - 16,
+                                    width : MediaQuery.of(context).size.width * 0.4,
                                     child : Row( children : [ 
                                     Container( 
 
