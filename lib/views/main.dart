@@ -120,7 +120,7 @@ class _ViewMainState extends State<ViewMain> {
     color: Colors.white,
   ),
                               child : Row ( 
-                                mainAxisAlignment :MainAxisAlignment.spaceAround, 
+                                mainAxisAlignment :MainAxisAlignment.center, 
                                 children : [  
                                   
                                   
