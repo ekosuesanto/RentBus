@@ -106,7 +106,7 @@ class _ViewMainState extends State<ViewMain> {
                 SizedBox( height: 24), 
                 
                 Container(
-                  padding : EdgeInsets.only(top: 0,bottom:15,right: 24,left: 24) , 
+                  padding : EdgeInsets.only(top: 0,bottom:15,right: 16,left: 16) , 
                   child: Column( 
                     crossAxisAlignment : CrossAxisAlignment.start, 
                     children : [ 
