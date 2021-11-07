@@ -112,14 +112,21 @@ class _ViewMainState extends State<ViewMain> {
                     children : [ 
                       Container(
                         child : Text("New Promo") 
-                      ), 
-                      BannerCarousel.fullScreen(
+                      ),
+                      Container ( 
+                          decoration: new BoxDecoration(
+    borderRadius: new BorderRadius.all(16),
+    
+  ),
+                          child: BannerCarousel.fullScreen(
             banners: BannerImages.listBanners,
             height: 150,
             animation: true,
             initialPage: 0,
             // OR pageController: PageController(initialPage: 6),
           ),
+                        ), 
+                      
                     ], 
                   ),
                 ),
