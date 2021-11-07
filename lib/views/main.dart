@@ -244,10 +244,10 @@ class _ViewMainState extends State<ViewMain> {
 }
 class BannerImages {
   static const String banner1 =
-      "assets/promo/00-18-27-images.jpg";
+      "assets/promo/00-20-48-images.jpg";
   static const String banner2 =
       "assets/promo/00-20-13-cM8cQYodWe.png";
-  static const String banner3 = "assets/promo/00-20-48-images.jpg";
+  static const String banner3 = "assets/promo/00-18-27-images.jpg";
   static const String banner4 =
       "assets/promo/00-22-35-images.jpg";
 
