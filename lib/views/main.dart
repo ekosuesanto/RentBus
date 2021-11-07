@@ -31,7 +31,7 @@ class _ViewMainState extends State<ViewMain> {
                   child :Column( 
                     crossAxisAlignment : CrossAxisAlignment.start, 
                     children :[ 
-                      Text("Welcome!",style: TextStyle(fontSize: 12,fontWeight :FontWeight.bold,color:Color.grey) ) , 
+                      Text("Welcome!",style: TextStyle(fontSize: 12,fontWeight :FontWeight.bold,color:Colors.grey) ) , 
                       Text(fullname,style: TextStyle(fontSize: 18,fontWeight :FontWeight.bold) ),
                     ], 
                   ), 
