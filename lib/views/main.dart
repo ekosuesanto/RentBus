@@ -44,8 +44,8 @@ class _ViewMainState extends State<ViewMain> {
                   child :Column( 
                     crossAxisAlignment : CrossAxisAlignment.start, 
                     children :[ 
-                      Text("Welcome!",style: TextStyle(fontSize: 12,fontWeight :FontWeight.bold,color:Colors.grey) ) , 
-                      Text(fullname,style: TextStyle(fontSize: 18,fontWeight :FontWeight.bold) ),
+                      Text("Welcome!",style: TextStyle(fontSize: 12,fontWeight :FontWeight.bold,color:Colors.whitesmoke) ) , 
+                      Text(fullname,style: TextStyle(fontSize: 18,fontWeight :FontWeight.bold,color:Colors.white) ),
                     ], 
                   ), 
                 ), 
@@ -55,7 +55,7 @@ class _ViewMainState extends State<ViewMain> {
           (showNotificationIcon) ? 
             Container( 
               child : Icon(Icons.notifications_outlined,
-      color: Colors.grey,
+      color: Colors.white,
       size: 24.0, )
             ) : Container(child : Text("")), 
         ], 
