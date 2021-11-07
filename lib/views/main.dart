@@ -26,6 +26,7 @@ class _ViewMainState extends State<ViewMain> {
                   height : logoSize, 
                   child : Image(image: AssetImage(logo)),
                 ), 
+                SizedBox(width: 5), 
                 Container( 
                   child : Text(fullname,style: TextStyle(fontSize: 18,fontWeight :FontWeight.bold) ),
                 ), 
