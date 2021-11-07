@@ -12,7 +12,7 @@ class ViewMain extends StatefulWidget
 class _ViewMainState extends State<ViewMain> { 
   bool showNotificationIcon = true;
     
-  Widget _buildCustomProfil (String fullname, String logo, {bool showNotificationIcon = false}) {
+  Widget _buildCustomProfil (String fullname, String logo, bool showNotificationIcon =false) {
     return Container( 
       child: Row ( 
         mainAxisAlignment : MainAxisAlignment.spaceBetween, 
