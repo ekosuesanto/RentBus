@@ -125,7 +125,24 @@ class _ViewMainState extends State<ViewMain> {
                                   Container( 
                                     padding : EdgeInsets.only(top: 20,bottom:20,right: 30,left: 30) , 
                                     width : MediaQuery.of(context).size.width * 0.4 - 8,
-                                    child : Text("Row 2"), 
+                                    child : Row( children : [ 
+                                    Container( 
+
+              child : Icon(Icons.redeem_outlined,
+
+      color: Colors.white,
+
+      size: 24.0, ), ), 
+                                    Container( 
+
+              child : Column( 
+                children : [ 
+                  Span(child: Text("My Poin")),
+                  SizedBox(width: 15), 
+                  Span(child: Text("3000", style : TextStyle(fontWeight :fontWeight.bold,fontSize:30,color: Colors. white)), 
+                ], 
+              ),), 
+                                    ],), 
                                   ),
                                 ], 
                               ) 
