@@ -28,7 +28,12 @@ class _ViewMainState extends State<ViewMain> {
                 ), 
                 SizedBox(width: 5), 
                 Container( 
-                  child : Text(fullname,style: TextStyle(fontSize: 18,fontWeight :FontWeight.bold) ),
+                  child :Column( 
+                    children :[ 
+                      Text("Welcome!",style: TextStyle(fontSize: 14,fontWeight :FontWeight.bold) ) , 
+                      Text(fullname,style: TextStyle(fontSize: 18,fontWeight :FontWeight.bold) ),
+                    ], 
+                  ), 
                 ), 
               ], 
             ), 
