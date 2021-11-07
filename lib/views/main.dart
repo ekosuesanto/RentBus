@@ -181,6 +181,7 @@ class _ViewMainState extends State<ViewMain> {
                   ), 
                 ),
                 Container ( 
+                width: MediaQuery.of(context).size.width, 
                 decoration: new BoxDecoration(
     
                     color: Colors.grey[200]
