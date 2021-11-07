@@ -102,6 +102,15 @@ class _ViewMainState extends State<ViewMain> {
                             _buildCustomProfil("Eko Susanto",AssetImage("assets/icon/default-user-icon.png"),50.0,true),
                           Container( 
                             padding : EdgeInsets.only(top: 0,bottom:30,right: 30,left: 30) , 
+                              decoration: new BoxDecoration(
+    borderRadius: new BorderRadius.only(
+        bottomRight: Radius.circular(16),
+        bottomLeft: Radius.circular(16),
+        topRight: Radius.circular(16),
+        topLeft: Radius.circular(16),
+      ),
+    color: Colors.white,
+  ),
                               child : Row ( 
                                 mainAxisAlignment :MainAxisAlignment.spaceBetween, 
                                 children : [  
