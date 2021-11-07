@@ -101,7 +101,11 @@ class _ViewMainState extends State<ViewMain> {
         bottomRight: Radius.circular(16),
         bottomLeft: Radius.circular(16),
       ),
-    color: Colors.red[800]
+    color: Colors.red[800], 
+    image: DecorationImage(
+            image: AssetImage("assets/images/02-05-08-images.jpg"),
+            fit: BoxFit.cover,
+          ),
   ),
                     child: Column( 
                         children : [ 
