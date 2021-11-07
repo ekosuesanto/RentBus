@@ -157,7 +157,7 @@ class _ViewMainState extends State<ViewMain> {
 
               child : Column( 
                 children : [ 
-                  Container(child: Text("My Reservation")),
+                  Container(child: Text("My Trip")),
                    
                   Container(child: Text("0", style : TextStyle(fontWeight : FontWeight.bold,fontSize:24,color: Colors. red)),), 
                 ], 
