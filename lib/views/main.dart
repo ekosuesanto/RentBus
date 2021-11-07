@@ -101,7 +101,7 @@ class _ViewMainState extends State<ViewMain> {
                     child: Column( 
                         children : [ 
                             _buildCustomProfil("Eko Susanto",AssetImage("assets/icon/default-user-icon.png"),50.0,true),
-                          SizedBox( height: 3), 
+                          SizedBox( height: 5), 
                           Container( 
                             margin : EdgeInsets.only(left:24,right: 24,) ,
                              
