@@ -29,6 +29,7 @@ class _ViewMainState extends State<ViewMain> {
                 SizedBox(width: 5), 
                 Container( 
                   child :Column( 
+                    crossAxisAlignment : CrossAxisAlignment.start, 
                     children :[ 
                       Text("Welcome!",style: TextStyle(fontSize: 14,fontWeight :FontWeight.bold) ) , 
                       Text(fullname,style: TextStyle(fontSize: 18,fontWeight :FontWeight.bold) ),
