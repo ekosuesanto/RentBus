@@ -116,11 +116,12 @@ class _ViewMainState extends State<ViewMain> {
                               child : Row ( 
                                 mainAxisAlignment :MainAxisAlignment.start, 
                                 children : [  
-                                  SizedBox( 
+                                  Container( 
                                     width : MediaQuery.of(context).size.width * 0.4,
                                     child : Text("Row 1"), 
                                   ),
-                                  SizedBox( 
+                                  Divider(), 
+                                  Container( 
                                     width : MediaQuery.of(context).size.width * 0.4,
                                     child : Text("Row 2"), 
                                   ),
