@@ -66,7 +66,7 @@ class _ViewMainState extends State<ViewMain> {
               crossAxisAlignment : CrossAxisAlignment.start, 
               children : [ 
                 Container( 
-                    child:_buildCustomProfil("Eko Susanto","assets/icon/default-user-icon.png",showNotificationIcon = true),
+                    child:_buildCustomProfil("Eko Susanto","assets/icon/default-user-icon.png",true),
                 ),
                 Container( 
                     child:Text("Container 2"),
