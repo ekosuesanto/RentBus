@@ -101,7 +101,7 @@ class _ViewMainState extends State<ViewMain> {
         bottomRight: Radius.circular(16),
         bottomLeft: Radius.circular(16),
       ),
-    color: Colors.redAccent,
+    color: Colors.redAccent[900]
   ),
                     child: Column( 
                         children : [ 
