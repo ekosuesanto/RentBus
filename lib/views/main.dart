@@ -89,12 +89,12 @@ class _ViewMainState extends State<ViewMain> {
               
               crossAxisAlignment : CrossAxisAlignment.start, 
               children : [ 
-                Container( 
-                  
-    decoration: new BoxDecoration(
+                Container ( 
+                decoration: new BoxDecoration(
     
     color: Colors.grey,
   ),
+                child : Container( 
                   padding : EdgeInsets.only(bottom:30,) , 
                   decoration: new BoxDecoration(
     borderRadius: new BorderRadius.only(
@@ -178,7 +178,9 @@ class _ViewMainState extends State<ViewMain> {
                           ), 
                         ], 
                     ),
+                  ), 
                 ),
+                
                 SizedBox( height: 24), 
                 
                 Container(
