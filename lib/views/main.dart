@@ -72,7 +72,8 @@ class _ViewMainState extends State<ViewMain> {
         
       ),
       debugShowCheckedModeBanner: false,
-      home:Scaffold(
+      home:Scaffold( 
+        extendBody: true,
         body:SingleChildScrollView(
           physics: ScrollPhysics(),
           
