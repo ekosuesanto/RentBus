@@ -106,7 +106,7 @@ class _ViewMainState extends State<ViewMain> {
             //image: AssetImage("assets/images/02-05-08-images.jpg"),
             //fit: BoxFit.cover,
           //),
- // ),
+ ),
                     child: Column( 
                         children : [ 
                             _buildCustomProfil("Eko Susanto",AssetImage("assets/icon/default-user-icon.png"),50.0,true),
