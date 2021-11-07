@@ -102,7 +102,7 @@ class _ViewMainState extends State<ViewMain> {
                         children : [ 
                             _buildCustomProfil("Eko Susanto",AssetImage("assets/icon/default-user-icon.png"),50.0,true),
                           Container( 
-                            padding :EdgeInsets.only(left:24,right: 24,) ,
+                            margin : EdgeInsets.only(left:24,right: 24,) ,
                              
                             decoration: new BoxDecoration(
     borderRadius: new BorderRadius.only(
