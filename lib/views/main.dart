@@ -21,6 +21,8 @@ class _ViewMainState extends State<ViewMain> {
             child: Row( 
               children : [ 
                 Container( 
+                  width : logoSize, 
+                  height : logoSize, 
                   child : Image(image: AssetImage(logo)),
                 ), 
                 Container( 
