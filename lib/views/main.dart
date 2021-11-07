@@ -12,7 +12,7 @@ class ViewMain extends StatefulWidget
 class _ViewMainState extends State<ViewMain> { 
   bool showNotificationIcon = true;
     
-  Widget _buildCustomProfil (String fullname, String logo, double logoSize,bool showNotificationIcon) {
+  Widget _buildCustomProfil (String fullname, Widget logo, double logoSize,bool showNotificationIcon) {
     return Container( 
       padding : EdgeInsets.only(top: 50,bottom:15,right: 24,left: 24) , 
       child: Row ( 
@@ -24,7 +24,7 @@ class _ViewMainState extends State<ViewMain> {
                 Container( 
                   width : logoSize, 
                   height : logoSize, 
-                  child : Image(image: AssetImage(logo)),
+                  child : Image(image: logo),
                 ), 
                 SizedBox(width: 5), 
                 Container( 
@@ -76,7 +76,7 @@ class _ViewMainState extends State<ViewMain> {
               crossAxisAlignment : CrossAxisAlignment.start, 
               children : [ 
                 Container( 
-                    child:_buildCustomProfil("Eko Susanto","assets/icon/default-user-icon.png",50.0,true),
+                    child:_buildCustomProfil("Eko Susanto",AssetImage("assets/icon/default-user-icon.png"),50.0,true),
                 ),
                 Container( 
                     child:Text("Container 2"),
