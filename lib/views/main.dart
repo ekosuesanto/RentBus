@@ -133,13 +133,14 @@ class _ViewMainState extends State<ViewMain> {
       color: Colors.red,
 
       size: 24.0, ), ), 
+                                    SizedBox(width: 15),
                                     Container( 
 
               child : Column( 
                 children : [ 
                   Container(child: Text("My Poin")),
-                  SizedBox(width: 15), 
-                  Container(child: Text("3000", style : TextStyle(fontWeight : FontWeight.bold,fontSize:30,color: Colors. red)),), 
+                   
+                  Container(child: Text("3000", style : TextStyle(fontWeight : FontWeight.bold,fontSize:24,color: Colors. red)),), 
                 ], 
               ),), 
                                     ],), 
