@@ -90,6 +90,7 @@ class _ViewMainState extends State<ViewMain> {
               crossAxisAlignment : CrossAxisAlignment.start, 
               children : [ 
                 Container( 
+                    backgroundColor : Colors.red, 
                     child: _buildCustomProfil("Eko Susanto",AssetImage("assets/icon/default-user-icon.png"),50.0,true),
                 ),
                 Container(
