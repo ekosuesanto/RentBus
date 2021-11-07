@@ -120,7 +120,7 @@ class _ViewMainState extends State<ViewMain> {
                                     width : MediaQuery.of(context).size.width * 0.4,
                                     child : Text("Row 1"), 
                                   ),
-                                  Divider(), 
+                                  VerticalDivider(),
                                   Container( 
                                     width : MediaQuery.of(context).size.width * 0.4,
                                     child : Text("Row 2"), 
