@@ -27,7 +27,7 @@ class _ViewMainState extends State<ViewMain> {
   
   Widget _buildCustomProfil (String fullname, AssetImage logo, double logoSize,bool showNotificationIcon) {
     return Container( 
-      padding : EdgeInsets.only(top: 50,bottom:30,right: 24,left: 24) , 
+      padding : EdgeInsets.only(top: 50,bottom:15,right: 24,left: 24) , 
       child: Row ( 
         mainAxisAlignment : MainAxisAlignment.spaceBetween, 
         children : [ 
