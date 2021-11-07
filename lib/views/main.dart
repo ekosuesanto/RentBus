@@ -116,11 +116,11 @@ class _ViewMainState extends State<ViewMain> {
                               child : Row ( 
                                 mainAxisAlignment :MainAxisAlignment.start, 
                                 children : [  
-                                  Container( 
+                                  SizedBox( 
                                     width : double.infinity * 0.5,
                                     child : Text("Row 1"), 
                                   ),
-                                  Container( 
+                                  SizedBox( 
                                     width : double.infinity * 0.5,
                                     child : Text("Row 2"), 
                                   ),
