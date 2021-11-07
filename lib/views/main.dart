@@ -10,7 +10,7 @@ class ViewMain extends StatefulWidget
   @override
   _ViewMainState createState() => _ViewMainState();
 }
-
+enum _SelectedTab { home, favorite, search, person }
 class _ViewMainState extends State<ViewMain> { 
   bool showNotificationIcon = true;
   var _selectedTab = _SelectedTab.home;
