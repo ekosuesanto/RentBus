@@ -100,6 +100,20 @@ class _ViewMainState extends State<ViewMain> {
                     child: Column( 
                         children : [ 
                             _buildCustomProfil("Eko Susanto",AssetImage("assets/icon/default-user-icon.png"),50.0,true),
+                          Container( 
+                            padding : EdgeInsets.only(top: 20,bottom:20,right: 30,left: 30) , 
+                              child : Row ( 
+                                mainAxisAlignment :MainAxisAlignment.spaceBetween, 
+                                children : [  
+                                  Container( 
+                                    child : Text("Row 1"), 
+                                  ),
+                                  Container( 
+                                    child : Text("Row 2"), 
+                                  ),
+                                ], 
+                              ) 
+                          ), 
                         ], 
                     ),
                 ),
