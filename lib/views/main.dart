@@ -137,9 +137,9 @@ class _ViewMainState extends State<ViewMain> {
 
               child : Column( 
                 children : [ 
-                  Span(child: Text("My Poin")),
+                  SizedBox(child: Text("My Poin")),
                   SizedBox(width: 15), 
-                  Span(child: Text("3000", style : TextStyle(fontWeight : FontWeight.bold,fontSize:30,color: Colors. white)), 
+                  SizedBox(child: Text("3000", style : TextStyle(fontWeight : FontWeight.bold,fontSize:30,color: Colors. white)), 
                 ], 
               ),), 
                                     ],), 
