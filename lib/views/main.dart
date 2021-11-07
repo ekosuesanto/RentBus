@@ -180,7 +180,13 @@ class _ViewMainState extends State<ViewMain> {
                     ),
                   ), 
                 ),
-                
+                Container ( 
+                decoration: new BoxDecoration(
+    
+                    color: Colors.grey[200]
+                  ),
+                child : Text("++_++_"),
+                ), 
                 SizedBox( height: 24), 
                 
                 Container(
