@@ -95,7 +95,7 @@ class _ViewMainState extends State<ViewMain> {
     color: Colors.grey[200]
   ),
                 child : Container( 
-                  padding : EdgeInsets.only(bottom:30,) , 
+                  padding : EdgeInsets.only(bottom:24,) , 
                   decoration: new BoxDecoration(
     borderRadius: new BorderRadius.only(
         bottomRight: Radius.circular(16),
