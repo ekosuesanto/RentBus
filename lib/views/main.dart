@@ -90,7 +90,10 @@ class _ViewMainState extends State<ViewMain> {
               crossAxisAlignment : CrossAxisAlignment.start, 
               children : [ 
                 Container( 
-                    backgroundColor : Colors.red, 
+                    decoration: new BoxDecoration(
+    borderRadius: new BorderRadius.circular(16.0),
+    color: Colors.red,
+  ),
                     child: _buildCustomProfil("Eko Susanto",AssetImage("assets/icon/default-user-icon.png"),50.0,true),
                 ),
                 Container(
