@@ -117,12 +117,12 @@ class _ViewMainState extends State<ViewMain> {
                                 mainAxisAlignment :MainAxisAlignment.start, 
                                 children : [  
                                   Container( 
-                                    width : MediaQuery.of(context).size.width * 0.4,
+                                    width : MediaQuery.of(context).size.width * 0.4 - 8,
                                     child : Text("Row 1"), 
                                   ),
                                   VerticalDivider(),
                                   Container( 
-                                    width : MediaQuery.of(context).size.width * 0.4,
+                                    width : MediaQuery.of(context).size.width * 0.4 - 8,
                                     child : Text("Row 2"), 
                                   ),
                                 ], 
