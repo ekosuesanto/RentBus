@@ -116,12 +116,8 @@ class _ViewMainState extends State<ViewMain> {
                               child : Row ( 
                                 mainAxisAlignment :MainAxisAlignment.start, 
                                 children : [  
-                                  Container( 
-                                    padding : EdgeInsets.only(top: 20,bottom:20,right: 30,left: 30) , 
-                                    width : MediaQuery.of(context).size.width / 3,
-                                    child : Text("Row 1"), 
-                                  ),
-                                  VerticalDivider(),
+                                  
+                                  
                                   Container( 
                                     padding : EdgeInsets.only(top: 20,bottom:20,) , 
                                     width : MediaQuery.of(context).size.width / 3,
@@ -141,6 +137,29 @@ class _ViewMainState extends State<ViewMain> {
                   Container(child: Text("My Poin")),
                    
                   Container(child: Text("3000", style : TextStyle(fontWeight : FontWeight.bold,fontSize:24,color: Colors. red)),), 
+                ], 
+              ),), 
+                                    ],), 
+                                  ),
+                                  Container( 
+                                    padding : EdgeInsets.only(top: 20,bottom:20,) , 
+                                    width : MediaQuery.of(context).size.width / 3,
+                                    child : Row( children : [ 
+                                    Container( 
+
+              child : Icon(Icons.redeem_outlined,
+
+      color: Colors.red,
+
+      size: 32.0, ), ), 
+                                    SizedBox(width: 15),
+                                    Container( 
+
+              child : Column( 
+                children : [ 
+                  Container(child: Text("My Reservation")),
+                   
+                  Container(child: Text("0", style : TextStyle(fontWeight : FontWeight.bold,fontSize:24,color: Colors. red)),), 
                 ], 
               ),), 
                                     ],), 
