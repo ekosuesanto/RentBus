@@ -98,8 +98,7 @@ class _ViewMainState extends State<ViewMain> {
             ),
           ),
         ), 
-      ),
-      bottomNavigationBar:  DotNavigationBar(
+        bottomNavigationBar:  DotNavigationBar(
           currentIndex: _SelectedTab.values.indexOf(_selectedTab),
           onTap: _handleIndexChanged,
           // dotIndicatorColor: Colors.black,
@@ -130,6 +129,8 @@ class _ViewMainState extends State<ViewMain> {
             
           ],
         ),
+      ),
+      
     );
   }
 }
