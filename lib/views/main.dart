@@ -27,7 +27,7 @@ class _ViewMainState extends State<ViewMain> {
                   child : Image(image: AssetImage(logo)),
                 ), 
                 Container( 
-                  child : Text(fullname),
+                  child : Text(fullname,style: TextStyle(fontSize: 24)),
                 ), 
               ], 
             ), 
