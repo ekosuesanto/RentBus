@@ -108,7 +108,7 @@ class _ViewMainState extends State<ViewMain> {
                 Container(
                   padding : EdgeInsets.only(top: 0,bottom:15,right: 24,left: 24) , 
                   child: Column( 
-                    crossAXisAlignment : CrossAxisAlignment.start, 
+                    crossAxisAlignment : CrossAxisAlignment.start, 
                     children : [ 
                       Container(
                         child : Text("New Promo") 
