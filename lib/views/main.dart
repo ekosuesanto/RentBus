@@ -123,14 +123,14 @@ class _ViewMainState extends State<ViewMain> {
                                   ),
                                   VerticalDivider(),
                                   Container( 
-                                    padding : EdgeInsets.only(top: 20,bottom:20,right: 0,left: 0) , 
+                                    padding : EdgeInsets.only(top: 20,bottom:20,) , 
                                     width : MediaQuery.of(context).size.width / 3,
                                     child : Row( children : [ 
                                     Container( 
 
               child : Icon(Icons.redeem_outlined,
 
-      color: Colors.white,
+      color: Colors.red,
 
       size: 24.0, ), ), 
                                     Container( 
@@ -139,7 +139,7 @@ class _ViewMainState extends State<ViewMain> {
                 children : [ 
                   Container(child: Text("My Poin")),
                   SizedBox(width: 15), 
-                  Container(child: Text("3000", style : TextStyle(fontWeight : FontWeight.bold,fontSize:30,color: Colors. white)),), 
+                  Container(child: Text("3000", style : TextStyle(fontWeight : FontWeight.bold,fontSize:30,color: Colors. red)),), 
                 ], 
               ),), 
                                     ],), 
