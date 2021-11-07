@@ -93,6 +93,10 @@ class _ViewMainState extends State<ViewMain> {
                     child: _buildCustomProfil("Eko Susanto",AssetImage("assets/icon/default-user-icon.png"),50.0,true),
                 ),
                 Container(
+                  padding : EdgeInsets.only(top: 0,bottom:15,right: 24,left: 24) ,
+                  child : Text("New Promo") 
+                ), 
+                Container(
                   padding : EdgeInsets.only(top: 0,bottom:15,right: 24,left: 24) , 
                   child: BannerCarousel.fullScreen(
             banners: BannerImages.listBanners,
