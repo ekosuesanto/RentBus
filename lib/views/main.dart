@@ -126,7 +126,7 @@ class _ViewMainState extends State<ViewMain> {
                                   
                                   Container( 
                                     padding : EdgeInsets.only(top: 20,bottom:20,left:0,right: 0,) , 
-                                    width : MediaQuery.of(context).size.width / 2 - 70,
+                                    width : MediaQuery.of(context).size.width / 2 - 65,
                                     child : Row( children : [ 
                                     Container( 
 
