@@ -142,6 +142,7 @@ class _ViewMainState extends State<ViewMain> {
               ),), 
                                     ],), 
                                   ),
+                                  Container(height: 80, child: VerticalDivider(color: Colors.red)),
                                   Container( 
                                     padding : EdgeInsets.only(top: 20,bottom:20,) , 
                                     width : MediaQuery.of(context).size.width / 3,
