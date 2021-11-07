@@ -141,9 +141,9 @@ class _ViewMainState extends State<ViewMain> {
               child : Column( 
                 crossAxisAlignment : CrossAxisAlignment.start, 
                 children : [ 
-                  Container(child: Text("My Poin")),
+                  Container(child: Text("My Poin",style : TextStyle(fontWeight : FontWeight.bold,fontSize:12,color: Colors. red))),
                    
-                  Container(child: Text("3000", style : TextStyle(fontWeight : FontWeight.bold,fontSize:18,color: Colors. red)),), 
+                  Container(child: Text("3000", style : TextStyle(fontWeight : FontWeight.bold,fontSize:16,color: Colors. red)),), 
                 ], 
               ),), 
                                     ],), 
@@ -168,7 +168,7 @@ class _ViewMainState extends State<ViewMain> {
                 children : [ 
                   Container(child: Text("My Trip")),
                    
-                  Container(child: Text("0", style : TextStyle(fontWeight : FontWeight.bold,fontSize:18,color: Colors. red)),), 
+                  Container(child: Text("0", style : TextStyle(fontWeight : FontWeight.bold,fontSize:16,color: Colors. red)),), 
                 ], 
               ),), 
                                     ],), 
