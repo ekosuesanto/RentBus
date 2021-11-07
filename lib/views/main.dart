@@ -244,12 +244,12 @@ class _ViewMainState extends State<ViewMain> {
 }
 class BannerImages {
   static const String banner1 =
-      "https://picjumbo.com/wp-content/uploads/the-golden-gate-bridge-sunset-1080x720.jpg";
+      "assets/promo/00-18-27-images.jpg";
   static const String banner2 =
-      "https://cdn.mos.cms.futurecdn.net/Nxz3xSGwyGMaziCwiAC5WW-1024-80.jpg";
-  static const String banner3 = "https://wallpaperaccess.com/full/19921.jpg";
+      "assets/promo/00-20-13-cM8cQYodWe.png";
+  static const String banner3 = "assets/promo/00-20-48-images.jpg";
   static const String banner4 =
-      "https://images.pexels.com/photos/2635817/pexels-photo-2635817.jpeg?auto=compress&crop=focalpoint&cs=tinysrgb&fit=crop&fp-y=0.6&h=500&sharp=20&w=1400";
+      "assets/promo/00-22-35-images.jpg";
 
   static List<BannerModel> listBanners = [
     BannerModel(imagePath: banner1, id: "1"),
