@@ -98,7 +98,7 @@ class _ViewMainState extends State<ViewMain> {
             banners: BannerImages.listBanners,
             height: 120,
             animation: true,
-            initialPage: 1,
+            initialPage: 0,
             // OR pageController: PageController(initialPage: 6),
           ),
                 ),
