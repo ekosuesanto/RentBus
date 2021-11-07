@@ -10,6 +10,8 @@ class ViewMain extends StatefulWidget
 }
 
 class _ViewMainState extends State<ViewMain> { 
+  
+    
   Widget _buildCustomProfil (String fullname, AssetImage logo, {bool showNotificationIcon = false}) {
     return Container( 
       child: Row ( 
@@ -17,12 +19,14 @@ class _ViewMainState extends State<ViewMain> {
         children : [ 
           Container( 
             child: Row( 
-              Container( 
+              children : [ 
+                Container( 
                   child : Image(image: AssetImage(logo)),
-              ), 
-              Container( 
+                ), 
+                Container( 
                   child : Text(fullname),
-              ), 
+                ), 
+              ], 
             ), 
           ) , 
           (showNotificationIcon) ? 
