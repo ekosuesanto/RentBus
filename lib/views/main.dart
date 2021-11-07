@@ -133,6 +133,7 @@ class _ViewMainState extends State<ViewMain> {
                                     Container( 
 
               child : Column( 
+                crossAxisAlignment : CrossAxisAlignment.start, 
                 children : [ 
                   Container(child: Text("My Poin")),
                    
