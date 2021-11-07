@@ -100,7 +100,7 @@ class _ViewMainState extends State<ViewMain> {
                   padding : EdgeInsets.only(top: 0,bottom:15,right: 24,left: 24) , 
                   child: BannerCarousel.fullScreen(
             banners: BannerImages.listBanners,
-            height: 180,
+            height: 150,
             animation: true,
             initialPage: 0,
             // OR pageController: PageController(initialPage: 6),
