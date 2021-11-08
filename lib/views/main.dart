@@ -726,7 +726,7 @@ class _ViewMainState extends State<ViewMain> {
                         color: Colors.orange[500],
                       ),
                       Text(
-                        "Latest Trip",
+                        "Latest Activity",
                         style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16),
                       )
                     ],
