@@ -754,11 +754,12 @@ class _ViewMainState extends State<ViewMain> {
                 return Container( 
              margin: EdgeInsets.only(
                     top: 10,
-                    bottom: 20,
+                    bottom: 0,
                     right: (index < myProducts.length-1) ? 15 : 0,
                     left:(index > 0 ) ? 15 : 0,
                   ),
              decoration : BoxDecoration(color: Colors.white) , 
+             
              width : MediaQuery.of(context).size.width * 0.8, 
                   // In many cases, the key isn't mandatory
                   key: UniqueKey(),
