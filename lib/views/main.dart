@@ -29,6 +29,7 @@ class _ViewMainState extends State<ViewMain> {
   final TextEditingController _departureController = new TextEditingController();
   final TextEditingController _arrivalController = new TextEditingController();
   
+  final myProducts = List<String>.generate(1000, (i) => 'Product $i');
 
   Widget _buildCustomProfil(String fullname, AssetImage logo, double logoSize, bool showNotificationIcon) {
     return Container(
@@ -866,3 +867,4 @@ class BannerImages {
     BannerModel(imagePath: banner4, id: "4"),
   ];
 }
+  
