@@ -13,7 +13,7 @@ class ViewMain extends StatefulWidget {
   _ViewMainState createState() => _ViewMainState();
 }
 
-//enum _SelectedTab { home, favorite, search, person }
+List<String> _SelectedTab = ["Home", "History", "Promo", "Profile" ];
 
 class _ViewMainState extends State<ViewMain> {
   bool showNotificationIcon = true;
@@ -107,7 +107,7 @@ class _ViewMainState extends State<ViewMain> {
       home: Scaffold(
         appBar: AppBar(
           title: Text(
-            "Home",
+            _SelectedTab[selectedIndex],
             style: TextStyle(fontSize: 16),
           ),
           centerTitle: true,
