@@ -727,7 +727,7 @@ class _ViewMainState extends State<ViewMain> {
                       ),
                       Text(
                         "Latest Activity",
-                        style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16),
+                        style: TextStyle(fontWeight: FontWeight.bold, fontSize: 14),
                       )
                     ],
                   ),
@@ -762,7 +762,7 @@ class _ViewMainState extends State<ViewMain> {
                       ),
                       Text(
                         "New Promo",
-                        style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16),
+                        style: TextStyle(fontWeight: FontWeight.bold, fontSize: 14),
                       )
                     ],
                   ),
