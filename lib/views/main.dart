@@ -712,7 +712,7 @@ class _ViewMainState extends State<ViewMain> {
                     spacing: 5,
                     children: [
                       Icon(
-                        Icons.new_releases_outlined,
+                        Icons.receipt_long_outlined,
                         size: 28.0,
                         color: Colors.orange[500],
                       ),
