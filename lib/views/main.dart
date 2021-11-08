@@ -750,6 +750,7 @@ class _ViewMainState extends State<ViewMain> {
               // display each item of the product list
               itemBuilder: (context, index) {
                 return Container( 
+             decoration : BoxDecoration(color: Colors.white) , 
              width : MediaQuery.of(context).size.width * 0.8, 
                   // In many cases, the key isn't mandatory
                   key: UniqueKey(),
