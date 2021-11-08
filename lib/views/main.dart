@@ -5,6 +5,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:helloworld/views/auth/sign_in.dart';
 import 'package:dot_navigation_bar/dot_navigation_bar.dart';
+import 'package:sliding_clipped_nav_bar/sliding_clipped_nav_bar.dart';
 
 class ViewMain extends StatefulWidget {
   const ViewMain({Key? key}) : super(key: key);
@@ -12,19 +13,22 @@ class ViewMain extends StatefulWidget {
   _ViewMainState createState() => _ViewMainState();
 }
 
-enum _SelectedTab { home, favorite, search, person }
+//enum _SelectedTab { home, favorite, search, person }
 
 class _ViewMainState extends State<ViewMain> {
   bool showNotificationIcon = true;
-  var _selectedTab = _SelectedTab.home;
+  late PageController _pageController;
+  int selectedIndex = 0;
+
+  @override
+  void initState() {
+    super.initState();
+    _pageController = PageController(initialPage: selectedIndex);
+  }
   final _formDepartureKey = GlobalKey<FormState>();
   final TextEditingController _departureController = new TextEditingController();
   final TextEditingController _arrivalController = new TextEditingController();
-  void _handleIndexChanged(int i) {
-    setState(() {
-      _selectedTab = _SelectedTab.values[i];
-    });
-  }
+  
 
   Widget _buildCustomProfil(String fullname, AssetImage logo, double logoSize, bool showNotificationIcon) {
     return Container(
@@ -131,7 +135,11 @@ class _ViewMainState extends State<ViewMain> {
           ),
         ),
         extendBody: true,
-        body: SingleChildScrollView(
+        body:PageView(
+        physics: NeverScrollableScrollPhysics(),
+        controller: _pageController,
+        children: [ 
+            SingleChildScrollView(
           physics: ScrollPhysics(),
           reverse: false,
           primary: false,
@@ -747,36 +755,55 @@ class _ViewMainState extends State<ViewMain> {
             ),
           ),
         ),
-        bottomNavigationBar: DotNavigationBar(
-          currentIndex: _SelectedTab.values.indexOf(_selectedTab),
-          onTap: _handleIndexChanged,
-          // dotIndicatorColor: Colors.black,
-          items: [
-            /// Home
-            DotNavigationBarItem(
-              icon: Icon(Icons.home),
-              selectedColor: Colors.purple,
-            ),
-
-            /// Likes
-            DotNavigationBarItem(
-              icon: Icon(Icons.favorite_border),
-              selectedColor: Colors.pink,
-            ),
-
-            /// Search
-            DotNavigationBarItem(
-              icon: Icon(Icons.search),
-              selectedColor: Colors.orange,
-            ),
-
-            /// Profile
-            DotNavigationBarItem(
-              icon: Icon(Icons.person),
-              selectedColor: Colors.teal,
-            ),
-          ],
+        Center( 
+          child: Container( 
+            child : Text("gdjdjfnfn") 
+          ) 
+        ), 
+        Center( 
+          child: Container( 
+            child : Text("gdjfnfn") 
+          ) 
         ),
+        Center( 
+          child: Container( 
+            child : Text("gdjdzhdhdbdfnfn") 
+          ) 
+        ), 
+        ], 
+        ), 
+        bottomNavigationBar: SlidingClippedNavBar(
+        backgroundColor: Colors.white,
+        onButtonPressed: (index) {
+          setState(() {
+            selectedIndex = index;
+          });
+          _pageController.animateToPage(selectedIndex,
+              duration: const Duration(milliseconds: 400),
+              curve: Curves.easeOutQuad);
+        },
+        iconSize: 30,
+        activeColor: Color(0xFF01579B),
+        selectedIndex: selectedIndex,
+        barItems: [
+          BarItem(
+            icon: Icons.event,
+            title: 'Events',
+          ),
+          BarItem(
+            icon: Icons.search_rounded,
+            title: 'Search',
+          ),
+          BarItem(
+            icon: Icons.bolt_rounded,
+            title: 'Energy',
+          ),
+          BarItem(
+            icon: Icons.tune_rounded,
+            title: 'Settings',
+          ),
+        ],
+      ),
       ),
     );
   }
