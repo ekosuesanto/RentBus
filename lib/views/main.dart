@@ -742,12 +742,8 @@ class _ViewMainState extends State<ViewMain> {
                   ),
                   width: MediaQuery.of(context).size.width,
                   height: 150,
-                  child: ListView.separated(
-                    separatorBuilder: (BuildContext context, int index) {
-		return SizedBox(
-				height: 15,
-                );
-		},
+                  child: ListView.builder(
+                    
                     scrollDirection : Axis.horizontal, 
               // the number of items in the list
               itemCount: myProducts.length,
