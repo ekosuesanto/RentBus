@@ -749,7 +749,7 @@ class _ViewMainState extends State<ViewMain> {
                   ),
                 ),
                 SizedBox(
-                  height: 70,
+                  height: 100,
                 ),
               ],
             ),
