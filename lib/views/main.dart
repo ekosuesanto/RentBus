@@ -690,7 +690,7 @@ class _ViewMainState extends State<ViewMain> {
                     ],
                   ),
                 ),
-                Divider(),
+                Divider(width: MediaQuery.of(Context).size.width),
                 Container(
                   padding: EdgeInsets.only(
                     top: 10,
