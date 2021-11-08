@@ -761,7 +761,7 @@ class _ViewMainState extends State<ViewMain> {
              decoration : BoxDecoration( 
                  boxShadow: [
  BoxShadow(
-  color: Colors.black.withOpacity(0.95),
+  color: Colors.black.withOpacity(0.05),
   spreadRadius: 3,
   blurRadius: 10, 
     offset: Offset(0, 3), 
