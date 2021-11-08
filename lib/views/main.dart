@@ -746,10 +746,19 @@ class _ViewMainState extends State<ViewMain> {
                     scrollDirection : Axis.horizontal, 
               // the number of items in the list
               itemCount: myProducts.length,
+              shrinkWrap: true,
 
               // display each item of the product list
               itemBuilder: (context, index) {
-                return Container( 
+                return Wrap(
+
+                            direction: Axis.horizontal,
+
+                            spacing: 10.0,
+
+                            runSpacing: 20.0,
+
+                            children: [ Container( 
              decoration : BoxDecoration(color: Colors.white) , 
              width : MediaQuery.of(context).size.width * 0.8, 
                   // In many cases, the key isn't mandatory
@@ -757,7 +766,7 @@ class _ViewMainState extends State<ViewMain> {
                   child: Padding(
                       padding: const EdgeInsets.all(10),
                       child: Text(myProducts[index])),
-                );
+                ));
               }),
                 ), 
                 Divider(),
