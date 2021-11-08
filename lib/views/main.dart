@@ -743,12 +743,13 @@ class _ViewMainState extends State<ViewMain> {
                   width: MediaQuery.of(context).size.width,
                   height: 200,
                   child: ListView.builder(
+                    scrollDirection : Axis.vertical, 
               // the number of items in the list
               itemCount: myProducts.length,
 
               // display each item of the product list
               itemBuilder: (context, index) {
-                return Card(
+                return Container(
                   // In many cases, the key isn't mandatory
                   key: UniqueKey(),
                   child: Padding(
