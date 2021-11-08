@@ -774,7 +774,7 @@ class _ViewMainState extends State<ViewMain> {
                   // In many cases, the key isn't mandatory
                   key: UniqueKey(),
                   child:  Column(
-                      
+                      crossAxisAlignment : CrossAxisAlignment.start, 
                       children: [ 
                          Padding( 
                              padding: EdgeInsets.all(20),child:Text(myProducts[index])),
