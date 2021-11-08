@@ -745,7 +745,7 @@ class _ViewMainState extends State<ViewMain> {
                   child: ListView.separated(
                     separatorBuilder: (BuildContext context, int index) {
 		return SizedBox(
-				height: 5,
+				height: 15,
                 );
 		},
                     scrollDirection : Axis.horizontal, 
