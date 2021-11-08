@@ -722,7 +722,7 @@ class _ViewMainState extends State<ViewMain> {
                     children: [
                       Icon(
                         Icons.receipt_long_outlined,
-                        size: 28.0,
+                        size: 30.0,
                         color: Colors.orange[500],
                       ),
                       Text(
