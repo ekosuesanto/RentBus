@@ -754,8 +754,8 @@ class _ViewMainState extends State<ViewMain> {
              margin: EdgeInsets.only(
                     top: 30,
                     bottom: 30,
-                    right: (index < myProducts.length-1) ? 15 : 0,
-                    left:(index > 0 ) ? 15 : 0,
+                    right: (index < myProducts.length-1) ? 10 : 0,
+                    left:(index > 0 ) ? 10 : 0,
                   ),
              decoration : BoxDecoration( 
                  boxShadow: [
@@ -769,7 +769,7 @@ class _ViewMainState extends State<ViewMain> {
                  color: Colors.white 
              ) , 
              
-             width : MediaQuery.of(context).size.width * 0.7, 
+             width : MediaQuery.of(context).size.width * 0.75, 
                   // In many cases, the key isn't mandatory
                   key: UniqueKey(),
                   child:  Column(
