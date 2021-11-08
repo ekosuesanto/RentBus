@@ -29,7 +29,7 @@ class _ViewMainState extends State<ViewMain> {
   final TextEditingController _departureController = new TextEditingController();
   final TextEditingController _arrivalController = new TextEditingController();
   
-  final myProducts = List<String>.generate(1000, (i) => 'Product $i');
+  final myProducts = List<String>.generate(5, (i) => 'Product $i');
 
   Widget _buildCustomProfil(String fullname, AssetImage logo, double logoSize, bool showNotificationIcon) {
     return Container(
@@ -741,7 +741,20 @@ class _ViewMainState extends State<ViewMain> {
                     left: 24,
                   ),
                   width: MediaQuery.of(context).size.width,
-                  child: Text("how") 
+                  child: ListView.builder(
+              // the number of items in the list
+              itemCount: myProducts.length,
+
+              // display each item of the product list
+              itemBuilder: (context, index) {
+                return Card(
+                  // In many cases, the key isn't mandatory
+                  key: UniqueKey(),
+                  child: Padding(
+                      padding: const EdgeInsets.all(10),
+                      child: Text(myProducts[index])),
+                );
+              }),
                 ), 
                 Divider(),
                 Container(
