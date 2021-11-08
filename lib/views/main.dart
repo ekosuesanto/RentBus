@@ -758,7 +758,7 @@ class _ViewMainState extends State<ViewMain> {
                     left:(index > 0 ) ? 10 : 0,
                   ),
              decoration : BoxDecoration( 
-                 borderRadius : BorderRadius.all(BorderRadius.circular(12)) , 
+                 borderRadius : BorderRadius.circular(12), 
                  boxShadow: [
  BoxShadow(
   color: Colors.black.withOpacity(0.05),
