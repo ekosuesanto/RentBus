@@ -763,9 +763,13 @@ class _ViewMainState extends State<ViewMain> {
              width : MediaQuery.of(context).size.width * 0.7, 
                   // In many cases, the key isn't mandatory
                   key: UniqueKey(),
-                  child: Padding(
-                      padding: const EdgeInsets.all(10),
-                      child: Text(myProducts[index])),
+                  child:  Column(
+                      
+                      children: [ 
+                          Text(myProducts[index],
+                               Divider(),
+                               Text(myProducts[index]
+                               ])),
                 );
               }),
                 ), 
