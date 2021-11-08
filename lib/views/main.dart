@@ -672,7 +672,7 @@ class _ViewMainState extends State<ViewMain> {
                           crossAxisAlignment: CrossAxisAlignment.center,
                           children: [
                             Icon(
-                              Icons.support_agent_outlined,
+                              Icons.place_outlined,
                               size: 30,
                               color: Colors.black.withOpacity(0.6),
                             ),
@@ -683,7 +683,7 @@ class _ViewMainState extends State<ViewMain> {
                               alignment: Alignment.center,
                               // height: 28,
                               child: Text(
-                                "Customer Service",
+                                "Nearest Agent",
                                 style: TextStyle(
                                   fontSize: 10,
                                   fontWeight: FontWeight.w700,
