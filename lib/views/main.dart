@@ -124,7 +124,17 @@ class _ViewMainState extends State<ViewMain> {
           ],
           leading: Builder(
             builder: (BuildContext context) {
-              return IconButton(
+              return (selectedIndex==0) ? 
+                  IconButton(
+                icon: const Icon(Icons.menu, color: Color(0xFFFFFFFF)),
+                onPressed: () {
+                  Scaffold.of(context).openDrawer();
+                },
+                tooltip: MaterialLocalizations.of(context).openAppDrawerTooltip,
+              );
+            },
+          )
+                  : IconButton(
                 icon: const Icon(Icons.chevron_left, color: Color(0xFFFFFFFF)),
                 onPressed: () {
                   Scaffold.of(context).openDrawer();
