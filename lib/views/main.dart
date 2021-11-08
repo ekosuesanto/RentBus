@@ -690,6 +690,7 @@ class _ViewMainState extends State<ViewMain> {
                     ],
                   ),
                 ),
+                Divider(),
                 Container(
                   padding: EdgeInsets.only(
                     top: 10,
