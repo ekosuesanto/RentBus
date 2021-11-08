@@ -799,7 +799,7 @@ class _ViewMainState extends State<ViewMain> {
             title: 'Energy',
           ),
           BarItem(
-            icon: Icons.user_outlined,
+            icon: Icons.account_circle_outlined,
             title: 'Profile',
           ),
         ],
