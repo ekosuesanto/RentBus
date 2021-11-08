@@ -766,7 +766,7 @@ class _ViewMainState extends State<ViewMain> {
                   child: Padding(
                       padding: const EdgeInsets.all(10),
                       child: Text(myProducts[index])),
-                ));
+                )]);
               }),
                 ), 
                 Divider(),
