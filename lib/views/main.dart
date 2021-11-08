@@ -758,7 +758,17 @@ class _ViewMainState extends State<ViewMain> {
                     right: (index < myProducts.length-1) ? 15 : 0,
                     left:(index > 0 ) ? 15 : 0,
                   ),
-             decoration : BoxDecoration(color: Colors.white) , 
+             decoration : BoxDecoration( 
+                 boxShadow: [
+ BoxShadow(
+  color: Colors.black.withOpacity(0.95),
+  spreadRadius: 3,
+  blurRadius: 10, 
+    offset: Offset(0, 3), 
+ )
+],
+                 color: Colors.white 
+             ) , 
              
              width : MediaQuery.of(context).size.width * 0.7, 
                   // In many cases, the key isn't mandatory
