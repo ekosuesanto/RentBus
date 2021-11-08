@@ -760,7 +760,7 @@ class _ViewMainState extends State<ViewMain> {
                   ),
              decoration : BoxDecoration(color: Colors.white) , 
              
-             width : MediaQuery.of(context).size.width * 0.8, 
+             width : MediaQuery.of(context).size.width * 0.7, 
                   // In many cases, the key isn't mandatory
                   key: UniqueKey(),
                   child: Padding(
