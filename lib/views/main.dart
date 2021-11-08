@@ -734,11 +734,7 @@ class _ViewMainState extends State<ViewMain> {
                   ),
                 ),
                 Container(
-                  padding: EdgeInsets.only(
-                    
-                    right: 24,
-                    left: 24,
-                  ),
+                  
                   width: MediaQuery.of(context).size.width,
                   height: 200,
                   child: ListView.builder(
@@ -754,8 +750,8 @@ class _ViewMainState extends State<ViewMain> {
              margin: EdgeInsets.only(
                     top: 30,
                     bottom: 30,
-                    right: (index < myProducts.length-1) ? 10 : 0,
-                    left:(index > 0 ) ? 10 : 0,
+                    right: (index < myProducts.length-1) ? 10 : 24,
+                    left:(index > 0 ) ? 10 : 24,
                   ),
              decoration : BoxDecoration( 
                  borderRadius : BorderRadius.circular(12), 
