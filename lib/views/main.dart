@@ -787,19 +787,19 @@ class _ViewMainState extends State<ViewMain> {
         selectedIndex: selectedIndex,
         barItems: [
           BarItem(
-            icon: Icons.home_rounded,
+            icon: Icons.home_outlined,
             title: 'Home',
           ),
           BarItem(
-            icon: Icons.search_rounded,
+            icon: Icons.search_outlined,
             title: 'Search',
           ),
           BarItem(
-            icon: Icons.bolt_rounded,
+            icon: Icons.bolt_outlined,
             title: 'Energy',
           ),
           BarItem(
-            icon: Icons.tune_rounded,
+            icon: Icons.tune_outlined,
             title: 'Settings',
           ),
         ],
