@@ -358,7 +358,7 @@ class _ViewMainState extends State<ViewMain> {
                                 ),
                                 border: InputBorder.none,
                                 // filled: true,
-                                hintText: 'Destination City',
+                                hintText: 'Surabaya - Surabaya Bungur Asih',
                                 hintStyle: TextStyle(
                                   fontSize: 12,
                                   letterSpacing: 1,
@@ -396,7 +396,7 @@ class _ViewMainState extends State<ViewMain> {
                                 ),
                                 border: InputBorder.none,
                                 // filled: true,
-                                hintText: 'Arrival City',
+                                hintText: 'Solo - Palur',
                                 hintStyle: TextStyle(
                                   fontSize: 12,
                                   letterSpacing: 1,
