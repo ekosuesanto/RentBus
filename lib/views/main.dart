@@ -766,10 +766,10 @@ class _ViewMainState extends State<ViewMain> {
                   child:  Column(
                       
                       children: [ 
-                          Text(myProducts[index],
+                          Text(myProducts[index]),
                                Divider(),
-                               Text(myProducts[index]
-                               ])),
+                               Text(myProducts[index]) 
+                               ]),
                 );
               }),
                 ), 
