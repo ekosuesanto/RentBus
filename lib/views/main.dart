@@ -741,7 +741,7 @@ class _ViewMainState extends State<ViewMain> {
                     left: 24,
                   ),
                   width: MediaQuery.of(context).size.width,
-                  height: 200,
+                  height: 150,
                   child: ListView.builder(
                     scrollDirection : Axis.horizontal, 
               // the number of items in the list
