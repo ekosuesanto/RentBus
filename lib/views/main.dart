@@ -791,12 +791,12 @@ class _ViewMainState extends State<ViewMain> {
             title: 'Home',
           ),
           BarItem(
-            icon: Icons.luggage_outlined,
-            title: 'My Trip',
+            icon: Icons.receipt_long_outlined,
+            title: 'History',
           ),
           BarItem(
-            icon: Icons.bolt_outlined,
-            title: 'Energy',
+            icon: Icons.local_activity_outlined,
+            title: 'Promo',
           ),
           BarItem(
             icon: Icons.account_circle_outlined,
