@@ -133,8 +133,8 @@ class _ViewMainState extends State<ViewMain> {
                 tooltip: MaterialLocalizations.of(context).openAppDrawerTooltip,
               );
             },
-          )
-                  :return IconButton(
+          );
+                  : return IconButton(
                 icon: const Icon(Icons.chevron_left, color: Color(0xFFFFFFFF)),
                 onPressed: () {
                   Scaffold.of(context).openDrawer();
