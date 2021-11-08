@@ -755,7 +755,7 @@ class _ViewMainState extends State<ViewMain> {
              margin: EdgeInsets.only(
                     top: 10,
                     bottom: 20,
-                    right: (index <= myProducts.length - 1 ) ? 24 : 0,
+                    right: (index < myProducts.length-1) ? 24 : 0,
                     left:(index > 0 ) ? 24 : 0,
                   ),
              decoration : BoxDecoration(color: Colors.white) , 
