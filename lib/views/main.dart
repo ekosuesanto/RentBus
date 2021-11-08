@@ -443,30 +443,6 @@ class _ViewMainState extends State<ViewMain> {
                 Container(
                   padding: EdgeInsets.only(
                     top: 10,
-                    bottom: 20,
-                    right: 24,
-                    left: 24,
-                  ),
-                  width: MediaQuery.of(context).size.width,
-                  child: Wrap(
-                    crossAxisAlignment: WrapCrossAlignment.center,
-                    spacing: 5,
-                    children: [
-                      Icon(
-                        Icons.list,
-                        size: 28.0,
-                        color: Colors.grey[500],
-                      ),
-                      Text(
-                        "Menu",
-                        style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16),
-                      )
-                    ],
-                  ),
-                ),
-                Container(
-                  padding: EdgeInsets.only(
-                    top: 10,
                     bottom: 30,
                     right: 24,
                     left: 24,
