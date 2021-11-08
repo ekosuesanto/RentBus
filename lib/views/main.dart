@@ -717,6 +717,31 @@ class _ViewMainState extends State<ViewMain> {
                         color: Colors.orange[500],
                       ),
                       Text(
+                        "Latest Trip",
+                        style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16),
+                      )
+                    ],
+                  ),
+                ),
+                Divider(),
+                Container(
+                  padding: EdgeInsets.only(
+                    top: 10,
+                    bottom: 20,
+                    right: 24,
+                    left: 24,
+                  ),
+                  width: MediaQuery.of(context).size.width,
+                  child: Wrap(
+                    crossAxisAlignment: WrapCrossAlignment.center,
+                    spacing: 5,
+                    children: [
+                      Icon(
+                        Icons.new_releases_outlined,
+                        size: 28.0,
+                        color: Colors.orange[500],
+                      ),
+                      Text(
                         "New Promo",
                         style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16),
                       )
