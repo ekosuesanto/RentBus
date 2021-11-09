@@ -856,6 +856,7 @@ children : [
       color: Colors.grey[400]
    ),
 ) , 
+SizedBox( height:7), 
 Container( 
     padding : EdgeInsets.all(10), 
     decoration : BoxDecoration ( 
@@ -865,7 +866,7 @@ Container(
     ) , 
     child : Text("LTHY09UI", style : 
      TextStyle ( 
-          fontSize:16, 
+          fontSize:14, 
           fontWeight: FontWeight.bold, 
           color: Colors.black
       ),) 
