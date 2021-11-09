@@ -772,6 +772,28 @@ class _ViewMainState extends State<ViewMain> {
                   child:  Column(
                       crossAxisAlignment : CrossAxisAlignment.start, 
                       children: [ 
+                         Stack(
+  children: <Widget>[
+    Positioned(
+      top: 30,
+      left: 30,
+      height:250,
+      width: 250,
+      child: Container(
+        width: 150,
+        height: 150,
+        color: Colors.green[300],
+        child: Text(
+          'Green',
+          style: TextStyle(
+              color: Colors.white,
+              fontSize: 20
+          ),
+        ),
+      ),
+    ),
+ ],
+),
                          Padding( 
                              padding: EdgeInsets.all(20),child:Text(myProducts[index])),
                                Divider(),
