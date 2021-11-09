@@ -846,7 +846,7 @@ children : [
       children : [ 
         Icon(
                               Icons.place_outlined,size:48), 
-        SizeBox(width:15), 
+        SizedBox(width:15), 
         Container( 
           child : Column ( 
             children : [ 
