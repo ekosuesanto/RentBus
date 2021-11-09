@@ -816,7 +816,7 @@ class _ViewMainState extends State<ViewMain> {
   children: <Widget>[
     Positioned(
       top: 50,
-      right: -15,
+      right: 15,
       height:30,
       width: 30,
       child: Container(
