@@ -878,7 +878,7 @@ Container(
   ) 
   
 ]
-                             ),
+                             ),) , 
                                Divider( thickness: 5, color: Colors.grey[100]),
                                Padding( 
                              padding: EdgeInsets.only(left: 24,right:24,top:15,bottom: 15),child:Text(myProducts[index])),
