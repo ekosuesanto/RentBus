@@ -836,8 +836,9 @@ class _ViewMainState extends State<ViewMain> {
  ],
 ), 
                             ),
-                         Padding( 
+                         Container( 
                              padding: EdgeInsets.only(left: 24,right:24,top:15,bottom: 15),child:Row( 
+                                 
 mainAxisAlignment : MainAxisAlignment.spaceBetween, 
 crossAxisAlignment : CrossAxisAlignment.center, 
 children : [ 
