@@ -851,7 +851,7 @@ children : [
           child : Column ( 
             children : [ 
                 Text("Booking Code",style : TextStyle ( 
-                        font size:12, fontWeight: FontWeight.bold, color: Colors.grey[400]
+                        fontSize:12, fontWeight: FontWeight.bold, color: Colors.grey[400]
                     ),) , 
                 Container( 
                   padding : EdgeInsets.all(10), 
