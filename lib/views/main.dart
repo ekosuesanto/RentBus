@@ -785,18 +785,15 @@ class _ViewMainState extends State<ViewMain> {
     Positioned(
       top: 30,
       left: 30,
-      height:250,
-      width: 250,
+      height:30,
+      width: 30,
       child: Container(
-        width: 150,
-        height: 150,
-        color: Colors.green[300],
+        width: 30,
+        height: 30,
+        color: Colors.grey[300],
         child: Text(
-          'Green',
-          style: TextStyle(
-              color: Colors.white,
-              fontSize: 20
-          ),
+          '',
+          
         ),
       ),
     ),
