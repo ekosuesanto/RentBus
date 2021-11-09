@@ -843,6 +843,7 @@ crossAxisAlignment : CrossAxisAlignment.center,
 children : [ 
   Container( 
     child: Row( 
+      mainAxisAlignment : MainAxisAlignment.spaceBetween, 
       children : [ 
         Icon(
                               Icons.place_outlined,size:40,color: Colors.red), 
