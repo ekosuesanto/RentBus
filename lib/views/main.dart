@@ -793,7 +793,7 @@ class _ViewMainState extends State<ViewMain> {
         
         decoration : BoxDecoration( 
           borderRadius : BorderRadius.circular(20), 
-          color: Colors.grey[200], 
+          color: Colors.grey[100], 
         ), 
         child: Text(
           '',
@@ -825,7 +825,7 @@ class _ViewMainState extends State<ViewMain> {
         
         decoration : BoxDecoration( 
           borderRadius : BorderRadius.circular(20), 
-          color: Colors.grey[200], 
+          color: Colors.grey[100], 
         ), 
         child: Text(
           '',
