@@ -748,7 +748,7 @@ class _ViewMainState extends State<ViewMain> {
               itemBuilder: (context, index) {
                 return Container( 
              margin: EdgeInsets.only(
-                    top: 30,
+                    top: 0,
                     bottom: 30,
                     right: (index < myProducts.length-1) ? 10 : 24,
                     left:(index > 0 ) ? 10 : 24,
