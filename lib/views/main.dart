@@ -772,7 +772,12 @@ class _ViewMainState extends State<ViewMain> {
                   child:  Column(
                       crossAxisAlignment : CrossAxisAlignment.start, 
                       children: [ 
-                         Stack(
+                         Stack( 
+                             alignment: Alignment.center,
+  textDirection: TextDirection.rtl,
+  fit: StackFit.loose,
+  overflow: Overflow.visible,
+  clipBehavior: Clip.hardEdge,
   children: <Widget>[
     Positioned(
       top: 30,
