@@ -773,7 +773,7 @@ class _ViewMainState extends State<ViewMain> {
                       crossAxisAlignment : CrossAxisAlignment.start, 
                       children: [ 
                         Container(
-                          width: 50.0,
+                          width: 30.0,
                           height: 0.0,
                           child: new Stack( 
                              alignment: Alignment.center,
@@ -790,7 +790,10 @@ class _ViewMainState extends State<ViewMain> {
       child: Container(
         width: 30,
         height: 30,
-        color: Colors.grey[300],
+        color: Colors.grey[200]
+        decoration : BoxDecoration( 
+          borderRadius : BorderRadius.all(BorderRadius.circular(20)) 
+        ), 
         child: Text(
           '',
           
