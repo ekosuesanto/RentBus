@@ -766,7 +766,7 @@ class _ViewMainState extends State<ViewMain> {
                  color: Colors.white 
              ) , 
              
-             width : MediaQuery.of(context).size.width , 
+             width : MediaQuery.of(context).size.width - 48 , 
                   // In many cases, the key isn't mandatory
                   key: UniqueKey(),
                   child:  Column(
@@ -816,7 +816,7 @@ class _ViewMainState extends State<ViewMain> {
   children: <Widget>[
     Positioned(
       top: 50,
-      left: MediaQuery. of(context).size.width - 15,
+      left: MediaQuery. of(context).size.width - 63,
       height:30,
       width: 30,
       child: Container(
