@@ -845,7 +845,7 @@ children : [
     child: Row( 
       children : [ 
         Icon(
-                              Icons.place_outlined,size:48), 
+                              Icons.place_outlined,size:40,color: Colors.red), 
         SizedBox(width:10), 
         Container( 
           child : Column ( 
