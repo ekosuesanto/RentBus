@@ -857,11 +857,11 @@ children : [
                   padding : EdgeInsets.all(10), 
                   decoration : BoxDecoration ( 
                     color : Colors.green[200], 
-                    borderRadius : BorderRadius.circular(15) , 
+                    borderRadius : BorderRadius.circular(15) ), 
                     child : Text("LTHY09UI", style : TextStyle ( 
                         font size:16, fontWeight: FontWeight.bold, color: Colors.red
                     ),) 
-                  
+                  ) , 
                 ),
               
             ]
