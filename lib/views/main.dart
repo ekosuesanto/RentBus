@@ -861,7 +861,7 @@ Container(
     padding : EdgeInsets.only(top:5,bottom:5,left:10,right:10), 
     decoration : BoxDecoration ( 
         color : Colors.green[100], 
-        borderRadius :BorderRadius.circular(15), 
+        borderRadius :BorderRadius.circular(10), 
                     
     ) , 
     child : Text("LTHY09UI", style : 
