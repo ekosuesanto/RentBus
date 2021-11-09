@@ -858,7 +858,7 @@ children : [
 ) , 
 SizedBox( height:7), 
 Container( 
-    padding : EdgeInsets.all(10), 
+    padding : EdgeInsets.only(top:5,bottom:5,left:10,right:10), 
     decoration : BoxDecoration ( 
         color : Colors.green[100], 
         borderRadius :BorderRadius.circular(15), 
