@@ -837,10 +837,10 @@ class _ViewMainState extends State<ViewMain> {
 ), 
                             ),
                          Padding( 
-                             padding: EdgeInsets.all(20),child:Text(myProducts[index])),
+                             padding: EdgeInsets.only(left: 24,right:24,top:15,bottom: 15),child:Text(myProducts[index])),
                                Divider( thickness: 5, color: Colors.grey[100]),
                                Padding( 
-                             padding: EdgeInsets.all(20),child:Text(myProducts[index])),
+                             padding: EdgeInsets.only(left: 24,right:24,top:15,bottom: 15),child:Text(myProducts[index])),
                           
                                ] 
                       
