@@ -860,7 +860,7 @@ SizedBox( height:7),
 Container( 
     padding : EdgeInsets.all(10), 
     decoration : BoxDecoration ( 
-        color : Colors.green[200], 
+        color : Colors.green[100], 
         borderRadius :BorderRadius.circular(15), 
                     
     ) , 
