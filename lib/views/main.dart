@@ -772,7 +772,10 @@ class _ViewMainState extends State<ViewMain> {
                   child:  Column(
                       crossAxisAlignment : CrossAxisAlignment.start, 
                       children: [ 
-                         Stack( 
+                        Container(
+                          width: 50.0,
+                          height: 0.0,
+                          child: new Stack( 
                              alignment: Alignment.center,
   
   
@@ -798,7 +801,8 @@ class _ViewMainState extends State<ViewMain> {
       ),
     ),
  ],
-),
+), 
+                            ), 
                          Padding( 
                              padding: EdgeInsets.all(20),child:Text(myProducts[index])),
                                Divider(),
