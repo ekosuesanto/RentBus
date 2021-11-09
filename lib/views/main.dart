@@ -772,12 +772,38 @@ class _ViewMainState extends State<ViewMain> {
                   child:  Column(
                       crossAxisAlignment : CrossAxisAlignment.start, 
                       children: [ 
-                         
-                         Padding( 
-                             padding: EdgeInsets.all(20),child:Text(myProducts[index])),
-                               Divider(),
-                               Padding( 
-                             padding: EdgeInsets.all(20),child:Text(myProducts[index])),
+                         Container(
+                          width: 30.0,
+                          height: 0.0,
+                          child: new Stack( 
+                             alignment: Alignment.center,
+  
+  
+  overflow: Overflow.visible,
+  clipBehavior: Clip.hardEdge,
+  children: <Widget>[
+    Positioned(
+      top: 50,
+      left: -15,
+      height:30,
+      width: 30,
+      child: Container(
+        width: 30,
+        height: 30,
+        
+        decoration : BoxDecoration( 
+          borderRadius : BorderRadius.circular(20), 
+          color: Colors.grey[200], 
+        ), 
+        child: Text(
+          '',
+          
+        ),
+      ),
+    ),
+ ],
+), 
+                            ),
                           Container(
                           width: 30.0,
                           height: 0.0,
@@ -810,6 +836,12 @@ class _ViewMainState extends State<ViewMain> {
  ],
 ), 
                             ),
+                         Padding( 
+                             padding: EdgeInsets.all(20),child:Text(myProducts[index])),
+                               Divider(),
+                               Padding( 
+                             padding: EdgeInsets.all(20),child:Text(myProducts[index])),
+                          
                                ] 
                       
                   ),
