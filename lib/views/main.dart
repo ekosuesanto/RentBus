@@ -876,7 +876,8 @@ Container(
             ]
           ) 
         ) , 
-        Text("Complete") 
+        Center(child: Text("Complete") ), 
+        
       ]
     ) 
   ) 
