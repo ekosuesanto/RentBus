@@ -758,9 +758,9 @@ class _ViewMainState extends State<ViewMain> {
                  boxShadow: [
  BoxShadow(
   color: Colors.black.withOpacity(0.05),
-  spreadRadius: 2,
+  spreadRadius: 3,
   blurRadius: 15, 
-    offset: Offset(0, 15), 
+    offset: Offset(-3, 15), 
  )
 ],
                  color: Colors.white 
