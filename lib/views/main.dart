@@ -790,9 +790,10 @@ class _ViewMainState extends State<ViewMain> {
       child: Container(
         width: 30,
         height: 30,
-        color: Colors.grey[200], 
+        
         decoration : BoxDecoration( 
           borderRadius : BorderRadius.circular(20), 
+          color: Colors.grey[200], 
         ), 
         child: Text(
           '',
