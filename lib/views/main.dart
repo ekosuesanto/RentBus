@@ -861,9 +861,9 @@ children : [
                     child : Text("LTHY09UI", style : TextStyle ( 
                         font size:16, fontWeight: FontWeight.bold, color: Colors.red
                     ),) 
-                  ), 
+                  
                 ),
-              ), 
+              
             ]
           ) 
         ) 
