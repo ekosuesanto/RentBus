@@ -760,7 +760,7 @@ class _ViewMainState extends State<ViewMain> {
   color: Colors.black.withOpacity(0.05),
   spreadRadius: 3,
   blurRadius: 15, 
-    offset: Offset(-3, 3), 
+    offset: Offset(0, 3), 
  )
 ],
                  color: Colors.white 
