@@ -783,7 +783,7 @@ class _ViewMainState extends State<ViewMain> {
   clipBehavior: Clip.hardEdge,
   children: <Widget>[
     Positioned(
-      top: 75,
+      top: 65,
       left: -15,
       height:30,
       width: 30,
@@ -815,7 +815,7 @@ class _ViewMainState extends State<ViewMain> {
   clipBehavior: Clip.hardEdge,
   children: <Widget>[
     Positioned(
-      top: 75,
+      top: 65,
       left: MediaQuery. of(context).size.width - 63,
       height:30,
       width: 30,
