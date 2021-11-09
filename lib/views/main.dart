@@ -851,7 +851,7 @@ children : [
           child : Column ( 
             children : [ 
               Text("Booking Code", style : TextStyle (
-      fontSize:12, 
+      fontSize:10, 
       fontWeight: FontWeight.bold, 
       color: Colors.grey[400]
    ),
@@ -866,7 +866,7 @@ Container(
     ) , 
     child : Text("LTHY09UI", style : 
      TextStyle ( 
-          fontSize:14, 
+          fontSize:12, 
           fontWeight: FontWeight.bold, 
           color: Colors.black
       ),) 
