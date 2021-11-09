@@ -875,12 +875,12 @@ Container(
  ),
             ]
           ) 
-        ) , 
-        Center(child: Text("Complete") ), 
+        )  
         
       ]
     ) 
-  ) 
+  ) , 
+        Center(child: Text("Complete") ),
   
 ]
                              ),) , 
