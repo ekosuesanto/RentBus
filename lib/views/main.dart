@@ -837,7 +837,41 @@ class _ViewMainState extends State<ViewMain> {
 ), 
                             ),
                          Padding( 
-                             padding: EdgeInsets.only(left: 24,right:24,top:15,bottom: 15),child:Text(myProducts[index])),
+                             padding: EdgeInsets.only(left: 24,right:24,top:15,bottom: 15),child:Row( 
+mainAxisAlignment : MainAxisAlignment.spaceBetween, 
+crossAxisAlignment : CrossAxisAlignment.center, 
+children : [ 
+  Container( 
+    child: Row( 
+      children : [ 
+        Icon(
+                              Icons.place_outlined,size:48), 
+        SizeBox(width:15), 
+        Container( 
+          child : Column ( 
+            children : [ 
+                Text("Booking Code",style : TextStyle ( 
+                        font size:12, fontWeight: FontWeight.bold, color: Colors.grey[400]
+                    ),) , 
+                Container( 
+                  padding : EdgeInsets.all(10), 
+                  decoration : BoxDecoration ( 
+                    color : Colors.green[200], 
+                    borderRadius : BorderRadius.circular(15) , 
+                    child : Text("LTHY09UI", style : TextStyle ( 
+                        font size:16, fontWeight: FontWeight.bold, color: Colors.red
+                    ),) 
+                  ), 
+                ) 
+            ]
+          ) 
+        ) 
+      ]
+    ) 
+  ) 
+  
+]
+                             ),
                                Divider( thickness: 5, color: Colors.grey[100]),
                                Padding( 
                              padding: EdgeInsets.only(left: 24,right:24,top:15,bottom: 15),child:Text(myProducts[index])),
