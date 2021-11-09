@@ -816,7 +816,7 @@ class _ViewMainState extends State<ViewMain> {
   children: <Widget>[
     Positioned(
       top: 50,
-      left: MediaQuery. of(context).size.width * 0.8 - 15,
+      left: MediaQuery. of(context).size.width * 0.75 - 15,
       height:30,
       width: 30,
       child: Container(
