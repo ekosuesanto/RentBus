@@ -808,7 +808,7 @@ class _ViewMainState extends State<ViewMain> {
                           width: 30.0,
                           height: 0.0,
                           child: new Stack( 
-                             alignment: Alignment.center,
+                             alignment: Alignment.centerRight,
   
   
   overflow: Overflow.visible,
