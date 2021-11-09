@@ -850,22 +850,26 @@ children : [
         Container( 
           child : Column ( 
             children : [ 
-                Text("Booking Code",style : TextStyle ( 
-                        fontSize:12, fontWeight: FontWeight.bold, color: Colors.grey[400]
-                    ),) , 
-                Container( 
-                  padding : EdgeInsets.all(10), 
-                  decoration : BoxDecoration ( 
-                    color : Colors.green[200], 
-                    borderRadius : BorderRadius.circular(15), 
+              Text("Booking Code", style : TextStyle (
+      fontSize:12, 
+      fontWeight: FontWeight.bold, 
+      color: Colors.grey[400]
+   ),
+) , 
+Container( 
+    padding : EdgeInsets.all(10), 
+    decoration : BoxDecoration ( 
+        color : Colors.green[200], 
+        borderRadius :BorderRadius.circular(15), 
                     
-                  ) , 
-                  child : Text("LTHY09UI", style : TextStyle ( 
-                        fontSize:16, fontWeight: FontWeight.bold, color: Colors.red
-                    ),),) , 
-                  ]
-                ),
-              ), 
+    ) , 
+    child : Text("LTHY09UI", style : 
+     TextStyle ( 
+          fontSize:16, 
+          fontWeight: FontWeight.bold, 
+          color: Colors.red
+      ), 
+ ), 
             ]
           ) 
         ) 
