@@ -783,8 +783,8 @@ class _ViewMainState extends State<ViewMain> {
   clipBehavior: Clip.hardEdge,
   children: <Widget>[
     Positioned(
-      top: 30,
-      left: 30,
+      top: 50,
+      left: -15,
       height:30,
       width: 30,
       child: Container(
