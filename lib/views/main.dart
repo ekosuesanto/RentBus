@@ -774,8 +774,8 @@ class _ViewMainState extends State<ViewMain> {
                       children: [ 
                          Stack( 
                              alignment: Alignment.center,
-  textDirection: TextDirection.rtl,
-  fit: StackFit.loose,
+  
+  
   overflow: Overflow.visible,
   clipBehavior: Clip.hardEdge,
   children: <Widget>[
