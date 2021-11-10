@@ -1,5 +1,5 @@
 name: helloworld
-description: A new Flutter project.
+description: Bus Online Ticketing.
 
 # The following defines the version and build number for your application.
 # A version number is three numbers separated by dots, like 1.2.43
@@ -31,6 +31,8 @@ dependencies:
   multi_wizard: ^1.0.1
   google_fonts: ^2.1.0
   dot_navigation_bar:
+  banner_carousel: ^1.2.1
+  sliding_clipped_nav_bar: ^1.0.3
 dev_dependencies:
   flutter_test:
     sdk: flutter
@@ -54,6 +56,8 @@ flutter:
     - assets/svg/instagram.svg
     - assets/onboarding/
     - assets/icon/
+    - assets/promo/
+    - assets/images/
 
 
   # An image asset can refer to one or more resolution-specific "variants", see
