@@ -1,10 +1,10 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:banner_carousel/banner_carousel.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:shared_preferences/shared_preferences.dart';
-import 'package:helloworld/views/auth/sign_in.dart';
-import 'package:dot_navigation_bar/dot_navigation_bar.dart';
+// import 'package:google_fonts/google_fonts.dart';
+// import 'package:shared_preferences/shared_preferences.dart';
+// import 'package:rosalia_indah_transport/views/auth/sign_in.dart';
+// import 'package:dot_navigation_bar/dot_navigation_bar.dart';
 import 'package:sliding_clipped_nav_bar/sliding_clipped_nav_bar.dart';
 
 class ViewMain extends StatefulWidget {
@@ -13,7 +13,7 @@ class ViewMain extends StatefulWidget {
   _ViewMainState createState() => _ViewMainState();
 }
 
-List<String> _SelectedTab = ["Home", "History", "Promo", "Profile" ];
+List<String> _SelectedTab = ["Home", "History", "Promo", "Profile"];
 
 class _ViewMainState extends State<ViewMain> {
   bool showNotificationIcon = true;
@@ -25,13 +25,16 @@ class _ViewMainState extends State<ViewMain> {
     super.initState();
     _pageController = PageController(initialPage: selectedIndex);
   }
+
   final _formDepartureKey = GlobalKey<FormState>();
-  final TextEditingController _departureController = new TextEditingController();
+  final TextEditingController _departureController =
+      new TextEditingController();
   final TextEditingController _arrivalController = new TextEditingController();
-  
+
   final myProducts = List<String>.generate(5, (i) => 'Product $i');
 
-  Widget _buildCustomProfil(String fullname, AssetImage logo, double logoSize, bool showNotificationIcon) {
+  Widget _buildCustomProfil(String fullname, AssetImage logo, double logoSize,
+      bool showNotificationIcon) {
     return Container(
       padding: EdgeInsets.only(top: 10, bottom: 15, right: 24, left: 24),
       child: Row(
@@ -125,881 +128,1130 @@ class _ViewMainState extends State<ViewMain> {
           ],
           leading: Builder(
             builder: (BuildContext context) {
-              return (selectedIndex==0) ? 
-                  IconButton(
-                icon: const Icon(Icons.menu, color: Color(0xFFFFFFFF)),
-                onPressed: () {
-                  Scaffold.of(context).openDrawer();
-                },
-                tooltip: MaterialLocalizations.of(context).openAppDrawerTooltip,
-              )
-            
+              return (selectedIndex == 0)
+                  ? IconButton(
+                      icon: const Icon(Icons.menu, color: Color(0xFFFFFFFF)),
+                      onPressed: () {
+                        Scaffold.of(context).openDrawer();
+                      },
+                      tooltip: MaterialLocalizations.of(context)
+                          .openAppDrawerTooltip,
+                    )
                   : IconButton(
-                icon: const Icon(Icons.chevron_left, color: Color(0xFFFFFFFF)),
-                onPressed: () {
-                  Scaffold.of(context).openDrawer();
-                },
-                tooltip: MaterialLocalizations.of(context).openAppDrawerTooltip,
-              );
+                      icon: const Icon(Icons.chevron_left,
+                          color: Color(0xFFFFFFFF)),
+                      onPressed: () {
+                        Scaffold.of(context).openDrawer();
+                      },
+                      tooltip: MaterialLocalizations.of(context)
+                          .openAppDrawerTooltip,
+                    );
             },
           ),
         ),
         extendBody: true,
-        body:PageView(
-        physics: NeverScrollableScrollPhysics(),
-        controller: _pageController,
-        children: [ 
+        body: PageView(
+          physics: NeverScrollableScrollPhysics(),
+          controller: _pageController,
+          children: [
             SingleChildScrollView(
-          physics: ScrollPhysics(),
-          reverse: false,
-          primary: false,
-          child: Container(
-            width: MediaQuery.of(context).size.width,
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Container(
-                  decoration: new BoxDecoration(color: Colors.grey[200]),
-                  child: Container(
-                    padding: EdgeInsets.only(
-                      bottom: 24,
-                    ),
-                    decoration: new BoxDecoration(
-                      borderRadius: new BorderRadius.only(
-                        bottomRight: Radius.circular(16),
-                        bottomLeft: Radius.circular(16),
-                      ),
-                      color: Colors.blue[900],
-                      // image: new DecorationImage(
-                      //   image: AssetImage("assets/images/batik.png"),
-                      //   colorFilter: new ColorFilter.mode(
-                      //       Colors.red[700]!.withOpacity(0.9),
-                      //       BlendMode.dstATop),
-                      //   fit: BoxFit.cover,
-                      // ),
-                    ),
-                    child: Column(
-                      children: [
-                        _buildCustomProfil(
-                          "Eko Susanto",
-                          AssetImage("assets/icon/default-user-icon.png"),
-                          50.0,
-                          true,
+              physics: ScrollPhysics(),
+              reverse: false,
+              primary: false,
+              child: Container(
+                width: MediaQuery.of(context).size.width,
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Container(
+                      decoration: new BoxDecoration(color: Colors.grey[200]),
+                      child: Container(
+                        padding: EdgeInsets.only(
+                          bottom: 24,
                         ),
-                        SizedBox(height: 5),
-                        Container(
-                          margin: EdgeInsets.only(
-                            left: 24,
-                            right: 24,
+                        decoration: new BoxDecoration(
+                          borderRadius: new BorderRadius.only(
+                            bottomRight: Radius.circular(16),
+                            bottomLeft: Radius.circular(16),
                           ),
-                          decoration: new BoxDecoration(
-                            borderRadius: new BorderRadius.only(
-                              bottomRight: Radius.circular(16),
-                              bottomLeft: Radius.circular(16),
-                              topRight: Radius.circular(16),
-                              topLeft: Radius.circular(16),
+                          color: Colors.blue[900],
+                          // image: new DecorationImage(
+                          //   image: AssetImage("assets/images/batik.png"),
+                          //   colorFilter: new ColorFilter.mode(
+                          //       Colors.red[700]!.withOpacity(0.9),
+                          //       BlendMode.dstATop),
+                          //   fit: BoxFit.cover,
+                          // ),
+                        ),
+                        child: Column(
+                          children: [
+                            _buildCustomProfil(
+                              "Eko Susanto",
+                              AssetImage("assets/icon/default-user-icon.png"),
+                              50.0,
+                              true,
                             ),
-                            color: Colors.white,
-                          ),
-                          child: Row(
-                            children: [
-                              Flexible(
-                                flex: 1,
-                                fit: FlexFit.tight,
-                                child: Container(
-                                  padding: EdgeInsets.only(
-                                    top: 20,
-                                    bottom: 20,
-                                    left: 24,
-                                    right: 24,
-                                  ),
-                                  child: Row(
-                                    children: [
-                                      Container(
-                                        child: Icon(
-                                          Icons.redeem_outlined,
-                                          color: Colors.red,
-                                          size: 32.0,
-                                        ),
-                                      ),
-                                      SizedBox(width: 15),
-                                      Container(
-                                        child: Column(
-                                          crossAxisAlignment: CrossAxisAlignment.start,
-                                          children: [
-                                            Container(
-                                              child: Text(
-                                                "My Poin",
-                                                style: TextStyle(
-                                                  fontWeight: FontWeight.bold,
-                                                  fontSize: 12,
-                                                  color: Colors.black87,
-                                                ),
-                                              ),
-                                            ),
-                                            SizedBox(height: 5),
-                                            Container(
-                                              child: Text(
-                                                "3000",
-                                                style: TextStyle(
-                                                  fontWeight: FontWeight.bold,
-                                                  fontSize: 16,
-                                                  color: Colors.red,
-                                                ),
-                                              ),
-                                            ),
-                                          ],
-                                        ),
-                                      ),
-                                    ],
-                                  ),
-                                ),
+                            SizedBox(height: 5),
+                            Container(
+                              margin: EdgeInsets.only(
+                                left: 24,
+                                right: 24,
                               ),
-                              Container(
-                                height: 60,
-                                child: VerticalDivider(
-                                  width: 2,
-                                  color: Colors.red,
+                              decoration: new BoxDecoration(
+                                borderRadius: new BorderRadius.only(
+                                  bottomRight: Radius.circular(16),
+                                  bottomLeft: Radius.circular(16),
+                                  topRight: Radius.circular(16),
+                                  topLeft: Radius.circular(16),
                                 ),
-                              ),
-                              new Flexible(
-                                flex: 1,
-                                fit: FlexFit.tight,
-                                child: Container(
-                                  padding: EdgeInsets.only(
-                                    top: 20,
-                                    bottom: 20,
-                                    left: 24,
-                                    right: 24,
-                                  ),
-                                  child: Row(
-                                    children: [
-                                      Container(
-                                        child: Icon(
-                                          Icons.book_online_outlined,
-                                          color: Colors.red,
-                                          size: 32.0,
-                                        ),
-                                      ),
-                                      SizedBox(width: 15),
-                                      Container(
-                                        child: Column(
-                                          crossAxisAlignment: CrossAxisAlignment.start,
-                                          children: [
-                                            Container(
-                                              child: Text(
-                                                "My Trip",
-                                                style: TextStyle(
-                                                  fontWeight: FontWeight.bold,
-                                                  fontSize: 12,
-                                                  color: Colors.black87,
-                                                ),
-                                              ),
-                                            ),
-                                            SizedBox(height: 5),
-                                            Container(
-                                              child: Text(
-                                                "0",
-                                                style: TextStyle(
-                                                  fontWeight: FontWeight.bold,
-                                                  fontSize: 16,
-                                                  color: Colors.red,
-                                                ),
-                                              ),
-                                            ),
-                                          ],
-                                        ),
-                                      ),
-                                    ],
-                                  ),
-                                ),
-                              ),
-                            ],
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
-                ),
-                Container(
-                  width: MediaQuery.of(context).size.width,
-                  padding: EdgeInsets.only(
-                    top: 20,
-                    bottom: 30,
-                    right: 24,
-                    left: 24,
-                  ),
-                  decoration: new BoxDecoration(
-                    color: Colors.grey[200],
-                  ),
-                  child: Container(
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Container(
-                          decoration: BoxDecoration(color: Colors.white, borderRadius: BorderRadius.all(Radius.circular(12))),
-                          padding: EdgeInsets.only(
-                            left: 10,
-                            top: 5,
-                            bottom: 5,
-                          ),
-                          child: Form(
-                            key: _formDepartureKey,
-                            autovalidateMode: AutovalidateMode.always,
-                            child: TextFormField(
-                              readOnly: true,
-                              controller: _departureController,
-                              keyboardType: TextInputType.name,
-                              // autovalidateMode: AutovalidateMode.always,
-                              decoration: InputDecoration(
-                                prefixIcon: Icon(
-                                  Icons.trip_origin_outlined,
-                                  color: Colors.red,
-                                  size: 20,
-                                ),
-                                border: InputBorder.none,
-                                // filled: true,
-                                hintText: 'Surabaya - Surabaya Bungur Asih',
-                                hintStyle: TextStyle(
-                                  fontSize: 12,
-                                  letterSpacing: 1,
-                                  fontWeight: FontWeight.bold,
-                                ),
-                                hintMaxLines: 1,
-                              ),
-                              onTap: () {},
-                            ),
-                          ),
-                        ),
-                        SizedBox(
-                          height: 15,
-                        ),
-                        Container(
-                          decoration: BoxDecoration(color: Colors.white, borderRadius: BorderRadius.all(Radius.circular(12))),
-                          padding: EdgeInsets.only(
-                            left: 10,
-                            top: 5,
-                            bottom: 5,
-                          ),
-                          child: Form(
-                            // key: _formDepartureKey,
-                            // autovalidateMode: AutovalidateMode.always,
-                            child: TextFormField(
-                              readOnly: true,
-                              controller: _arrivalController,
-                              keyboardType: TextInputType.name,
-                              // autovalidateMode: AutovalidateMode.always,
-                              decoration: InputDecoration(
-                                prefixIcon: Icon(
-                                  Icons.trip_origin_outlined,
-                                  color: Colors.blue,
-                                  size: 20,
-                                ),
-                                border: InputBorder.none,
-                                // filled: true,
-                                hintText: 'Solo - Palur',
-                                hintStyle: TextStyle(
-                                  fontSize: 12,
-                                  letterSpacing: 1,
-                                  fontWeight: FontWeight.bold,
-                                ),
-                                hintMaxLines: 1,
-                              ),
-                              onTap: () {},
-                            ),
-                          ),
-                        ),
-                        Container(
-                          width: 50.0,
-                          height: 0.0,
-                          child: new Stack(
-                            overflow: // ignore: deprecated_member_use
-                                Overflow.visible, // ignore: deprecated_member_use
-                            children: [
-                              new Positioned(
-                                left: MediaQuery.of(context).size.width - 120,
-                                top: -90,
-                                child: Container(
-                                  padding: EdgeInsets.all(10),
-                                  decoration: BoxDecoration(borderRadius: BorderRadius.circular(50), color: Colors.grey[200]),
-                                  alignment: Alignment.bottomRight,
-                                  child: Icon(
-                                    Icons.swap_vert_outlined,
-                                    size: 30,
-                                    color: Colors.black,
-                                  ),
-                                ),
-                              ),
-                            ],
-                          ),
-                        ),
-                        SizedBox(
-                          height: 20,
-                        ),
-                        Container(
-                          child: ElevatedButton(
-                            style: ButtonStyle(
-                              backgroundColor: MaterialStateProperty.all(Colors.red[400]),
-                              minimumSize: MaterialStateProperty.all(Size(MediaQuery.of(context).size.width, 50)),
-                            ),
-                            onPressed: () {},
-                            child: Text(
-                              "Continue",
-                              style: TextStyle(
-                                fontSize: 16,
-                                fontWeight: FontWeight.bold,
                                 color: Colors.white,
                               ),
+                              child: Row(
+                                children: [
+                                  Flexible(
+                                    flex: 1,
+                                    fit: FlexFit.tight,
+                                    child: Container(
+                                      padding: EdgeInsets.only(
+                                        top: 20,
+                                        bottom: 20,
+                                        left: 24,
+                                        right: 24,
+                                      ),
+                                      child: Row(
+                                        children: [
+                                          Container(
+                                            child: Icon(
+                                              Icons.redeem_outlined,
+                                              color: Colors.red,
+                                              size: 32.0,
+                                            ),
+                                          ),
+                                          SizedBox(width: 15),
+                                          Container(
+                                            child: Column(
+                                              crossAxisAlignment:
+                                                  CrossAxisAlignment.start,
+                                              children: [
+                                                Container(
+                                                  child: Text(
+                                                    "My Poin",
+                                                    style: TextStyle(
+                                                      fontWeight:
+                                                          FontWeight.bold,
+                                                      fontSize: 12,
+                                                      color: Colors.black87,
+                                                    ),
+                                                  ),
+                                                ),
+                                                SizedBox(height: 5),
+                                                Container(
+                                                  child: Text(
+                                                    "3000",
+                                                    style: TextStyle(
+                                                      fontWeight:
+                                                          FontWeight.bold,
+                                                      fontSize: 16,
+                                                      color: Colors.red,
+                                                    ),
+                                                  ),
+                                                ),
+                                              ],
+                                            ),
+                                          ),
+                                        ],
+                                      ),
+                                    ),
+                                  ),
+                                  Container(
+                                    height: 60,
+                                    child: VerticalDivider(
+                                      width: 2,
+                                      color: Colors.red,
+                                    ),
+                                  ),
+                                  new Flexible(
+                                    flex: 1,
+                                    fit: FlexFit.tight,
+                                    child: Container(
+                                      padding: EdgeInsets.only(
+                                        top: 20,
+                                        bottom: 20,
+                                        left: 24,
+                                        right: 24,
+                                      ),
+                                      child: Row(
+                                        children: [
+                                          Container(
+                                            child: Icon(
+                                              Icons.book_online_outlined,
+                                              color: Colors.red,
+                                              size: 32.0,
+                                            ),
+                                          ),
+                                          SizedBox(width: 15),
+                                          Container(
+                                            child: Column(
+                                              crossAxisAlignment:
+                                                  CrossAxisAlignment.start,
+                                              children: [
+                                                Container(
+                                                  child: Text(
+                                                    "My Trip",
+                                                    style: TextStyle(
+                                                      fontWeight:
+                                                          FontWeight.bold,
+                                                      fontSize: 12,
+                                                      color: Colors.black87,
+                                                    ),
+                                                  ),
+                                                ),
+                                                SizedBox(height: 5),
+                                                Container(
+                                                  child: Text(
+                                                    "0",
+                                                    style: TextStyle(
+                                                      fontWeight:
+                                                          FontWeight.bold,
+                                                      fontSize: 16,
+                                                      color: Colors.red,
+                                                    ),
+                                                  ),
+                                                ),
+                                              ],
+                                            ),
+                                          ),
+                                        ],
+                                      ),
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ),
+                    Container(
+                      width: MediaQuery.of(context).size.width,
+                      padding: EdgeInsets.only(
+                        top: 20,
+                        bottom: 30,
+                        right: 24,
+                        left: 24,
+                      ),
+                      decoration: new BoxDecoration(
+                        color: Colors.grey[200],
+                      ),
+                      child: Container(
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Container(
+                              decoration: BoxDecoration(
+                                  color: Colors.white,
+                                  borderRadius:
+                                      BorderRadius.all(Radius.circular(12))),
+                              padding: EdgeInsets.only(
+                                left: 10,
+                                top: 5,
+                                bottom: 5,
+                              ),
+                              child: Form(
+                                key: _formDepartureKey,
+                                autovalidateMode: AutovalidateMode.always,
+                                child: TextFormField(
+                                  readOnly: true,
+                                  controller: _departureController,
+                                  keyboardType: TextInputType.name,
+                                  // autovalidateMode: AutovalidateMode.always,
+                                  decoration: InputDecoration(
+                                    prefixIcon: Icon(
+                                      Icons.trip_origin_outlined,
+                                      color: Colors.red,
+                                      size: 20,
+                                    ),
+                                    border: InputBorder.none,
+                                    // filled: true,
+                                    hintText: 'Surabaya - Surabaya Bungur Asih',
+                                    hintStyle: TextStyle(
+                                      fontSize: 12,
+                                      letterSpacing: 1,
+                                      fontWeight: FontWeight.bold,
+                                    ),
+                                    hintMaxLines: 1,
+                                  ),
+                                  onTap: () {},
+                                ),
+                              ),
+                            ),
+                            SizedBox(
+                              height: 15,
+                            ),
+                            Container(
+                              decoration: BoxDecoration(
+                                  color: Colors.white,
+                                  borderRadius:
+                                      BorderRadius.all(Radius.circular(12))),
+                              padding: EdgeInsets.only(
+                                left: 10,
+                                top: 5,
+                                bottom: 5,
+                              ),
+                              child: Form(
+                                // key: _formDepartureKey,
+                                // autovalidateMode: AutovalidateMode.always,
+                                child: TextFormField(
+                                  readOnly: true,
+                                  controller: _arrivalController,
+                                  keyboardType: TextInputType.name,
+                                  // autovalidateMode: AutovalidateMode.always,
+                                  decoration: InputDecoration(
+                                    prefixIcon: Icon(
+                                      Icons.trip_origin_outlined,
+                                      color: Colors.blue,
+                                      size: 20,
+                                    ),
+                                    border: InputBorder.none,
+                                    // filled: true,
+                                    hintText: 'Solo - Palur',
+                                    hintStyle: TextStyle(
+                                      fontSize: 12,
+                                      letterSpacing: 1,
+                                      fontWeight: FontWeight.bold,
+                                    ),
+                                    hintMaxLines: 1,
+                                  ),
+                                  onTap: () {},
+                                ),
+                              ),
+                            ),
+                            Container(
+                              width: 50.0,
+                              height: 0.0,
+                              child: new Stack(
+                                overflow: // ignore: deprecated_member_use
+                                    Overflow
+                                        .visible, // ignore: deprecated_member_use
+                                children: [
+                                  new Positioned(
+                                    left:
+                                        MediaQuery.of(context).size.width - 120,
+                                    top: -90,
+                                    child: Container(
+                                      padding: EdgeInsets.all(10),
+                                      decoration: BoxDecoration(
+                                          borderRadius:
+                                              BorderRadius.circular(50),
+                                          color: Colors.grey[200]),
+                                      alignment: Alignment.bottomRight,
+                                      child: Icon(
+                                        Icons.swap_vert_outlined,
+                                        size: 30,
+                                        color: Colors.black,
+                                      ),
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ),
+                            SizedBox(
+                              height: 20,
+                            ),
+                            Container(
+                              child: ElevatedButton(
+                                style: ButtonStyle(
+                                  backgroundColor: MaterialStateProperty.all(
+                                      Colors.red[400]),
+                                  minimumSize: MaterialStateProperty.all(Size(
+                                      MediaQuery.of(context).size.width, 50)),
+                                ),
+                                onPressed: () {},
+                                child: Text(
+                                  "Continue",
+                                  style: TextStyle(
+                                    fontSize: 16,
+                                    fontWeight: FontWeight.bold,
+                                    color: Colors.white,
+                                  ),
+                                ),
+                              ),
+                            )
+                          ],
+                        ),
+                      ),
+                    ),
+                    SizedBox(height: 24),
+                    Container(
+                      padding: EdgeInsets.only(
+                        top: 10,
+                        bottom: 30,
+                        right: 24,
+                        left: 24,
+                      ),
+                      width: MediaQuery.of(context).size.width,
+                      child: Wrap(
+                        spacing: 10,
+                        runSpacing: 10,
+                        alignment: WrapAlignment.spaceBetween,
+                        children: [
+                          Container(
+                            // padding: EdgeInsets.all(10),
+                            width: MediaQuery.of(context).size.width / 4,
+                            // decoration: BoxDecoration(
+                            //     color: Colors.yellow.shade200,
+                            //     border: Border.all(
+                            //       color: Colors.yellow,
+                            //       width: 3,
+                            //     ),
+                            //     borderRadius:
+                            //         BorderRadius.all(Radius.circular(12))),
+                            child: Column(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              crossAxisAlignment: CrossAxisAlignment.center,
+                              children: [
+                                Icon(
+                                  Icons.book_online_outlined,
+                                  size: 30,
+                                  color: Colors.blue[300],
+                                ),
+                                SizedBox(
+                                  height: 10,
+                                ),
+                                Container(
+                                  alignment: Alignment.topCenter,
+                                  // height: 28,
+                                  child: Text(
+                                    "Booking Ticket",
+                                    style: TextStyle(
+                                        fontSize: 10,
+                                        fontWeight: FontWeight.w700,
+                                        color: Colors.black54),
+                                    textAlign: TextAlign.center,
+                                  ),
+                                ),
+                              ],
                             ),
                           ),
-                        )
-                      ],
-                    ),
-                  ),
-                ),
-                SizedBox(height: 24),
-                Container(
-                  padding: EdgeInsets.only(
-                    top: 10,
-                    bottom: 30,
-                    right: 24,
-                    left: 24,
-                  ),
-                  width: MediaQuery.of(context).size.width,
-                  child: Wrap(
-                    spacing: 10,
-                    runSpacing: 10,
-                    alignment: WrapAlignment.spaceBetween,
-                    children: [
-                      Container(
-                        // padding: EdgeInsets.all(10),
-                        width: MediaQuery.of(context).size.width / 4,
-                        // decoration: BoxDecoration(
-                        //     color: Colors.yellow.shade200,
-                        //     border: Border.all(
-                        //       color: Colors.yellow,
-                        //       width: 3,
-                        //     ),
-                        //     borderRadius:
-                        //         BorderRadius.all(Radius.circular(12))),
-                        child: Column(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          crossAxisAlignment: CrossAxisAlignment.center,
-                          children: [
-                            Icon(
-                              Icons.book_online_outlined,
-                              size: 30,
-                              color: Colors.blue[300],
-                            ),
-                            SizedBox(
-                              height: 10,
-                            ),
-                            Container(
-                              alignment: Alignment.topCenter,
-                              // height: 28,
-                              child: Text(
-                                "Booking Ticket",
-                                style: TextStyle(fontSize: 10, fontWeight: FontWeight.w700, color: Colors.black54),
-                                textAlign: TextAlign.center,
-                              ),
-                            ),
-                          ],
-                        ),
-                      ),
-                      Container(
-                        // padding: EdgeInsets.all(10),
-                        width: MediaQuery.of(context).size.width / 4,
-                        // decoration: BoxDecoration(
-                        //     color: Colors.yellow.shade200,
-                        //     border: Border.all(
-                        //       color: Colors.yellow,
-                        //       width: 3,
-                        //     ),
-                        //     borderRadius:
-                        //         BorderRadius.all(Radius.circular(12))),
-                        child: Column(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          crossAxisAlignment: CrossAxisAlignment.center,
-                          children: [
-                            Icon(
-                              Icons.luggage_outlined,
-                              size: 30,
-                              color: Colors.green[300],
-                            ),
-                            SizedBox(
-                              height: 10,
-                            ),
-                            Container(
-                              alignment: Alignment.topCenter,
-                              // height: 28,
-                              child: Text(
-                                "My Trip",
-                                style: TextStyle(
-                                  fontSize: 10,
-                                  fontWeight: FontWeight.w700,
-                                  color: Colors.black54,
-                                ),
-                                textAlign: TextAlign.center,
-                              ),
-                            ),
-                          ],
-                        ),
-                      ),
-                      Container(
-                        // padding: EdgeInsets.all(10),
-                        width: MediaQuery.of(context).size.width / 4,
-                        // height: 90,
-                        // decoration: BoxDecoration(
-                        //     color: Colors.yellow.shade200,
-                        //     border: Border.all(
-                        //       color: Colors.yellow,
-                        //       width: 3,
-                        //     ),
-                        //     borderRadius:
-                        //         BorderRadius.all(Radius.circular(12))),
-                        child: Column(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          crossAxisAlignment: CrossAxisAlignment.center,
-                          children: [
-                            Icon(
-                              Icons.directions_bus_outlined,
-                              size: 30,
-                              color: Colors.orange[300],
-                            ),
-                            SizedBox(
-                              height: 10,
-                            ),
-                            Container(
-                              alignment: Alignment.topCenter,
-                              height: 28,
-                              child: Text(
-                                "Rental Bus",
-                                style: TextStyle(
-                                  fontSize: 10,
-                                  fontWeight: FontWeight.w700,
-                                  color: Colors.black54,
-                                ),
-                                textAlign: TextAlign.center,
-                              ),
-                            ),
-                          ],
-                        ),
-                      ),
-                      Container(
-                        // padding: EdgeInsets.all(10),
-                        width: MediaQuery.of(context).size.width / 4,
-                        // height: 90,
-                        // decoration: BoxDecoration(
-                        //     color: Colors.yellow.shade200,
-                        //     border: Border.all(
-                        //       color: Colors.yellow,
-                        //       width: 3,
-                        //     ),
-                        //     borderRadius:
-                        //         BorderRadius.all(Radius.circular(12))),
-                        child: Column(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          crossAxisAlignment: CrossAxisAlignment.center,
-                          children: [
-                            Icon(
-                              Icons.local_activity_outlined,
-                              size: 30,
-                              color: Colors.deepPurple[300],
-                            ),
-                            SizedBox(
-                              height: 10,
-                            ),
-                            Container(
-                              alignment: Alignment.center,
-                              // height: 28,
-                              child: Text(
-                                "Promo",
-                                style: TextStyle(
-                                  fontSize: 10,
-                                  fontWeight: FontWeight.w700,
-                                  color: Colors.black54,
-                                ),
-                                textAlign: TextAlign.center,
-                              ),
-                            ),
-                          ],
-                        ),
-                      ),
-                      Container(
-                        // padding: EdgeInsets.all(10),
-                        width: MediaQuery.of(context).size.width / 4,
-                        // height: 90,
-                        // decoration: BoxDecoration(
-                        //     color: Colors.yellow.shade200,
-                        //     border: Border.all(
-                        //       color: Colors.yellow,
-                        //       width: 3,
-                        //     ),
-                        //     borderRadius:
-                        //         BorderRadius.all(Radius.circular(12))),
-                        child: Column(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          crossAxisAlignment: CrossAxisAlignment.center,
-                          children: [
-                            Icon(
-                              Icons.manage_search_outlined,
-                              size: 30,
-                              color: Colors.red[300],
-                            ),
-                            SizedBox(
-                              height: 10,
-                            ),
-                            Container(
-                              alignment: Alignment.center,
-                              // height: 28,
-                              child: Text(
-                                "Check Ticket",
-                                style: TextStyle(
-                                  fontSize: 10,
-                                  fontWeight: FontWeight.w700,
-                                  color: Colors.black54,
-                                ),
-                                textAlign: TextAlign.center,
-                              ),
-                            ),
-                          ],
-                        ),
-                      ),
-                      Container(
-                        // padding: EdgeInsets.all(10),
-                        width: MediaQuery.of(context).size.width / 4,
-                        // height: 90,
-                        // decoration: BoxDecoration(
-                        //     color: Colors.yellow.shade200,
-                        //     border: Border.all(
-                        //       color: Colors.yellow,
-                        //       width: 3,
-                        //     ),
-                        //     borderRadius:
-                        //         BorderRadius.all(Radius.circular(12))),
-                        child: Column(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          crossAxisAlignment: CrossAxisAlignment.center,
-                          children: [
-                            Icon(
-                              Icons.place_outlined,
-                              size: 30,
-                              color: Colors.black.withOpacity(0.6),
-                            ),
-                            SizedBox(
-                              height: 10,
-                            ),
-                            Container(
-                              alignment: Alignment.center,
-                              // height: 28,
-                              child: Text(
-                                "Nearest Agent",
-                                style: TextStyle(
-                                  fontSize: 10,
-                                  fontWeight: FontWeight.w700,
-                                  color: Colors.black54,
-                                ),
-                                textAlign: TextAlign.center,
-                              ),
-                            ),
-                          ],
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
-                Divider(),
-                Container(
-                  padding: EdgeInsets.only(
-                    top: 10,
-                    bottom: 10,
-                    right: 24,
-                    left: 24,
-                  ),
-                  width: MediaQuery.of(context).size.width,
-                  child: Wrap(
-                    crossAxisAlignment: WrapCrossAlignment.center,
-                    spacing: 5,
-                    children: [
-                      Icon(
-                        Icons.receipt_long_outlined,
-                        size: 30.0,
-                        color: Colors.orange[500],
-                      ),
-                      Text(
-                        "Latest Activity",
-                        style: TextStyle(fontWeight: FontWeight.bold, fontSize: 14),
-                      )
-                    ],
-                  ),
-                ),
-                Container(
-                  
-                  width: MediaQuery.of(context).size.width,
-                  height: 200,
-                  child: ListView.builder(
-                    
-                    scrollDirection : Axis.horizontal, 
-              // the number of items in the list
-              itemCount: myProducts.length,
-              shrinkWrap: true,
-
-              // display each item of the product list
-              itemBuilder: (context, index) {
-                return Container( 
-             margin: EdgeInsets.only(
-                    top: 10,
-                    bottom: 30,
-                    right: (index < myProducts.length-1) ? 10 : 24,
-                    left:(index > 0 ) ? 10 : 24,
-                  ),
-             decoration : BoxDecoration( 
-                 borderRadius : BorderRadius.circular(12), 
-                 boxShadow: [
- BoxShadow(
-  color: Colors.black.withOpacity(0.05),
-  spreadRadius: 3,
-  blurRadius: 15, 
-    offset: Offset(-3, 15), 
- )
-],
-                 color: Colors.white 
-             ) , 
-             
-             width : MediaQuery.of(context).size.width - 48 , 
-                  // In many cases, the key isn't mandatory
-                  key: UniqueKey(),
-                  child:  Column(
-                      crossAxisAlignment : CrossAxisAlignment.start, 
-                      children: [ 
-                         Container(
-                          width: 30.0,
-                          height: 0.0,
-                          child: new Stack( 
-                             alignment: Alignment.center,
-  
-  
-  overflow: Overflow.visible,
-  clipBehavior: Clip.hardEdge,
-  children: <Widget>[
-    Positioned(
-      top: 65,
-      left: -15,
-      height:30,
-      width: 30,
-      child: Container(
-        width: 30,
-        height: 30,
-        
-        decoration : BoxDecoration( 
-          borderRadius : BorderRadius.circular(20), 
-          color: Colors.grey[100], 
-        ), 
-        child: Text(
-          '',
-          
-        ),
-      ),
-    ),
- ],
-), 
-                            ),
                           Container(
-                          width: 30.0,
-                          height: 0.0,
-                          child: new Stack( 
-                             alignment: Alignment.centerRight,
-  
-  
-  overflow: Overflow.visible,
-  clipBehavior: Clip.hardEdge,
-  children: <Widget>[
-    Positioned(
-      top: 65,
-      left: MediaQuery. of(context).size.width - 63,
-      height:30,
-      width: 30,
-      child: Container(
-        width: 30,
-        height: 30,
-        
-        decoration : BoxDecoration( 
-          borderRadius : BorderRadius.circular(20), 
-          color: Colors.grey[100], 
-        ), 
-        child: Text(
-          '',
-          
-        ),
-      ),
-    ),
- ],
-), 
+                            // padding: EdgeInsets.all(10),
+                            width: MediaQuery.of(context).size.width / 4,
+                            // decoration: BoxDecoration(
+                            //     color: Colors.yellow.shade200,
+                            //     border: Border.all(
+                            //       color: Colors.yellow,
+                            //       width: 3,
+                            //     ),
+                            //     borderRadius:
+                            //         BorderRadius.all(Radius.circular(12))),
+                            child: Column(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              crossAxisAlignment: CrossAxisAlignment.center,
+                              children: [
+                                Icon(
+                                  Icons.luggage_outlined,
+                                  size: 30,
+                                  color: Colors.green[300],
+                                ),
+                                SizedBox(
+                                  height: 10,
+                                ),
+                                Container(
+                                  alignment: Alignment.topCenter,
+                                  // height: 28,
+                                  child: Text(
+                                    "My Trip",
+                                    style: TextStyle(
+                                      fontSize: 10,
+                                      fontWeight: FontWeight.w700,
+                                      color: Colors.black54,
+                                    ),
+                                    textAlign: TextAlign.center,
+                                  ),
+                                ),
+                              ],
                             ),
-                         Container( 
-                             padding: EdgeInsets.only(left: 24,right:24,top:15,bottom: 15),child:Row( 
-                                 
-mainAxisAlignment : MainAxisAlignment.spaceBetween, 
-crossAxisAlignment : CrossAxisAlignment.center, 
-children : [ 
-  Container( 
-    child: Row( 
-      mainAxisAlignment : MainAxisAlignment.spaceBetween, 
-      children : [ 
-        Icon(
-                              Icons.place_outlined,size:40,color: Colors.red), 
-        SizedBox(width:10), 
-        Container( 
-          child : Column ( 
-            children : [ 
-              Text("Booking Code", style : TextStyle (
-      fontSize:10, 
-      fontWeight: FontWeight.bold, 
-      color: Colors.grey[400]
-   ),
-) , 
-SizedBox( height:7), 
-Container( 
-    padding : EdgeInsets.only(top:5,bottom:5,left:10,right:10), 
-    decoration : BoxDecoration ( 
-        color : Colors.green[100], 
-        borderRadius :BorderRadius.circular(10), 
-                    
-    ) , 
-    child : Text("LTHY09UI", style : 
-     TextStyle ( 
-          fontSize:12, 
-          fontWeight: FontWeight.bold, 
-          color: Colors.black
-      ),) 
- ),
-            ]
-          ) 
-        )  
-        
-      ]
-    ) 
-  ) , 
-        Center(child: Text("Complete",style : TextStyle (color: Colors.green)) ),
-  
-]
-                             ),) , 
-                               Divider( thickness: 5, color: Colors.grey[100]),
-                               Padding( 
-                             padding: EdgeInsets.only(left: 24,right:24,top:15,bottom: 15),child:Text(myProducts[index])),
-                          
-                               ] 
-                      
-                  ),
-                );
-              }),
-                ), 
-                Divider(),
-                Container(
-                  padding: EdgeInsets.only(
-                    top: 10,
-                    bottom: 20,
-                    right: 24,
-                    left: 24,
-                  ),
-                  width: MediaQuery.of(context).size.width,
-                  child: Wrap(
-                    crossAxisAlignment: WrapCrossAlignment.center,
-                    spacing: 5,
-                    children: [
-                      Icon(
-                        Icons.new_releases_outlined,
-                        size: 28.0,
-                        color: Colors.orange[500],
+                          ),
+                          Container(
+                            // padding: EdgeInsets.all(10),
+                            width: MediaQuery.of(context).size.width / 4,
+                            // height: 90,
+                            // decoration: BoxDecoration(
+                            //     color: Colors.yellow.shade200,
+                            //     border: Border.all(
+                            //       color: Colors.yellow,
+                            //       width: 3,
+                            //     ),
+                            //     borderRadius:
+                            //         BorderRadius.all(Radius.circular(12))),
+                            child: Column(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              crossAxisAlignment: CrossAxisAlignment.center,
+                              children: [
+                                Icon(
+                                  Icons.directions_bus_outlined,
+                                  size: 30,
+                                  color: Colors.orange[300],
+                                ),
+                                SizedBox(
+                                  height: 10,
+                                ),
+                                Container(
+                                  alignment: Alignment.topCenter,
+                                  height: 28,
+                                  child: Text(
+                                    "Rental Bus",
+                                    style: TextStyle(
+                                      fontSize: 10,
+                                      fontWeight: FontWeight.w700,
+                                      color: Colors.black54,
+                                    ),
+                                    textAlign: TextAlign.center,
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
+                          Container(
+                            // padding: EdgeInsets.all(10),
+                            width: MediaQuery.of(context).size.width / 4,
+                            // height: 90,
+                            // decoration: BoxDecoration(
+                            //     color: Colors.yellow.shade200,
+                            //     border: Border.all(
+                            //       color: Colors.yellow,
+                            //       width: 3,
+                            //     ),
+                            //     borderRadius:
+                            //         BorderRadius.all(Radius.circular(12))),
+                            child: Column(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              crossAxisAlignment: CrossAxisAlignment.center,
+                              children: [
+                                Icon(
+                                  Icons.local_activity_outlined,
+                                  size: 30,
+                                  color: Colors.deepPurple[300],
+                                ),
+                                SizedBox(
+                                  height: 10,
+                                ),
+                                Container(
+                                  alignment: Alignment.center,
+                                  // height: 28,
+                                  child: Text(
+                                    "Promo",
+                                    style: TextStyle(
+                                      fontSize: 10,
+                                      fontWeight: FontWeight.w700,
+                                      color: Colors.black54,
+                                    ),
+                                    textAlign: TextAlign.center,
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
+                          Container(
+                            // padding: EdgeInsets.all(10),
+                            width: MediaQuery.of(context).size.width / 4,
+                            // height: 90,
+                            // decoration: BoxDecoration(
+                            //     color: Colors.yellow.shade200,
+                            //     border: Border.all(
+                            //       color: Colors.yellow,
+                            //       width: 3,
+                            //     ),
+                            //     borderRadius:
+                            //         BorderRadius.all(Radius.circular(12))),
+                            child: Column(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              crossAxisAlignment: CrossAxisAlignment.center,
+                              children: [
+                                Icon(
+                                  Icons.manage_search_outlined,
+                                  size: 30,
+                                  color: Colors.red[300],
+                                ),
+                                SizedBox(
+                                  height: 10,
+                                ),
+                                Container(
+                                  alignment: Alignment.center,
+                                  // height: 28,
+                                  child: Text(
+                                    "Check Ticket",
+                                    style: TextStyle(
+                                      fontSize: 10,
+                                      fontWeight: FontWeight.w700,
+                                      color: Colors.black54,
+                                    ),
+                                    textAlign: TextAlign.center,
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
+                          Container(
+                            // padding: EdgeInsets.all(10),
+                            width: MediaQuery.of(context).size.width / 4,
+                            // height: 90,
+                            // decoration: BoxDecoration(
+                            //     color: Colors.yellow.shade200,
+                            //     border: Border.all(
+                            //       color: Colors.yellow,
+                            //       width: 3,
+                            //     ),
+                            //     borderRadius:
+                            //         BorderRadius.all(Radius.circular(12))),
+                            child: Column(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              crossAxisAlignment: CrossAxisAlignment.center,
+                              children: [
+                                Icon(
+                                  Icons.place_outlined,
+                                  size: 30,
+                                  color: Colors.black.withOpacity(0.6),
+                                ),
+                                SizedBox(
+                                  height: 10,
+                                ),
+                                Container(
+                                  alignment: Alignment.center,
+                                  // height: 28,
+                                  child: Text(
+                                    "Nearest Agent",
+                                    style: TextStyle(
+                                      fontSize: 10,
+                                      fontWeight: FontWeight.w700,
+                                      color: Colors.black54,
+                                    ),
+                                    textAlign: TextAlign.center,
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
+                        ],
                       ),
-                      Text(
-                        "New Promo",
-                        style: TextStyle(fontWeight: FontWeight.bold, fontSize: 14),
-                      )
-                    ],
-                  ),
-                ),
-                Container(
-                  padding: EdgeInsets.only(
-                    top: 0,
-                    bottom: 15,
-                    right: 20,
-                    left: 20,
-                  ),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Container(
-                        decoration: new BoxDecoration(
-                          borderRadius: new BorderRadius.circular(16),
-                        ),
-                        child: BannerCarousel.fullScreen(
-                          banners: BannerImages.listBanners,
-                          height: 180,
-                          animation: true,
-                          initialPage: 0,
-                          // OR pageController: PageController(initialPage: 6),
-                        ),
+                    ),
+                    Divider(),
+                    Container(
+                      padding: EdgeInsets.only(
+                        top: 10,
+                        bottom: 10,
+                        right: 24,
+                        left: 24,
                       ),
-                    ],
-                  ),
+                      width: MediaQuery.of(context).size.width,
+                      child: Wrap(
+                        crossAxisAlignment: WrapCrossAlignment.center,
+                        spacing: 5,
+                        children: [
+                          Icon(
+                            Icons.receipt_long_outlined,
+                            size: 30.0,
+                            color: Colors.orange[500],
+                          ),
+                          Text(
+                            "Latest Activity",
+                            style: TextStyle(
+                              fontWeight: FontWeight.bold,
+                              fontSize: 14,
+                            ),
+                          )
+                        ],
+                      ),
+                    ),
+                    Container(
+                      width: MediaQuery.of(context).size.width,
+                      height: 270,
+                      child: ListView.builder(
+                        scrollDirection: Axis.horizontal,
+                        // the number of items in the list
+                        itemCount: myProducts.length,
+                        shrinkWrap: true,
+                        // display each item of the product list
+                        itemBuilder: (context, index) {
+                          return Container(
+                            margin: EdgeInsets.only(
+                              top: 10,
+                              bottom: 30,
+                              right: (index < myProducts.length - 1) ? 10 : 24,
+                              left: (index > 0) ? 10 : 24,
+                            ),
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(12),
+                              boxShadow: [
+                                BoxShadow(
+                                  color: Colors.black.withOpacity(0.05),
+                                  spreadRadius: 3,
+                                  blurRadius: 15,
+                                  offset: Offset(-3, 15),
+                                )
+                              ],
+                              color: Colors.white,
+                            ),
+                            width: MediaQuery.of(context).size.width - 48,
+                            // In many cases, the key isn't mandatory
+                            key: UniqueKey(),
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Container(
+                                  width: 30.0,
+                                  height: 0.0,
+                                  child: new Stack(
+                                    alignment: Alignment.center,
+                                    overflow: Overflow.visible,
+                                    clipBehavior: Clip.hardEdge,
+                                    children: <Widget>[
+                                      Positioned(
+                                        top: 65,
+                                        left: -15,
+                                        height: 30,
+                                        width: 30,
+                                        child: Container(
+                                          width: 30,
+                                          height: 30,
+                                          decoration: BoxDecoration(
+                                            borderRadius:
+                                                BorderRadius.circular(20),
+                                            color: Colors.grey[100],
+                                          ),
+                                          child: Text(''),
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                                Container(
+                                  width: 30.0,
+                                  height: 0.0,
+                                  child: new Stack(
+                                    alignment: Alignment.centerRight,
+                                    overflow: Overflow.visible,
+                                    clipBehavior: Clip.hardEdge,
+                                    children: <Widget>[
+                                      Positioned(
+                                        top: 65,
+                                        left:
+                                            MediaQuery.of(context).size.width -
+                                                63,
+                                        height: 30,
+                                        width: 30,
+                                        child: Container(
+                                          width: 30,
+                                          height: 30,
+                                          decoration: BoxDecoration(
+                                            borderRadius:
+                                                BorderRadius.circular(20),
+                                            color: Colors.grey[100],
+                                          ),
+                                          child: Text(''),
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                                Container(
+                                  padding: EdgeInsets.only(
+                                    left: 24,
+                                    right: 24,
+                                    top: 15,
+                                    bottom: 15,
+                                  ),
+                                  child: Row(
+                                    mainAxisAlignment:
+                                        MainAxisAlignment.spaceBetween,
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.center,
+                                    children: [
+                                      Container(
+                                        child: Row(
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.spaceBetween,
+                                          children: [
+                                            Icon(
+                                              Icons.place_outlined,
+                                              size: 40,
+                                              color: Colors.red,
+                                            ),
+                                            SizedBox(
+                                              width: 10,
+                                            ),
+                                            Container(
+                                              child: Column(
+                                                crossAxisAlignment:
+                                                    CrossAxisAlignment.start,
+                                                children: [
+                                                  Text(
+                                                    "Booking Code",
+                                                    textAlign: TextAlign.left,
+                                                    style: TextStyle(
+                                                      fontSize: 10,
+                                                      fontWeight:
+                                                          FontWeight.bold,
+                                                      color: Colors.grey[400],
+                                                    ),
+                                                  ),
+                                                  SizedBox(
+                                                    height: 7,
+                                                  ),
+                                                  Container(
+                                                    padding: EdgeInsets.only(
+                                                      top: 5,
+                                                      bottom: 5,
+                                                      left: 10,
+                                                      right: 10,
+                                                    ),
+                                                    decoration: BoxDecoration(
+                                                      color: Colors.green[100],
+                                                      borderRadius:
+                                                          BorderRadius.circular(
+                                                              10),
+                                                    ),
+                                                    child: Text(
+                                                      "LTHY09UI",
+                                                      style: TextStyle(
+                                                        fontSize: 14,
+                                                        fontWeight:
+                                                            FontWeight.bold,
+                                                        color: Colors.black,
+                                                      ),
+                                                    ),
+                                                  ),
+                                                ],
+                                              ),
+                                            ),
+                                          ],
+                                        ),
+                                      ),
+                                      Center(
+                                        child: Container(
+                                          padding: EdgeInsets.symmetric(
+                                              vertical: 5, horizontal: 12),
+                                          decoration: BoxDecoration(
+                                            borderRadius:
+                                                BorderRadius.circular(12.0),
+                                            border: Border.all(
+                                              width: 2,
+                                              color: Colors.green.shade50,
+                                            ),
+                                          ),
+                                          child: Text(
+                                            "Complete",
+                                            style: TextStyle(
+                                              color: Colors.green,
+                                              fontWeight: FontWeight.bold,
+                                            ),
+                                          ),
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                                Divider(
+                                  thickness: 5,
+                                  color: Colors.grey[100],
+                                ),
+                                Padding(
+                                    padding: EdgeInsets.only(
+                                      left: 24,
+                                      right: 24,
+                                      top: 15,
+                                      bottom: 15,
+                                    ),
+                                    child: Column(
+                                      children: [
+                                        Row(
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.spaceBetween,
+                                          crossAxisAlignment:
+                                              CrossAxisAlignment.center,
+                                          children: [
+                                            Container(
+                                              width: (MediaQuery.of(context)
+                                                          .size
+                                                          .width /
+                                                      2) -
+                                                  75,
+                                              child: Column(
+                                                crossAxisAlignment:
+                                                    CrossAxisAlignment.start,
+                                                children: [
+                                                  Text(
+                                                    "From",
+                                                    style: TextStyle(
+                                                      fontWeight:
+                                                          FontWeight.bold,
+                                                      fontSize: 12,
+                                                      color:
+                                                          Colors.grey.shade600,
+                                                    ),
+                                                  ),
+                                                  SizedBox(
+                                                    height: 5,
+                                                  ),
+                                                  Text(
+                                                    "Surabaya Bungur Asih",
+                                                    overflow:
+                                                        TextOverflow.ellipsis,
+                                                    style: TextStyle(
+                                                      fontWeight:
+                                                          FontWeight.bold,
+                                                      fontSize: 14,
+                                                      color: Color.fromRGBO(
+                                                          10, 12, 71, 1.0),
+                                                    ),
+                                                  ),
+                                                ],
+                                              ),
+                                            ),
+                                            SizedBox(
+                                              width: 40,
+                                              height: 40,
+                                              child: Container(
+                                                width: 40,
+                                                height: 40,
+                                                alignment: Alignment.center,
+                                                child: Center(
+                                                  child: const RotatedBox(
+                                                    quarterTurns: 1,
+                                                    child: Icon(
+                                                      Icons.swap_calls,
+                                                      color: Color(0xFFE4E8E8),
+                                                      size: 30,
+                                                    ),
+                                                  ),
+                                                ),
+                                              ),
+                                            ),
+                                            Container(
+                                              width: (MediaQuery.of(context)
+                                                          .size
+                                                          .width /
+                                                      2) -
+                                                  75,
+                                              child: Column(
+                                                crossAxisAlignment:
+                                                    CrossAxisAlignment.end,
+                                                children: [
+                                                  Text(
+                                                    "To",
+                                                    style: TextStyle(
+                                                      fontWeight:
+                                                          FontWeight.bold,
+                                                      fontSize: 12,
+                                                      color:
+                                                          Colors.grey.shade600,
+                                                    ),
+                                                  ),
+                                                  SizedBox(
+                                                    height: 5,
+                                                  ),
+                                                  Text(
+                                                    "Palur",
+                                                    overflow:
+                                                        TextOverflow.ellipsis,
+                                                    style: TextStyle(
+                                                      fontWeight:
+                                                          FontWeight.bold,
+                                                      fontSize: 14,
+                                                      color: Color.fromRGBO(
+                                                          10, 12, 71, 1.0),
+                                                    ),
+                                                  ),
+                                                ],
+                                              ),
+                                            ),
+                                          ],
+                                        ),
+                                        SizedBox(
+                                          height: 15,
+                                        ),
+                                        Row(
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.spaceBetween,
+                                          crossAxisAlignment:
+                                              CrossAxisAlignment.center,
+                                          children: [
+                                            Container(
+                                              width: (MediaQuery.of(context)
+                                                          .size
+                                                          .width /
+                                                      2) -
+                                                  75,
+                                              child: Column(
+                                                crossAxisAlignment:
+                                                    CrossAxisAlignment.start,
+                                                children: [
+                                                  Text(
+                                                    "Date",
+                                                    style: TextStyle(
+                                                      fontWeight:
+                                                          FontWeight.bold,
+                                                      fontSize: 12,
+                                                      color:
+                                                          Colors.grey.shade600,
+                                                    ),
+                                                  ),
+                                                  SizedBox(
+                                                    height: 5,
+                                                  ),
+                                                  Text(
+                                                    "10 Sep 2021",
+                                                    overflow:
+                                                        TextOverflow.ellipsis,
+                                                    style: TextStyle(
+                                                      fontWeight:
+                                                          FontWeight.bold,
+                                                      fontSize: 14,
+                                                      color: Color.fromRGBO(
+                                                          10, 12, 71, 1.0),
+                                                    ),
+                                                  ),
+                                                ],
+                                              ),
+                                            ),
+                                            Container(
+                                              width: (MediaQuery.of(context)
+                                                          .size
+                                                          .width /
+                                                      2) -
+                                                  75,
+                                              child: ElevatedButton(
+                                                style: ButtonStyle(
+                                                  backgroundColor:
+                                                      MaterialStateProperty.all<
+                                                          Color>(
+                                                    Color.fromRGBO(
+                                                        10, 12, 71, 1.0),
+                                                  ),
+                                                  padding: MaterialStateProperty
+                                                      .all<EdgeInsets>(
+                                                    EdgeInsets.symmetric(
+                                                        vertical: 15,
+                                                        horizontal: 15),
+                                                  ),
+                                                ),
+                                                onPressed: () {},
+                                                child: Text(
+                                                  "Booking",
+                                                  style: TextStyle(
+                                                      fontSize: 14,
+                                                      fontWeight:
+                                                          FontWeight.w900),
+                                                ),
+                                              ),
+                                            ),
+                                          ],
+                                        ),
+                                      ],
+                                    )),
+                              ],
+                            ),
+                          );
+                        },
+                      ),
+                    ),
+                    Divider(),
+                    Container(
+                      padding: EdgeInsets.only(
+                        top: 10,
+                        bottom: 20,
+                        right: 24,
+                        left: 24,
+                      ),
+                      width: MediaQuery.of(context).size.width,
+                      child: Wrap(
+                        crossAxisAlignment: WrapCrossAlignment.center,
+                        spacing: 5,
+                        children: [
+                          Icon(
+                            Icons.new_releases_outlined,
+                            size: 28.0,
+                            color: Colors.orange[500],
+                          ),
+                          Text(
+                            "New Promo",
+                            style: TextStyle(
+                              fontWeight: FontWeight.bold,
+                              fontSize: 14,
+                            ),
+                          )
+                        ],
+                      ),
+                    ),
+                    Container(
+                      padding: EdgeInsets.only(
+                        top: 0,
+                        bottom: 15,
+                        right: 20,
+                        left: 20,
+                      ),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Container(
+                            decoration: new BoxDecoration(
+                              borderRadius: new BorderRadius.circular(16),
+                            ),
+                            child: BannerCarousel.fullScreen(
+                              banners: BannerImages.listBanners,
+                              height: 180,
+                              animation: true,
+                              initialPage: 0,
+                              // OR pageController: PageController(initialPage: 6),
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                    SizedBox(
+                      height: 100,
+                    ),
+                  ],
                 ),
-                SizedBox(
-                  height: 100,
-                ),
-              ],
+              ),
             ),
-          ),
+            Center(child: Container(child: Text("gdjdjfnfn"))),
+            Center(child: Container(child: Text("gdjfnfn"))),
+            Center(child: Container(child: Text("gdjdzhdhdbdfnfn"))),
+          ],
         ),
-        Center( 
-          child: Container( 
-            child : Text("gdjdjfnfn") 
-          ) 
-        ), 
-        Center( 
-          child: Container( 
-            child : Text("gdjfnfn") 
-          ) 
-        ),
-        Center( 
-          child: Container( 
-            child : Text("gdjdzhdhdbdfnfn") 
-          ) 
-        ), 
-        ], 
-        ), 
         bottomNavigationBar: SlidingClippedNavBar(
-        backgroundColor: Colors.white,
-        onButtonPressed: (index) {
-          setState(() {
-            selectedIndex = index;
-          });
-          _pageController.animateToPage(selectedIndex,
-              duration: const Duration(milliseconds: 400),
-              curve: Curves.easeOutQuad);
-        },
-        iconSize: 30,
-        activeColor: Color(0xFF01579B),
-        selectedIndex: selectedIndex,
-        barItems: [
-          BarItem(
-            icon: Icons.home_outlined,
-            title: 'Home',
-          ),
-          BarItem(
-            icon: Icons.receipt_long_outlined,
-            title: 'History',
-          ),
-          BarItem(
-            icon: Icons.local_activity_outlined,
-            title: 'Promo',
-          ),
-          BarItem(
-            icon: Icons.account_circle_outlined,
-            title: 'Profile',
-          ),
-        ],
-      ),
+          backgroundColor: Colors.white,
+          onButtonPressed: (index) {
+            setState(() {
+              selectedIndex = index;
+            });
+            _pageController.animateToPage(selectedIndex,
+                duration: const Duration(milliseconds: 400),
+                curve: Curves.easeOutQuad);
+          },
+          iconSize: 30,
+          activeColor: Color(0xFF01579B),
+          selectedIndex: selectedIndex,
+          barItems: [
+            BarItem(
+              icon: Icons.home_outlined,
+              title: 'Home',
+            ),
+            BarItem(
+              icon: Icons.receipt_long_outlined,
+              title: 'History',
+            ),
+            BarItem(
+              icon: Icons.local_activity_outlined,
+              title: 'Promo',
+            ),
+            BarItem(
+              icon: Icons.account_circle_outlined,
+              title: 'Profile',
+            ),
+          ],
+        ),
       ),
     );
   }
@@ -1018,4 +1270,3 @@ class BannerImages {
     BannerModel(imagePath: banner4, id: "4"),
   ];
 }
-  
